@@ -1,0 +1,18 @@
+.profile-avtaar
+{
+    content: "";
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    border-radius: 60%;
+    /* background: url(projectize/src/assets/img/adult-1.png); */
+}
+.profile
+{
+    border: none;
+    margin: 0;
+}
