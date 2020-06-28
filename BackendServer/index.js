@@ -1,8 +1,23 @@
 var express = require('express');
 var cors = require('cors');
+var multer= require('multer');
 var bodyParser= require('body-parser');
 var MongoClient= require('mongodb').MongoClient;
 var ObjectId= require('mongodb').ObjectID;
+
+
+var storage = multer.diskStorage({
+    destination: function(req,file,cb){
+        console.log("in destination");
+        cb(null,'uploads')
+    },
+    filename:function(req,file,cb){
+        console.log(file);
+        cb(null,req.genId+"_"+file.fieldname+"_"+req[file.fieldname+'Ctr']++ +".jpg");
+    }
+})
+
+var upload=multer({storage:storage})
 
 
 var app = express();
@@ -92,7 +107,18 @@ app.post('/login-account',bodyParser.json(),(req,res)=>{
     })
 })
 
+app.post('/data-with-file',
+                            (req,res,next)=>{
 
+                                req.genId="hh";
+                                req['galleryCtr']=1;
+                                req['profileCtr']=1;
+
+                                next(); },
+
+                            upload.fields([{name:'profile',maxcount:1},{name:'gallery',maxcount:8}]),
+                            (req,res)=>{console.log("in last"); res.send({status:"ok"})   
+                        });
 
 app.listen(4000,()=>{
     console.log("Server running on port 4000");
