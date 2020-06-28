@@ -16,3 +16,20 @@
     border: none;
     margin: 0;
 }
+
+.but
+{
+  margin-top: -0.5rem;
+  padding: 9px;
+  text-align: center;
+  text-decoration: none;
+  /* display: inline-block; */
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(58, 207, 245);
+}
+
+.h6, h6 {
+  font-size: .625rem;
+}

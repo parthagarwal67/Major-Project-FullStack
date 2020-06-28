@@ -25,4 +25,9 @@ loginAccount( d ):any
 {
   return this.http.post('http://localhost:4000/login-account',d);
 }
+
+postDataWithImage( d )
+ {
+return this.http.post('http://localhost:4000/data-with-file',d)
+ }
 }

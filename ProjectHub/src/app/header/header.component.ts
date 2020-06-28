@@ -20,4 +20,8 @@ export class HeaderComponent implements OnInit {
   localStorage.removeItem('name');
   window.location.href="http://localhost:4200";
   }
+  logout2()
+  {
+    localStorage.removeItem('name');
+  }
 }

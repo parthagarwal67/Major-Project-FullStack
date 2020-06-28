@@ -1,1 +1,118 @@
-<p>dashboard works!</p>
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading logo">  <a routerLink="/"><img src="assets/img/logo1.png" style="height: 50px;width: 60px;" alt="" title="" />&nbsp;<span style="color: white;font-weight:bolder;font-size:larger;">Projectize</span> </a> </div>
+      <div class="dropdown-divider2"></div>
+      <div class="list-group list-group-flush">
+        <!-- <div class="dropdown-divider2"></div> -->
+        <a routerLink="/dashboard" class="list-group-item list-group-item-action bg-light"><i class="fa fa-book zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Dashboard</span></a>
+        <!-- <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a> -->
+        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-eye-slash zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Overview</span></a>
+        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-calendar-o zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Events</span></a>
+        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-user-secret zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Profile</span></a>
+        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-bar-chart zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Status</span></a>
+        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-sellsy zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Explore</span></a>
+        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-podcast zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Podcast</span></a>
+        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-bullhorn zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Announcements</span></a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle"><i class="fa fa-bars zoom" aria-hidden="true" style="width: 20px;color: papayawhip;"></i></button>
+
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+
+        <!-- <div class="input-wrap" style="display: flex; align-items: center; justify-content: center; text-align: center; padding-left: 300px;">
+          <form action="" class="form-box d-flex justify-content-between">
+              <input type="text" placeholder="Search Project" class="form-control" name="username">
+              <button type="submit" class="btn search-btn">Search</button>
+          </form>
+        </div> -->
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <h2 style="padding-left: 70px;color: #d1c8ba;font-family:comic sans MS">Dashboard</h2>
+         
+          <div class="input-wrap" #mm style="display: flex; align-items: center; justify-content: center; text-align: center; padding-left: 180px;">
+            <form action="" class="form-box d-flex justify-content-between">
+                <input type="text" placeholder="Search Anything...." class="form-control" name="username" (click)="myFunction()" style="border-style:dotted;width: 20rem; background-color: transparent;">&nbsp;
+                <button type="submit" class="btn search-btn" style="background-color: transparent;color: papayawhip;"> <i class="fa fa-search zoom" aria-hidden="true" ></i></button>
+            </form>
+          </div>
+
+
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0" style="padding-right:60px;">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/"><i class="fa fa-home zoom" aria-hidden="true"></i> <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink=""><i class="fa fa-bell zoom i" aria-hidden="true"></i></a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell" aria-hidden="true"></i></a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/profile" >
+                <!-- id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+                <!-- <i class="fa fa-user-circle zoom" aria-hidden="true"></i> -->
+                <img src="assets/img/img_avatar.png" alt="Avatar" class="avatar zoom">
+              </a>
+            </li>  
+
+            <li class="nav-item">
+              <a class="nav-link" routerLink="" >  
+                <i class="fa fa-cog fa-spin zoom" aria-hidden="true"></i>
+                <span class="sr-only">Saving. Hang tight!</span>
+              </a>
+            </li>  
+
+              <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div> -->
+            
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container" style="margin-top: 40px;">
+        <!-- <h2 class="mt-4">Dashboard</h2>
+        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p> -->
+        
+        <form #f="ngForm">
+          <input type="text" #n="ngModel" [(ngModel)]="name" name="name"> <br>
+          <input type="file" name="profile" (change)="getProfile($event)"> <br>
+          <input type="file" multiple name="gallery" (change)="getGallery($event)"> <br>
+          <button (click)="postData()">Click</button>
+        </form>
+
+        <!-- <div class="row"> 
+          <div class="col-md-6">
+            <form method="post" action="#" id="#">
+                <div class="form-group files color">
+                  <label>Upload Your File </label>
+                  <input type="file" class="form-control" multiple="">
+                </div>
+            </form>
+          </div>
+        </div> -->
+
+      </div>
+
+
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->

@@ -3,14 +3,14 @@
     <div class="container">
         <div class="row align-items-center justify-content-between d-flex">
             <div id="logo">
-                <a routerLink="/home"><img src="assets/img/logo.png" alt="" title="" /></a>
+                <a routerLink="/"><img src="assets/img/logo1.png" style="height: 60px;width: 100px;" alt="" title="" />&nbsp;<span style="color: white;font-weight:bolder;font-size:x-large;">Projectize</span> </a>
             </div>
             <nav id="nav-menu-container">
                 <ul class="nav-menu" style="right: 6rem;">
-                    <li ><a routerLink="">Home</a></li> 
+                    <li ><a routerLink="/"><i class="fa fa-home"></i>&nbsp;Home</a></li> 
                      <!-- class="menu-active" -->
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="about.html"><i class="fas fa-about"></i>&nbsp;About Us</a></li>
+                    <!-- <li><a href="courses.html">Courses</a></li>
                     <li class="menu-has-children"><a href="">Pages</a>
                         <ul>
                             <li><a href="elements.html">Elements</a></li>
@@ -21,15 +21,19 @@
                             <li><a href="blog-home.html">Blog Home</a></li>
                             <li><a href="blog-single.html">Blog Details</a></li>
                         </ul>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li *ngIf="!curuser"><a routerLink="/login">Login</a></li>
-                    <li *ngIf="curuser" class="menu-has-children"><a routerLink=""><i class="fas fa-user fa fw"></i></a>
+                    </li> -->
+                    <li><a href="contact.html"><i class="fa fa-phone"></i>&nbsp;Contact</a></li>
+                    <li *ngIf="!curuser" class="but"><a routerLink="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;Login / SignUp</a></li>
+                    <li *ngIf="curuser" class="menu-has-children"><a routerLink=""><i class="fa fa-user-circle"></i>&nbsp; {{curuser}}</a>
                         <ul>
-                            <li><a routerLink="">Hello {{curuser}}</a></li>
-                            <li><a routerLink="/dashboard">My Dashdoard</a></li>
+                            <div class="dropdown-header noti-title">
+                                <h6 class="text-overflow m-0">Welcome !</h6>
+                              </div>
+                            <li><a routerLink="/profile"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span>My Profile</span></a></li>
+                            <li><a routerLink="/dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp;&nbsp;<span>Dashdoard</span></a></li>
+                            <li><a routerLink="/login" (click)="logout2()"><i class="fa fa-exchange" aria-hidden="true"></i>&nbsp;&nbsp;<span>Switch Accounts</span></a></li>
                             <div class="dropdown-divider"></div>
-                            <li><a routerLink="" (click)="logout()">Logout</a></li>
+                            <li><a routerLink="" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp;<span>Logout</span></a></li>
                         </ul>
                     </li>
 

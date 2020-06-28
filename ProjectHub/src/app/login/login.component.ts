@@ -11,16 +11,16 @@ declare var $:any;
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-@ViewChild('mydiv') sgnp;
+@ViewChild('overlay') sgnp;
 record=new account();
-accountList;
+// accountList;
 accountdata =new account1();
   constructor(private ds:DataService,private router:Router) { }
 
   ngOnInit(): void {
-    this.ds.listAccount().subscribe((d)=>{
-      this.accountList=d.resultData;
-    })
+    // this.ds.listAccount().subscribe((d)=>{
+    //   this.accountList=d.resultData;
+    // })
   }
 
 
@@ -32,13 +32,13 @@ accountdata =new account1();
         // this.ds.listAccount().subscribe((d)=>{
           // alert(JSON.stringify(d))
           // this.accountList=d.resultData;
-          alert("jfjg")
+          // alert("jfjg")
           alert("Account Created Successfully");
           // location.reload();
           // window.location.href="http://localhost:4200/login";
           console.log(this.sgnp);
           this.sgnp.nativeElement.click();
-          this.sgnp.nativeElement.style.backgroundColor='black';
+          // this.sgnp.nativeElement.style.backgroundColor='black';
 //          this.router.navigate(['/login'])
         // })      
       }
@@ -57,13 +57,13 @@ login()
     // alert(JSON.stringify(d));
     if(d.Status=="ok")
     {
-      alert("Login Successful");
+      // alert("Login Successful");
       console.log(d.resultData);
       localStorage.setItem("name",d.resultData);
       this.router.navigate(['/dashboard'],{queryParams:{account:d.resultData}});
     }
     else{
-      alert("Invalid Account.. Try Again!!");
+      alert("Invalid Account Entry.. Try Again!!");
       location.reload();
       
     }
