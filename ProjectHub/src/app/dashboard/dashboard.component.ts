@@ -10,6 +10,9 @@ declare var $:any;
 export class DashboardComponent implements OnInit {
 @ViewChild('mm') ggp;
 name;
+desc;
+tech;
+key;
 profile;
 gallery:Array<File>;
   constructor(private ds:DataService) { }
@@ -44,6 +47,10 @@ postData()
   $("#menu-toggle").click(function(e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
+  });
+
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
   });
 }
 
