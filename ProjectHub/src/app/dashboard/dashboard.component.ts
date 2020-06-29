@@ -29,11 +29,12 @@ gallery:Array<File>;
 postData()
 {
   var form= new FormData();
+  form.set('name',name);
   for(var i=0;i<this.gallery.length;i++)
   {
-    form.append("gallery",this.gallery[i],this.gallery[i]['name']);
+    form.append("screenshot",this.gallery[i],this.gallery[i]['name']);
   }
-  form.set('name',name);
+  
   form.set('profile',this.profile);
 
   this.ds.postDataWithImage(form).subscribe((d)=>{alert(JSON.stringify(d))});

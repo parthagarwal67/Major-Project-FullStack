@@ -13,7 +13,55 @@ var storage = multer.diskStorage({
     },
     filename:function(req,file,cb){
         console.log(file);
-        cb(null,req.genId+"_"+file.fieldname+"_"+req[file.fieldname+'Ctr']++ +".jpg");
+
+
+        if(!req.hasTextDataProcessed)
+        {
+
+
+
+            var collection=connection.db('projectize').collection('projects');
+            collection.insert(req.body,(err,r)=>{
+                if(!err)
+                {
+                    console.log(r);
+              var insertedId=  r.insertedIds['0'];
+                    
+                      console.log("inserted id is returned as->"+insertedId)
+                      req.hasTextDataProcessed = true;
+                     req.insertedId=insertedId;
+                     req.screenshotCtr = 1;
+                     cb(null,req.insertedId+"_"+file.fieldname+"_"+req[file.fieldname+'Ctr']++ +".jpg");
+       
+                  
+                }
+                else
+                {
+                    return null;
+                }
+            })
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+
+        }
+        else{
+
+            cb(null,req.insertedId+"_"+file.fieldname+"_"+req[file.fieldname+'Ctr']++ +".jpg");
+        }
+
+
     }
 })
 
@@ -43,6 +91,13 @@ client.connect((err,con)=>{
         console.log("database could not connected")
     }
 })
+
+
+function insertProjectData(req)
+{
+
+   
+}
 
 
 app.post('/create-account',bodyParser.json(),(req,res)=>{
@@ -108,15 +163,8 @@ app.post('/login-account',bodyParser.json(),(req,res)=>{
 })
 
 app.post('/data-with-file',
-                            (req,res,next)=>{
 
-                                req.genId="hh";
-                                req['galleryCtr']=1;
-                                req['profileCtr']=1;
-
-                                next(); },
-
-                            upload.fields([{name:'profile',maxcount:1},{name:'gallery',maxcount:8}]),
+                            upload.fields([{name:'profile',maxcount:1},{name:'screenshot',maxcount:8}]),
                             (req,res)=>{console.log("in last"); res.send({status:"ok"})   
                         });
 

@@ -92,7 +92,7 @@
         
         <form #f="ngForm">
           <input type="text" #n="ngModel" [(ngModel)]="name" name="name"> <br>
-          <input type="file" name="profile" (change)="getProfile($event)"> <br>
+          <input type="file" value="Choose" name="profile" (change)="getProfile($event)"><br>
           <input type="file" multiple name="gallery" (change)="getGallery($event)"> <br>
           <button (click)="postData()">Click</button>
         </form>
