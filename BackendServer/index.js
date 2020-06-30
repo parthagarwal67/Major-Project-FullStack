@@ -13,6 +13,8 @@ var storage = multer.diskStorage({
     },
     filename:function(req,file,cb){
         console.log(file);
+        var ext = file.originalname.split('.').pop();
+        console.log(ext);
 
 
         if(!req.hasTextDataProcessed)
@@ -31,7 +33,7 @@ var storage = multer.diskStorage({
                       req.hasTextDataProcessed = true;
                      req.insertedId=insertedId;
                      req.screenshotCtr = 1;
-                     cb(null,req.insertedId+"_"+file.fieldname+"_"+req[file.fieldname+'Ctr']++ +".jpg");
+                     cb(null,req.insertedId+"_"+file.fieldname+"_"+req[file.fieldname+'Ctr']++ +"."+ext);
        
                   
                 }
@@ -58,7 +60,9 @@ var storage = multer.diskStorage({
         }
         else{
 
-            cb(null,req.insertedId+"_"+file.fieldname+"_"+req[file.fieldname+'Ctr']++ +".jpg");
+            cb(null,req.insertedId+"_"+file.fieldname+"_"+req[file.fieldname+'Ctr']++ +"."+ext);
+       
+        
         }
 
 
