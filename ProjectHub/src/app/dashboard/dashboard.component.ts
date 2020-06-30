@@ -9,35 +9,51 @@ declare var $:any;
 })
 export class DashboardComponent implements OnInit {
 @ViewChild('mm') ggp;
-name;
+title;
 desc;
 tech;
 key;
-profile;
-gallery:Array<File>;
+zipfile;
+ppt;
+doc;
+screenshots:Array<File>;
   constructor(private ds:DataService) { }
 
   ngOnInit(): void {
   }
 
-  getProfile(e)
+  getZipfile(e)
   {
-    this.profile=e.target.files[0];
+    this.zipfile=e.target.files[0];
   }
-  getGallery(e)
+  getPpt(e)
   {
-    this.gallery=e.target.files;
+    this.ppt=e.target.files[0];
+  }
+  getDoc(e)
+  {
+    this.doc=e.target.files[0];
+  }
+  getScreenshots(e)
+  {
+    this.screenshots=e.target.files;
   }
 
 postData()
 {
   var form= new FormData();
-  for(var i=0;i<this.gallery.length;i++)
+  form.set('title',this.title);
+  form.set('desc',this.desc);
+  form.set('tech',this.tech);
+  form.set('key',this.key);
+  for(var i=0;i<this.screenshots.length;i++)
   {
-    form.append("gallery",this.gallery[i],this.gallery[i]['name']);
+    form.append("screenshots",this.screenshots[i],this.screenshots[i]['title']);
   }
-  form.set('name',name);
-  form.set('profile',this.profile);
+  
+  form.set('zipfile',this.zipfile);
+  form.set('ppt',this.ppt);
+  form.set('doc',this.doc);
 
   this.ds.postDataWithImage(form).subscribe((d)=>{alert(JSON.stringify(d))});
 }
