@@ -1,0 +1,37 @@
+/* ul li a
+{
+    color:#818f9b
+}
+ul li a:hover
+{
+    color: rgb(87, 129, 129);
+} */
+.zoom
+{
+    transition: transform .2s;
+}
+.zoom:hover
+{
+    transform: scale(1.5); ;
+}
+
+/* .max-width-container {
+    max-width: 1224px;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+ul{
+    list-style: none;
+    margin-top: 16rem;
+}
+
+ul li{
+    float: left;
+    width: 662px;
+    /* background-color: black; */
+    color: black;
+    height: 55px;
+    line-height: 50px;
+    /* text-align: center; */
+}

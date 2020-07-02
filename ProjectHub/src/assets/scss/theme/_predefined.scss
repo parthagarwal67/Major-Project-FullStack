@@ -62,7 +62,7 @@
 
 .p1-gradient-color {
     @include gradient(90deg, $primary-color 0%, $primary-color2 100%);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 

@@ -1138,8 +1138,17 @@ pre code {
     .col-md-6 {
         -ms-flex: 0 0 50%;
         flex: 0 0 50%;
-        max-width: 50%
+        max-width: 50%;
+        /* height: 22rem; */
     }
+    .col-md-6a {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+        height: 23rem;
+        border-radius: 6%;
+    }
+
     .col-md-7 {
         -ms-flex: 0 0 58.333333%;
         flex: 0 0 58.333333%;
@@ -9357,6 +9366,151 @@ a.text-dark:hover {
         color: inherit;
         border-color: #dee2e6
     }
+}
+.max-width-container {
+    max-width: 1224px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* @media (max-width: 767px) */
+#trainings #trainings_container 
+{
+    max-width: 400px;
+}
+/* @media (max-width: 1255px) */
+#trainings #trainings_container {
+    max-width: 700px;
+    margin-bottom: 16px;
+    margin-top: 0;
+}
+#trainings #trainings_container {
+    margin-top: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.scrollable_cards {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin-top: 2px;
+}
+/* @media (max-width: 767px) */
+#trainings #trainings_container .card_item, #trainings #trainings_container .card_item:first-of-type, #trainings #trainings_container .card_item:last-of-type {
+    margin: 16px 7px 10px;
+}
+
+#trainings #trainings_container .card_item:first-of-type {
+    margin-left: 0;
+}
+/* @media (max-width: 767px) */
+#trainings #trainings_container .card_item {
+    height: 166px;
+}
+/* @media (max-width: 1255px) */
+#trainings #trainings_container .card_item {
+    margin-top: 14px;
+}
+#trainings #trainings_container .card_item {
+    height: 172px;
+    padding: 16px 8px 18px;
+    margin: 10px 7px;
+}
+.scrollable_cards .card_item:first-of-type {
+    margin-left: 1px;
+}
+/* @media (max-width: 767px) */
+.scrollable_cards .card_item {
+    border: 1px solid #EEE;
+}
+.scrollable_cards .card_item {
+    display: flex;
+    padding: 16px 4px 24px;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 6px;
+    margin: 10px 7px;
+    width: 140px;
+    height: 156px;
+}
+a {
+    font-weight: 500;
+    text-decoration: none;
+    color: #008BDC;
+    cursor: pointer;
+    line-height: 1.14285714;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+.scrollable_cards .card_item .img {
+    width: 132px;
+}
+.scrollable_cards .card_item .text {
+    font-size: 14px;
+    line-height: 1.58;
+}
+.scrollable_cards .card_item .text {
+    font-family: 'Inter var',sans-serif;
+}
+.scrollable_cards .card_item .text {
+    font-family: Inter,sans-serif;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.38;
+    margin-top: 16px;
+}
+#trainings #trainings_container .card_item, #trainings #trainings_container .card_item:first-of-type, #trainings #trainings_container .card_item:last-of-type {
+    margin: 16px 7px 10px;
+}
+/* @media (max-width: 767px) */
+#trainings #trainings_container .card_item {
+    height: 166px;
+}
+/* @media (max-width: 1255px) */
+#trainings #trainings_container .card_item {
+    margin-top: 14px;
+}
+#trainings #trainings_container .card_item {
+    height: 172px;
+    padding: 16px 8px 18px;
+    margin: 10px 7px;
+}
+/* @media (max-width: 767px) */
+.scrollable_cards .card_item {
+    border: 1px solid #EEE;
+}
+.scrollable_cards .card_item {
+    display: flex;
+    padding: 16px 4px 24px;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 6px;
+    margin: 10px 7px;
+    width: 140px;
+    height: 156px;
+}
+a {
+    font-weight: 500;
+    text-decoration: none;
+    color: #008BDC;
+    cursor: pointer;
+    line-height: 1.14285714;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
 }
 
 /*# sourceMappingURL=bootstrap.min.css.map */

@@ -6,17 +6,19 @@ import { WebsiteComponent } from './website/website.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthguardGuard } from './authguard.guard';
 import { ProfileComponent } from './profile/profile.component';
+import { DisplayprojectComponent } from './displayproject/displayproject.component';
 
 
 const routes: Routes = [
   {path:'',component:WebsiteComponent,
                                       children:[
                                            {path:'',component:HomeComponent},
+                                           {path:'displayproject',component:DisplayprojectComponent}
                                           ]},
   {path:'login',component:LoginComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'profile',component:ProfileComponent},
-];
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

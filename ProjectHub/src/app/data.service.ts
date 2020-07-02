@@ -8,7 +8,7 @@ export class DataService {
 
   constructor(private http:HttpClient) { }
 
-
+ 
 createAccount( d ):any
 {
  //return this.http.get('http://localhost:3000/create-user?username='+d.username+"&password="+d.password);
@@ -16,9 +16,9 @@ createAccount( d ):any
  return this.http.post('http://localhost:4000/create-account',d);
 }
 
-listAccount():any
+getprojects(  ):any
 {
-return this.http.get('http://localhost:4000/list-account');
+return this.http.get('http://localhost:4000/get-projects',);
 }
 
 loginAccount( d ):any
@@ -30,4 +30,5 @@ postDataWithImage( d )
  {
 return this.http.post('http://localhost:4000/data-with-file',d)
  }
+
 }

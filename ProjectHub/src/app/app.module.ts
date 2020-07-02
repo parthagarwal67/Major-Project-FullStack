@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { WebsiteComponent } from './website/website.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
+import { DisplayprojectComponent } from './displayproject/displayproject.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProfileComponent } from './profile/profile.component';
     LoginComponent,
     WebsiteComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    DisplayprojectComponent
   ],
   imports: [
     BrowserModule,

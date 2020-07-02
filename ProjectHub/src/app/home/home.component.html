@@ -1,35 +1,32 @@
-<!-- Start Banner Area -->
+<!-- Start Banner Area --> 
 <section class="home-banner-area relative">
     <div class="container">
         <div class="row fullscreen d-flex align-items-center justify-content-center">
             <div class="banner-content col-lg-8 col-md-12">
-                <h1 class="wow fadeIn" data-wow-duration="4s">We Rank the Best Projects <br> on the Web</h1>
+               <br><br> <h1 class="wow fadeIn" data-wow-duration="4s"> We Rank the Best Projects <br> on the Web</h1>
                 <p class="text-white">
                     In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space
                     telescope.
                 </p>
 
                 <div class="input-wrap">
-                    <form action="" class="form-box d-flex justify-content-between">
-                        <input type="text" placeholder="Search Project" class="form-control" name="username">
-                        <button type="submit" class="btn search-btn">Search</button>
+                    <form #cc="ngForm" class="form-box d-flex justify-content-between">
+                        <input type="text" id="ss" placeholder="Search Project" class="form-control" [(ngModel)]="keyword" name="keyword" required>
+                        <button *ngIf="cc.valid" type="submit" class="btn search-btn" (click)="search()">Search</button>
                     </form>
                 </div>
-                <h4 class="text-white">Top courses</h4>
+                <h4 class="text-white">Top technologies</h4>
 
                 <div class="courses pt-20">
-                    <a href="/" data-wow-duration="1s" data-wow-delay=".3s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Ruby
-                        on Rails</a>
+                    <a href="/" data-wow-duration="1s" data-wow-delay=".3s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Ruby on Rails</a>
                     <a href="/" data-wow-duration="1s" data-wow-delay=".6s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Python</a>
                     <a href="/" data-wow-duration="1s" data-wow-delay=".9s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Marketing</a>
-                    <a href="/" data-wow-duration="1s" data-wow-delay="1.2s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">UI/UX
-                        Design
-                    </a>
+                    <a href="/" data-wow-duration="1s" data-wow-delay="1.2s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">UI/UX Design</a>
                     <a href="/" data-wow-duration="1s" data-wow-delay="1.5s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Android</a>
-                    <a href="/" data-wow-duration="1s" data-wow-delay="1.8s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Data
-                        Science
-                    </a>
+                    <a href="/" data-wow-duration="1s" data-wow-delay="1.8s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Data Science</a>
                     <a href="/" data-wow-duration="1s" data-wow-delay="2.1s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Cryptocurrency</a>
+                    <a href="/" data-wow-duration="1s" data-wow-delay="2.4s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Javascript</a>
+                    <a href="/" data-wow-duration="1s" data-wow-delay="2.7s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Html / CSS</a>
                 </div>
             </div>
         </div>
@@ -50,7 +47,7 @@
             </div>
             <div class="offset-lg-1 col-lg-6 offset-md-0 col-md-12 about-right">
                 <h1>
-                    Over 2500 Courses <br> from 5 Platform
+                    Over 2500 Technologies <br> from 5 Platform
                 </h1>
                 <div class="wow fadeIn" data-wow-duration="1s">
                     <p>
@@ -59,7 +56,7 @@
                         telescope. It’s exciting to think about setting up your own viewing station.
                     </p>
                 </div>
-                <a href="courses.html" class="primary-btn">Explore Projects</a>
+                <a routerLink="/displayproject" class="primary-btn">Explore Projects</a>
             </div>
         </div>
     </div>
@@ -77,12 +74,13 @@
                 </h1>
                 <div class="wow fadeIn" data-wow-duration="1s">
                     <p>
-                        There is a moment in the life of any aspiring astronomer that it is time to buy that first telescope. It’s exciting to think
-                        about setting up your own viewing station. In the life of any aspiring astronomer that it is time to buy that first
-                        telescope. It’s exciting to think about setting up your own viewing station.
+                        Plans are only good intentions unless they immediately degenerate into hard work.
+                    </p>
+                    <p>
+                        “Get the right people. Then no matter what all else you might do wrong after that, the people will save you. That’s what management is all about.” – Tom DeMarco
                     </p>
                 </div>
-                <a href="courses.html" class="primary-btn white">Explore Projects</a>
+                <a routerLink="/displayproject" class="primary-btn">Explore Projects</a>
             </div>
             <div class="offset-lg-1 col-lg-6">
                 <div class="courses-right">
@@ -121,13 +119,23 @@
                                 </li>
                                 <li>
                                     <a class="wow fadeInLeft" href="courses.html" data-wow-duration="1s" data-wow-delay="1.3s">
-                                        <i class="fa fa-book"></i> Socoal Science
+                                        <i class="fa fa-book"></i> Social Science
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="wow fadeInLeft" href="courses.html" data-wow-duration="1s" data-wow-delay="1.6s">
+                                        <i class="fa fa-book"></i> MEAN Stack
                                     </a>
                                 </li>
                             </ul>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <ul class="courses-list">
+                                <li>
+                                    <a class="wow fadeInRight" href="courses.html" data-wow-duration="1s" data-wow-delay="1.6s">
+                                        <i class="fa fa-book"></i> MERN Stack
+                                    </a>
+                                </li>
                                 <li>
                                     <a class="wow fadeInRight" href="courses.html" data-wow-duration="1s" data-wow-delay="1.3s">
                                         <i class="fa fa-book"></i> Data Science
@@ -163,6 +171,7 @@
                                         <i class="fa fa-book"></i> Personal Dev
                                     </a>
                                 </li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -182,8 +191,12 @@
                 <div class="section-title text-center">
                     <h1>Features That Make Us Hero</h1>
                     <p>
-                        If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for
-                        as low as $.17 each.
+                        Project planning and scheduling, 
+                        Team collaboration, 
+                        Time tracking, 
+                        Reporting, 
+                        Project budgeting, 
+                        Billing & quotes, 
                     </p>
                 </div>
             </div>
@@ -195,7 +208,7 @@
                     <h4>Architecture</h4>
                     <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
                         <p>
-                            Lorem ipsum dolor sit amet consec tetur adipisicing elit, sed do eiusmod tempor incididunt labore.
+                            As with a wide range of other fields, architecture and engineering have been revolutionized by innovations in the last decades, and particularly in recent years.
                         </p>
                     </div>
                 </div>
@@ -203,10 +216,10 @@
             <div class="col-lg-4 col-md-6">
                 <div class="feature-item">
                     <i class="ti-briefcase"></i>
-                    <h4>Interior Design</h4>
+                    <h4>Freely Accessible</h4>
                     <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
                         <p>
-                            Lorem ipsum dolor sit amet consec tetur adipisicing elit, sed do eiusmod tempor incididunt labore.
+                            To truly benefit from a project management system you need to not only know how to use it but also be cautious when picking one for yourself. 
                         </p>
                     </div>
                 </div>
@@ -214,10 +227,10 @@
             <div class="col-lg-4 col-md-6">
                 <div class="feature-item">
                     <i class="ti-medall-alt"></i>
-                    <h4>Concept Design</h4>
+                    <h4>Design</h4>
                     <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
                         <p>
-                            Lorem ipsum dolor sit amet consec tetur adipisicing elit, sed do eiusmod tempor incididunt labore.
+                            You probably cannot afford to make a mistake when choosing the best project management system. As a project manager, you need to prepare a project plan.
                         </p>
                     </div>
                 </div>
@@ -228,7 +241,7 @@
                     <h4>Lifetime Access</h4>
                     <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
                         <p>
-                            Lorem ipsum dolor sit amet consec tetur adipisicing elit, sed do eiusmod tempor incididunt labore.
+                            A project life cycle is the sequence of phases that a project goes through from its initiation to its closure. Project’s purpose, vision, and mission, Measurable objectives and criteria.
                         </p>
                     </div>
                 </div>
@@ -239,7 +252,7 @@
                     <h4>Source File Included</h4>
                     <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
                         <p>
-                            Lorem ipsum dolor sit amet consec tetur adipisicing elit, sed do eiusmod tempor incididunt labore.
+                           As this website is freely accessible also its source file is freely available and could be easily downloaded just with an inital idea and simple authentication.
                         </p>
                     </div>
                 </div>
@@ -250,7 +263,7 @@
                     <h4>Live Support</h4>
                     <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
                         <p>
-                            Lorem ipsum dolor sit amet consec tetur adipisicing elit, sed do eiusmod tempor incididunt labore.
+                            24x7 assistance is provided. Users can get through Live Support by us in few followable steps i.e either by filling a assistance form or one can write a mail for the same.
                         </p>
                     </div>
                 </div>

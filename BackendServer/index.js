@@ -4,6 +4,8 @@ var multer= require('multer');
 var bodyParser= require('body-parser');
 var MongoClient= require('mongodb').MongoClient;
 var ObjectId= require('mongodb').ObjectID;
+const path = require('path');
+
 
 
 var storage = multer.diskStorage({
@@ -29,7 +31,12 @@ var storage = multer.diskStorage({
                       console.log("inserted id is returned as->"+insertedId)
                       req.hasTextDataProcessed = true;
                      req.insertedId=insertedId;
-                     req.screenshotCtr = 1;
+                     req.zipfileCtr = 1;
+                     req.pptCtr = 1;
+                     req.reportCtr = 1;
+                     req.screenshotsCtr = 1;
+                     req.setupprojectCtr = 1;
+                     req.covervideoCtr = 1;
                      cb(null,req.insertedId+"_"+file.fieldname+"_"+req[file.fieldname+'Ctr']++ +"."+ext);
        
                   
@@ -60,6 +67,8 @@ var app = express();
 let client= new MongoClient("mongodb+srv://ParthAgarwal:Parth9928034234@cluster0-jgvck.mongodb.net/projectize?retryWrites=true&w=majority",{useNewUrlParser:true});
 
 app.use(cors());
+app.use(express.static(path.join(__dirname,'uploads')));
+
 
 
 //arrays should be declared
@@ -117,10 +126,10 @@ collection.find({email:req.body.email}).toArray((err,docs)=>{
 
 })
 
-app.get('/list-account',(req,res)=>{
+app.get('/get-projects',(req,res)=>{
     // res.send(users);
  
-    var collection=connection.db('projectize').collection('accountholder');
+    var collection=connection.db('projectize').collection('projects');
     collection.find().toArray((err,docs)=>{
         if(!err)
         {
@@ -151,7 +160,7 @@ app.post('/login-account',bodyParser.json(),(req,res)=>{
 
 app.post('/data-with-file',
 
-                            upload.fields([{name:'zipfile',maxcount:1},{name:'ppt',maxcount:1},{name:'doc',maxcount:1},{name:'screenshots',maxcount:8}]),
+                            upload.fields([{name:'zipfile',maxcount:1},{name:'ppt',maxcount:1},{name:'report',maxcount:1},{name:'screenshots',maxcount:8},{name:'setupproject',maxcount:1},{name:'covervideo',maxcount:1}]),
                             (req,res)=>{console.log("in last"); res.send({status:"ok"})   
                         });
 
