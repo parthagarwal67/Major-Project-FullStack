@@ -17,6 +17,8 @@ import { DisplayprojectComponent } from './displayproject/displayproject.compone
 import { UploadprojectComponent } from './uploadproject/uploadproject.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { FirstExtPipe } from './first-ext.pipe';
+import { ElementFromStringPipe } from './element-from-string.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ContactComponent } from './contact/contact.component';
     DisplayprojectComponent,
     UploadprojectComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    FirstExtPipe,
+    ElementFromStringPipe
   ],
   imports: [
     BrowserModule,

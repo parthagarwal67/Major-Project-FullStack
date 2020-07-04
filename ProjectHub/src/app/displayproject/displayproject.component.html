@@ -118,7 +118,7 @@
         <div class="feature-inner row">
             <div class="col-lg-4 col-md-6a" (click)="details(a)" data-toggle="modal" data-target="#myModal" *ngFor="let a of projects">
                 <div class="feature-item">
-                  <a href="http://localhost:4000/{{a._id}}_screenshots_1.{{a.ssext}}" download> <img src="http://localhost:4000/{{a._id}}_screenshots_1.{{a.ssext}}" alt="" class="zoom" style=" width: 13rem;height:6rem;padding-left: 3rem;" download></a> 
+                  <a href="http://localhost:4000/{{a._id}}_screenshots_1.{{a.ssext|elementFromString:',':0}}" download> <img src="http://localhost:4000/{{a._id}}_screenshots_1.{{a.ssext|elementFromString:',':0}}" alt="" class="zoom" style=" width: 13rem;height:6rem;padding-left: 3rem;" download></a> 
                     <h4>{{a.title}}</h4>
                     <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
                         <p>
@@ -161,7 +161,7 @@
                             </tr>
                             <tr>
                               <td>Screenshots:</td>
-                              <td style="padding-left: 5rem;"><a href="" class="column" download *ngFor="let p of ssarr"><img src="http://localhost:4000/{{prodetail._id}}_screenshots_{{p}}.{{prodetail.ssext}}" alt="" style=" width: 8rem;height:4rem;"></a></td>
+                              <td style="padding-left: 5rem;"><a href="" class="column" download *ngFor="let p of ssarr; let i=index;"><img src="http://localhost:4000/{{prodetail._id}}_screenshots_{{i+1}}.{{p}}" alt="" style=" width: 8rem;height:4rem;"></a></td>
                                 <!-- <a href="" class="column" download><img src="assets/img/adult-1.png" alt="" style=" width: 8rem;height:4rem;padding-left: 5px;"></a>
                                   <a href="" class="column" download><img src="http://localhost:4000/{{a._id}}_screenshots_1.{{a.ssext}}" alt="" style=" width: 8rem;height:4rem;padding-left: 5px;"></a>
                                 </td> -->

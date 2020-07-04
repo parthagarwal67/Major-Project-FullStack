@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class DisplayprojectComponent implements OnInit {
 projects;
 prodetail;
-ssarr=new Array();
+ssarr;
   constructor(private ds:DataService,private router:Router) { }
 
   ngOnInit(): void {
@@ -25,9 +25,12 @@ ssarr=new Array();
   details(d)
   {
 this.prodetail=d;
-for(var i=1;i<=this.prodetail.screenshotsctr;i++)
-{
-  this.ssarr.push(i);
-}
+this.ssarr= this.prodetail.ssext.split(',');
+// alert(this.prodetail.screenshotsctr);
+// for(var i=1;i<=this.prodetail.screenshotsctr;i++)
+// {
+//   this.ssarr.push(i);
+// }
+// alert("after pushing"+this.ssarr);
   }
 }

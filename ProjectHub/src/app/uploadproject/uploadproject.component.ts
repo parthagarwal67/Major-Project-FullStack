@@ -49,8 +49,12 @@ export class UploadprojectComponent implements OnInit {
   getScreenshots(e)
   {
     this.screenshots=e.target.files;
-    this.ssext=this.screenshots[0].name.split('.').pop();
-    this.screenshotsctr=this.screenshots.length;
+    this.ssext = new Array();
+    for (var i=0; i<this.screenshots.length;i++)
+    {
+      this.ssext.push(this.screenshots[i].name.split('.').pop());
+    }
+    // this.screenshotsctr=this.screenshots.length;
   }
   getSetupproject(e)
   {
@@ -82,9 +86,13 @@ postData()
   form.set('pptext',this.pptext);
   form.set('reportext',this.reportext);
   form.set('ssext',this.ssext);
+  // for(var i=0;i<this.screenshots.length;i++)
+  // {
+  //   form.append("ssext",this.ssext[i],this.screenshots[i]['title']);
+  // }
   form.set('setproext',this.setproext);
   form.set('coverext',this.coverext);
-  form.set('screenshotsctr',this.screenshotsctr);
+  // form.set('screenshotsctr',this.screenshotsctr);
   for(var i=0;i<this.screenshots.length;i++)
   {
     form.append("screenshots",this.screenshots[i],this.screenshots[i]['title']);
