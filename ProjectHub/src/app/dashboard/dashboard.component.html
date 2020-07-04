@@ -10,11 +10,11 @@
         <!-- <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a> -->
         <a routerLink="/displayproject" class="list-group-item list-group-item-action bg-light"><i class="fa fa-eye zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>View Projects</span></a>
         <a routerLink="/uploadproject" class="list-group-item list-group-item-action bg-light"><i class="ti-upload zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Upload Projects</span></a>
-        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-user-secret zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Profile</span></a>
+        <a routerLink="/profile" class="list-group-item list-group-item-action bg-light"><i class="fa fa-user-secret zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Profile</span></a>
         <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-bar-chart zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Status</span></a>
         <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-sellsy zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Explore</span></a>
         <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-podcast zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Podcast</span></a>
-        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-bullhorn zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Announcements</span></a>
+        <a routerLink="/dashboard" class="list-group-item list-group-item-action bg-light menu-active"><i class="fa fa-bullhorn zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Announcements</span></a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -43,7 +43,7 @@
          
           <div class="input-wrap" #mm style="display: flex; align-items: center; justify-content: center; text-align: center; padding-left: 180px;">
             <form action="" class="form-box d-flex justify-content-between">
-                <input type="text" placeholder="Search Anything...." class="form-control" name="username" (click)="myFunction()" style="border-style:dotted;width: 20rem; background-color: transparent;">&nbsp;
+                <input type="text" pattern="[^'\x22]+" id="search" placeholder="Search Anything...." class="form-control" name="username" (click)="myFunction()" style="border-style:dotted;width: 20rem; background-color: transparent;">&nbsp;
                 <button type="submit" class="btn search-btn" (click)="search()" style="background-color: transparent;color: papayawhip;"> <i class="fa fa-search zoom" aria-hidden="true" ></i></button>
             </form>
           </div>
@@ -84,6 +84,16 @@
           </ul>
         </div>
       </nav>
+
+      <div class="container-fluid" style="margin-left: 1rem;">
+        <h2 class="mt-4" >Announcements&nbsp;<i class="fa fa-ravelry" aria-hidden="true"></i></h2>
+        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
+      </div>
+
+    </div> 
+</div>
+
 
     
   <!-- /#wrapper -->

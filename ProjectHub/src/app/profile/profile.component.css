@@ -19,7 +19,8 @@ body {
       height: 128px;
       border: 8px solid rgba(165, 165, 158, -2.3);
       position: absolute;
-      top: 72px;
+      top: 90px;
+      box-shadow: 6px 6px 5px grey;
       /* background: url('https://ssl.gstatic.com/accounts/ui/avatar_2x.png'); */
   }
   img {
@@ -28,8 +29,8 @@ body {
   }
   .p-image {
     position: absolute;
-    top: 170px;
-    left: 41rem;
+    top: 185px;
+    left: 43rem;
     color: #776868;
     transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
   }
@@ -49,6 +50,11 @@ body {
     /* border: 1px solid black; */
     padding: 5px;
     text-align: left;
+  }
+
+  .dd:hover
+  {
+    background-color: #b7d6d7;
   }
   /* table {
     border-spacing: 25px;

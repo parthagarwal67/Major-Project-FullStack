@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgxStarRatingModule } from 'ngx-star-rating';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -42,7 +43,7 @@ import { ElementFromStringPipe } from './element-from-string.pipe';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-  
+    NgxStarRatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

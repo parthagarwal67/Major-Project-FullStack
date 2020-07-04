@@ -11,7 +11,7 @@
 
                 <div class="input-wrap">
                     <form #cc="ngForm" class="form-box d-flex justify-content-between">
-                        <input type="text" id="ss" placeholder="Search Project" class="form-control" [(ngModel)]="keyword" name="keyword" required>
+                        <input type="text" id="search" pattern="[^'\x22]+" placeholder="Search Project" class="form-control" [(ngModel)]="keyword" name="keyword" required>
                         <button *ngIf="cc.valid" type="submit" class="btn search-btn" (click)="search()">Search</button>
                     </form>
                 </div>

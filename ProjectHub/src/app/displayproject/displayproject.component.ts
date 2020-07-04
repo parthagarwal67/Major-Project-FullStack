@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
-
+declare var document;
+declare var $;
 @Component({
   selector: 'app-displayproject',
   templateUrl: './displayproject.component.html',
@@ -32,5 +33,18 @@ this.ssarr= this.prodetail.ssext.split(',');
 //   this.ssarr.push(i);
 // }
 // alert("after pushing"+this.ssarr);
+  }
+
+  myFunction() 
+  {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+  }
+
+  ngAfterViewInit()
+  {
+    $(':radio').change(function() {
+      console.log('New star rating: ' + this.value);
+    });
   }
 }
