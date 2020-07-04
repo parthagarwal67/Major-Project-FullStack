@@ -89,11 +89,6 @@ client.connect((err,con)=>{
 })
 
 
-function insertProjectData(req)
-{
-
-   
-}
 
 
 app.post('/create-account',bodyParser.json(),(req,res)=>{

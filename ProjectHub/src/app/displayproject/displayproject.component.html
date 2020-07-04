@@ -51,7 +51,8 @@
   </div> -->
 
 
-  <section class="home-banner-area relative" style="height: 100px;">
+  <section class="home-banner-area relative" style="height: 100px;background: rgba(4, 70, 87, 3.705);">   
+    <!-- rgba(9, 33, 36, 1.705) -->
     <div class="container">
         <div class="row fullscreen d-flex align-items-center justify-content-center">
             <!-- <div class="banner-content col-lg-8 col-md-12">
@@ -94,12 +95,12 @@
 
   <div style="width: 100%;">
     <ul>
-      <li><a class="nav-link" (click)="goBack()" type="button" style="font-weight: 7rem;font-size: large;margin-left: 2rem;"><i class='fa fa-angle-left' style='font-size:18px'></i>&nbsp;<span>Back</span></a></li>
-      <li><a class="nav-link" routerLink="/dashboard" type="button" style="color: black; font-weight: 7rem;font-size: large;margin-left: 32rem;">Upload&nbsp;<i class='fa fa-angle-right' style='font-size:18px;'></i></a></li>
+      <li class="zz"><a class="nav-link" (click)="goBack()" type="button" style="font-weight: 7rem;font-size: large;margin-left: 2rem;"><i class='fa fa-angle-left' style='font-size:18px'></i>&nbsp;<span>Back</span></a></li>
+      <li class="zz"><a class="nav-link" routerLink="/uploadproject" type="button" style="color: black; font-weight: 7rem;font-size: large;margin-left: 34rem;">Upload&nbsp;<i class='fa fa-angle-right' style='font-size:18px;'></i></a></li>
     </ul>
   </div>
 
-  <section class="feature-area" style="margin-top:3rem;">
+  <section class="feature-area" style="margin-top:-4rem;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -115,9 +116,9 @@
             </div>
         </div>
         <div class="feature-inner row">
-            <div class="col-lg-4 col-md-6a" (click)="details()" *ngFor="let a of projects">
+            <div class="col-lg-4 col-md-6a" (click)="details(a)" data-toggle="modal" data-target="#myModal" *ngFor="let a of projects">
                 <div class="feature-item">
-                    <img src="http://localhost:4000/{{a._id}}_screenshots_1.{{a.ssext}}" alt="" class="zoom" style=" width: 13rem;height:6rem;padding-left: 3rem;">
+                  <a href="http://localhost:4000/{{a._id}}_screenshots_1.{{a.ssext}}" download> <img src="http://localhost:4000/{{a._id}}_screenshots_1.{{a.ssext}}" alt="" class="zoom" style=" width: 13rem;height:6rem;padding-left: 3rem;" download></a> 
                     <h4>{{a.title}}</h4>
                     <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
                         <p>
@@ -130,6 +131,68 @@
                     </div>
                 </div>
             </div>
+
+            <div *ngIf="prodetail" class="modal fade" id="myModal" role="dialog" style="width: 1100px;height: 100vh;">
+              <div class="modal-dialog" style="width: 1200px">
+              
+                <!-- Modal content-->
+                <div class="modal-content" style="width: 750px">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Project Details</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    
+                    <div class="row"> 
+                      <div class="col-md-7">
+                        <form >
+                          <table>
+                            <tr>
+                              <td>Title:</td>
+                              <td style="padding-left: 5rem;">{{prodetail.title}}</td>
+                            </tr>
+                            <tr>
+                              <td>Description:</td>
+                              <td style="padding-left: 5rem;">{{prodetail.desc}}</td>
+                            </tr>
+                            <tr>
+                              <td>Technologies Used:</td>
+                              <td style="padding-left: 5rem;">{{prodetail.tech}}</td>
+                            </tr>
+                            <tr>
+                              <td>Screenshots:</td>
+                              <td style="padding-left: 5rem;"><a href="" class="column" download *ngFor="let p of ssarr"><img src="http://localhost:4000/{{prodetail._id}}_screenshots_{{p}}.{{prodetail.ssext}}" alt="" style=" width: 8rem;height:4rem;"></a></td>
+                                <!-- <a href="" class="column" download><img src="assets/img/adult-1.png" alt="" style=" width: 8rem;height:4rem;padding-left: 5px;"></a>
+                                  <a href="" class="column" download><img src="http://localhost:4000/{{a._id}}_screenshots_1.{{a.ssext}}" alt="" style=" width: 8rem;height:4rem;padding-left: 5px;"></a>
+                                </td> -->
+                            </tr>
+                            <tr>
+                              <td>Project:</td>
+                              <td style="padding-left: 5rem;"><a href="http://localhost:4000/{{prodetail._id}}_zipfile_1.{{prodetail.zipext}}" download><i class="ti-download"></i>&nbsp;Download</a></td>
+                            </tr>
+                            <tr>
+                              <td>How To Setup:</td>
+                              <td style="padding-left: 5rem;"><a href="http://localhost:4000/{{prodetail._id}}_setupproject_1.{{prodetail.setproext}}" download><i class="ti-file"></i>&nbsp;Tap to view</a></td>
+                            </tr>
+                            <tr>
+                              <td>Cover Video:</td>
+                              <td style="padding-left: 5.2rem;"><a href="http://localhost:4000/{{prodetail._id}}_covervideo_1.{{prodetail.coverext}}" download><i class="fa fa-play"></i>&nbsp;Tap to watch</a></td>
+                            </tr>
+                          </table>
+                        </form>
+                      </div>
+                    </div>    
+                    
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-info btn-lg" style="height: 45px;" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+
+
             <!-- <div class="col-lg-4 col-md-6a">
                 <div class="feature-item">
                   <img src="http://localhost:4000/{{a._id}}_screenshots_1.{{a.ssext}}" alt="" class="zoom" style=" width: 13rem;height:6rem;padding-left: 3rem;">

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+// import { ImageCropperModule } from 'ngx-image-cropper';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,9 @@ import { WebsiteComponent } from './website/website.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DisplayprojectComponent } from './displayproject/displayproject.component';
+import { UploadprojectComponent } from './uploadproject/uploadproject.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +28,17 @@ import { DisplayprojectComponent } from './displayproject/displayproject.compone
     WebsiteComponent,
     DashboardComponent,
     ProfileComponent,
-    DisplayprojectComponent
+    DisplayprojectComponent,
+    UploadprojectComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,78 @@
+body {
+    background-color: #efefef;
+  }
+  
+  .profile-pic {
+      max-width: 200px;
+      max-height: 200px;
+      display: block;
+  }
+  
+  .file-upload {
+      display: none;
+  }
+  .circle {
+    background-color: rgb(233, 233, 233);
+      border-radius: 1000px !important;
+      overflow: hidden;
+      width: 128px;
+      height: 128px;
+      border: 8px solid rgba(165, 165, 158, -2.3);
+      position: absolute;
+      top: 72px;
+  }
+  img {
+      max-width: 100%;
+      height: auto;
+  }
+  .p-image {
+    position: absolute;
+    top: 170px;
+    left: 41rem;
+    color: #776868;
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  }
+  .p-image:hover {
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  }
+  .upload-button {
+    font-size: 1.2em;
+  }
+  
+  .upload-button:hover {
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+    color: #999;
+  }
+
+  table, th, td {
+    /* border: 1px solid black; */
+    padding: 5px;
+    text-align: left;
+  }
+  /* table {
+    border-spacing: 25px;
+  } */
+
+
+  /* .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  } */
+
+  .alert {
+    font-family: sans-serif;
+        padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+  }
+  
+  .alert-success {
+    color: #3c763d;
+      background-color: #dff0d8;
+      border-color: #d6e9c6;
+  }
+  
+  

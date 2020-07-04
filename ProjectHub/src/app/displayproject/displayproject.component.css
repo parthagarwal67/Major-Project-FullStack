@@ -23,7 +23,7 @@ ul li a:hover
 
 ul{
     list-style: none;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 
 ul li{
@@ -35,3 +35,24 @@ ul li{
     line-height: 50px;
     /* text-align: center; */
 }
+.zz:hover{
+    /* color: blue; */
+    color: rgba(9, 33, 36, 0.705);
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+/* .tt:hover{
+    /* color: blue; 
+    color: rgba(16, 196, 219, 0.705);
+} */

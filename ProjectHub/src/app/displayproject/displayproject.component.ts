@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class DisplayprojectComponent implements OnInit {
 projects;
+prodetail;
+ssarr=new Array();
   constructor(private ds:DataService,private router:Router) { }
 
   ngOnInit(): void {
@@ -20,8 +22,12 @@ projects;
     window.history.go(-1);
   }
 
-  details()
+  details(d)
   {
-this.router.navigate(['/dashboard'])
+this.prodetail=d;
+for(var i=1;i<=this.prodetail.screenshotsctr;i++)
+{
+  this.ssarr.push(i);
+}
   }
 }
