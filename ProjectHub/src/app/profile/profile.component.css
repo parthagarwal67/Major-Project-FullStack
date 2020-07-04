@@ -20,6 +20,7 @@ body {
       border: 8px solid rgba(165, 165, 158, -2.3);
       position: absolute;
       top: 72px;
+      /* background: url('https://ssl.gstatic.com/accounts/ui/avatar_2x.png'); */
   }
   img {
       max-width: 100%;
