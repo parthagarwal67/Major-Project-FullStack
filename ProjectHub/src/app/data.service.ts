@@ -30,5 +30,8 @@ postDataWithImage( d )
  {
 return this.http.post('http://localhost:4000/data-with-file',d)
  }
-
+projectRating( d )
+{
+  return this.http.post('http://localhost:4000/project-rating',d);
+}
 }

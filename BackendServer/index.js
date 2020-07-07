@@ -140,6 +140,63 @@ app.get('/get-projects',(req,res)=>{
     })
   })
 
+
+/* 
+
+app.post('/update-user',bodyParser.json(),(req,res)=>{
+    // var p ={username:req.query.username,password:req.query.password}
+    console.log(req.body);
+   // users.push(req.body);
+
+var collection=connection.db('teststudent').collection('studrecords');
+collection.update({_id:ObjectId(req.body._id)},{$set:{fname:req.body.fname,rollNo:req.body.rollNo,stream:req.body.stream,branch:req.body.branch,sec:req.body.sec}},(err,r)=>{
+    if(!err)
+    {
+        res.send({Status:"ok"});
+    }
+    else
+    {
+        res.send({Status:"failed"});
+    }
+})
+})
+
+*/
+
+
+
+app.get('/project-rating',bodyParser.json(),(req,res)=>{
+    var collection=connection.db('projectize').collection('projects');
+    collection.update({_id:ObjectId(req.body._id)},{$set:{email:req.body.email,projectid:req.body.projectid,ratings:req.body.ratings}},(err,r)=>{
+    if(!err)
+    {
+    collection.find({email:req.body.email,projectid:req.body.projectid,ratings:req.body.ratings}).toArray((err,docs)=>{
+        if(!err && docs.length>0)
+        {
+            res.send({status:"ok",resultData:docs});
+        }
+        else
+        {
+        collection.insert(req.body,(err,r)=>{
+        if(!err)
+        {
+           
+            res.send({status:"not found",resultData:r});
+            // location.reload();
+            // window.location.href="http://localhost:4200/login";
+        }
+        else
+        {
+            res.send({status:"failed",resultData:err});
+        }
+    })
+        }
+    })
+}
+})
+})
+
+
 app.post('/login-account',bodyParser.json(),(req,res)=>{
     // console.log(req.body)
     var collection=connection.db('projectize').collection('accountholder');

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
+import { ImageCroppedEvent } from 'ngx-image-cropper';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { data } from 'models/data';
 declare var document:any;
@@ -29,6 +30,7 @@ export class DashboardComponent implements OnInit {
 // setproext;
 // coverext;
 
+
   constructor(private ds:DataService,private router:Router) {}
   
 
@@ -37,6 +39,7 @@ export class DashboardComponent implements OnInit {
   }
 
 
+ 
  
   
 //   getZipfile(e)

@@ -8,7 +8,7 @@
     <div class="small-12 medium-2 large-2 columns">
       <div class="circle">
         <!-- User Profile Image -->
-        <img class="profile-pic" src="http://cdn.cutestpaw.com/wp-content/uploads/2012/07/l-Wittle-puppy-yawning.jpg">
+        <img [src]="croppedImage" style="border-radius: 1000px;height: 128px;width: 128px;">
         <!-- http://cdn.cutestpaw.com/wp-content/uploads/2012/07/l-Wittle-puppy-yawning.jpg -->
  
         <!-- Default Image -->
@@ -16,11 +16,11 @@
       </div>
       <div class="p-image">
        <a style="color: rgb(92, 87, 87);"><i class="fa fa-camera upload-button"></i></a> 
-         <input class="file-upload" type="file" accept="image/*"/>
+         <input class="file-upload" type="file" accept="image/*" (change)="fileChangeEvent($event)"/>
       </div>
    </div>
  </div>
-
+ 
 
  <div style="margin-top: 8rem;margin-bottom: 1rem; margin-left: auto;padding-left:2%;padding-top: 1.5%;padding-bottom: -1%; width: 40%;box-shadow: 10px 10px 5px grey;border-radius: 3%; background-color: #b7d6d7;text-align: center;margin-right: auto;">
  
@@ -58,6 +58,19 @@
     <button class="btn btn-primary" type="button" style="border-radius: 11px;font-weight: 500;background-color: #54acaf; font-size: larger; box-shadow: -5px -5px 5px grey; margin-bottom: 1rem;margin-left: -1.5rem;margin-right: auto;">save</button>
  </div>
 </form> 
+
+
+
+<image-cropper
+   [imageChangedEvent]="imageChangedEvent"
+   [maintainAspectRatio]="true"
+   [aspectRatio]="4 / 3"
+   format="png"
+   (imageCropped)="imageCropped($event)"
+   (imageLoaded)="imageLoaded()"
+   (cropperReady)="cropperReady()"
+   (loadImageFailed)="loadImageFailed()"
+style="width: 228px;height: 228px;" ></image-cropper>
 
 
 <!-- --------------------------------------------------------------------- -->
