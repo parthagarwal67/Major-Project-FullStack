@@ -5,6 +5,8 @@ var bodyParser= require('body-parser');
 var MongoClient= require('mongodb').MongoClient;
 var ObjectId= require('mongodb').ObjectID;
 const path = require('path');
+var nodemailer = require('nodemailer');
+
 
 
 
@@ -107,6 +109,7 @@ collection.find({email:req.body.email}).toArray((err,docs)=>{
     collection.insert(req.body,(err,r)=>{
     if(!err)
     {
+        sendMail("agarwalparth672000@gmail.com", "hoovjadjioeutgot" , req.body.email, "Project Hub SignUp Successful", `this is content   <h3>Hi</h3><br><h6>Congratulations your sign up is successful on Project Hub.</h6>` )
         res.send({Status:"ok",resultData:"Created Successfully"});
         // location.reload();
         // window.location.href="http://localhost:4200/login";
@@ -164,3 +167,46 @@ app.post('/data-with-file',
 app.listen(4000,()=>{
     console.log("Server running on port 4000");
 })
+
+
+
+
+
+function sendMail(from, appPassword, to, subject,  htmlmsg)
+{
+    let transporter=nodemailer.createTransport(
+        {
+            host:"smtp.gmail.com",
+            port:587,
+            secure:false,
+            auth:
+            {
+             //  user:"weforwomen01@gmail.com",
+             //  pass:""
+             user:from,
+              pass:appPassword
+              
+    
+            }
+        }
+      );
+    let mailOptions=
+    {
+       from:from ,
+       to:to,
+       subject:subject,
+       html:htmlmsg
+    };
+    transporter.sendMail(mailOptions ,function(error,info)
+    {
+      if(error)
+      {
+        console.log(error);
+      }
+      else
+      {
+        console.log('Email sent:'+info.response);
+      }
+    });
+}
+

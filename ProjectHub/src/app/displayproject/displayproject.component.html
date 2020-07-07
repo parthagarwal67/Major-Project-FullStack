@@ -138,7 +138,15 @@
                 <!-- Modal content-->
                 <div class="modal-content" style="width: 750px">
                   <div class="modal-header">
-                    <h4 class="modal-title">Project Details</h4>
+                    <h4 class="modal-title column" style="margin-top: 1rem;">Project Details</h4>
+                      <form [formGroup]="form">
+                        <div class="cont">
+                          <div class="stars">
+                            <ngx-star-rating formControlName="rating2" [id]="'rating2'" [disabled] ="true"></ngx-star-rating>
+                          </div>
+                          <!-- <div>Rating(Disabled): {{form.value.rating2}}</div> -->
+                      </div>
+                      </form>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
                   <div class="modal-body">
@@ -180,9 +188,9 @@
                             </tr><br>
                             <tr>
                               <td>
-                                <div class="popup" (click)="myFunction()" style="padding-left: 5rem;"><button class="btn-default btn" style="width: 6rem;">Ratings&nbsp;<i class="fa fa-star-o" aria-hidden="true"></i></button>
+                                <!-- <div class="popup" (click)="myFunction()" style="padding-left: 5rem;"><button class="btn-default btn" style="width: 6rem;">Ratings&nbsp;<i class="fa fa-star-o" aria-hidden="true"></i></button>
                                   <span class="popuptext" id="myPopup">    
-                                    <!-- A Simple Popup! -->
+                                    // A Simple Popup! 
 
                                     <form class="rating">
                                       <label>
@@ -220,10 +228,61 @@
 
 
                                   </span>
-                                </div>
+                                </div> -->
+                                Ratings: 
                               </td>
-                              <td style="padding-left:5rem">
-                                  <button class="btn-default btn">Comments&nbsp;<i class="fa fa-commenting-o" aria-hidden="true"></i></button>
+                              <td>
+                                  <!-- <button class="btn-default btn">Comments&nbsp;<i class="fa fa-commenting-o" aria-hidden="true"></i></button> -->
+                                
+                                  <form [formGroup]="form">
+                                    <div class="cont2">
+                                      <div class="stars">
+                                        <ngx-star-rating formControlName="rating1" [id]="'rating'"></ngx-star-rating>
+                                      </div>
+                                      <div>Rating: {{form.value.rating1}}</div>
+                                      <p>form is valid: {{ form.valid ? 'true' : 'false' }}</p>
+                                    </div>
+                                    <!-- <div class="cont">
+                                        <div class="stars">
+                                          <ngx-star-rating formControlName="rating2" [id]="'rating2'" [disabled] ="true"></ngx-star-rating>
+                                        </div>
+                                        <div>Rating(Disabled): {{form.value.rating2}}</div>
+                                    </div> -->
+                                    </form>
+                                    <!-- <div class="cont">
+                                      <div class="stars">
+                                        <ngx-star-rating [(ngModel)]="rating3" [id]="'rating3'" ></ngx-star-rating >
+                                      </div>
+                                      <div>Rating: {{ rating3 }}</div>
+                                    </div> -->
+
+                              </td>
+                            </tr><br>
+                            <tr rowspan="2">
+                              <td colspan="2">
+
+                                <!-- <textarea name="comments" id="comments" cols="87.5" rows="4" placeholder="Place Your Comments Here" onfocus="this.placeholder=''" onblur="this.placeholder='Place Your Comments Here'"></textarea>
+                                <br><button style="margin-left: 41.5rem;margin-top:-4%;"><i class="ti-arrow-right"></i></button>
+                              -->
+                                <div class="input-wrap">
+                                  <form #cc="ngForm" class="form-box d-flex justify-content-between">
+                                    <textarea name="comments" id="comments" cols="84.5" rows="3" placeholder="Place Your Comments Here" onfocus="this.placeholder=''" onblur="this.placeholder='Place Your Comments Here'"></textarea>
+                                     <span style="padding-left:0.07rem;"><button type="submit" class="btn btn-default bb"><i class="ti-arrow-right"></i></button></span> 
+                                  </form>
+                                </div>
+
+
+                              </td>
+                            </tr><br>
+                            <tr rowspan="2">
+                              <td colspan="2"> 
+
+                                <div class="input-wrap">
+                                  <form #cc="ngForm" class="form-box d-flex justify-content-between">
+                                    <textarea name="comments" id="comments" cols="87.5" rows="8" style="overflow-y: auto;"></textarea>
+                                  </form>
+                                </div>
+
                               </td>
                             </tr>
                           </table>

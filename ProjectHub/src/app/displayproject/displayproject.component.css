@@ -40,6 +40,13 @@ ul li{
     color: rgba(9, 33, 36, 0.705);
 }
 
+.bb{
+  background-color: darkcyan;
+}
+.bb:hover{
+  background-color: rgb(73, 206, 206);
+}
+
 .column {
     float: left;
     width: 33.33%;
@@ -57,6 +64,47 @@ ul li{
     /* color: blue; 
     color: rgba(16, 196, 219, 0.705);
 } */
+
+/* ------------------ngx star rating starts--------- */
+.cont {
+  width: 100%;
+  max-width: 262px;
+  text-align: center;
+  margin: auto auto;
+  /* display: inline-block; */
+  padding: 6px 0;
+  background: transparent;
+  color: black;
+  border-radius: 5px;
+  /* border: thin solid #444; */
+  border: none;
+  overflow: hidden;
+  height: 60px;
+}
+
+.cont2 {
+  width: 100%;
+  max-width: 270px;
+  text-align: center;
+  margin: auto 3.5rem;
+  /* display: inline-block; */
+  padding: 6px 0;
+  background: transparent;
+  color: black;
+  border-radius: 5px;
+  /* border: thin solid #444; */
+  border: none;
+  overflow: hidden;
+  height: 80px;
+}
+
+div.stars {
+  width: 270px;
+  display: inline-block;
+}
+/* ------------------ngx star rating ends--------- */
+
+
 
 /* ---------------popup starts---------------- */
 

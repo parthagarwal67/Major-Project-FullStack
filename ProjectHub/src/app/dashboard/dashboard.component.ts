@@ -30,6 +30,7 @@ export class DashboardComponent implements OnInit {
 // coverext;
 
   constructor(private ds:DataService,private router:Router) {}
+  
 
   ngOnInit(): void {
    
@@ -112,7 +113,10 @@ search()
   this.router.navigate(['/displayproject']);
 }
 
-
+goto()
+{
+  this.router.navigate(['/displayproject']);
+}
 
   ngAfterViewInit()
 {

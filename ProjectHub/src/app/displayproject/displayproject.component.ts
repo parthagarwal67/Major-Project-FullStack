@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 declare var document;
 declare var $;
 @Component({
@@ -12,7 +13,16 @@ export class DisplayprojectComponent implements OnInit {
 projects;
 prodetail;
 ssarr;
-  constructor(private ds:DataService,private router:Router) { }
+
+rating3: number;
+public form: FormGroup;
+  constructor(private ds:DataService,private router:Router,private fb: FormBuilder) {
+    this.rating3 = 0;
+    this.form = this.fb.group({
+      rating1: ['', Validators.required],
+      rating2: [4]
+    });
+   }
 
   ngOnInit(): void {
     this.ds.getprojects().subscribe((d)=>{

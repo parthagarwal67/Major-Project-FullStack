@@ -9,7 +9,7 @@
         <a routerLink="/dashboard" class="list-group-item list-group-item-action bg-light"><i class="fa fa-book zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Dashboard</span></a>
         <!-- <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a> -->
         <a routerLink="/displayproject" class="list-group-item list-group-item-action bg-light"><i class="fa fa-eye zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>View Projects</span></a>
-        <a routerLink="/uploadproject" class="list-group-item list-group-item-action bg-light"><i class="ti-upload zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Upload Projects</span></a>
+        <a routerLink="/uploadproject" class="list-group-item list-group-item-action bg-light"><i class="ti-export zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Upload Projects</span></a>
         <a routerLink="/profile" class="list-group-item list-group-item-action bg-light"><i class="fa fa-user-secret zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Profile</span></a>
         <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-bar-chart zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Status</span></a>
         <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-sellsy zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Explore</span></a>
@@ -85,10 +85,19 @@
         </div>
       </nav>
 
-      <div class="container-fluid" style="margin-left: 1rem;">
+      <div class="container-fluid" style="margin-left: 2rem;">
         <h2 class="mt-4" >Announcements&nbsp;<i class="fa fa-ravelry" aria-hidden="true"></i></h2>
-        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
+
+        <!-- <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p> -->
+         <h3 class="mt-4 glow" (click)="goto()" style="font-family: cursive;margin-left: auto;margin-right: auto;cursor: pointer;">New Projects Added</h3>
+      
+
+
+         
+          
+
+         
       </div>
 
     </div> 
