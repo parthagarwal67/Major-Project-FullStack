@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { account1 } from 'models/account1';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Key } from 'protractor';
+import { account } from 'models/account';
 declare var document;
 declare var $;
 @Component({
@@ -15,7 +16,7 @@ export class DisplayprojectComponent implements OnInit {
 projects;
 prodetail;
 ssarr;
-account1;
+account1:account;
 
 rating3: number;
 public form: FormGroup;
@@ -37,8 +38,8 @@ projectrating(a)
 {
 alert(this.form.value.rating1)
 alert(a)
+alert(localStorage.getItem('account1'))
 // this.ds.projectRating({projectid:a,ratings:this.form.value.rating1}).subscribe((d)=>{
-
 //   if(d.status=="ok")
 //   {
 //     this.ds.getprojects().subscribe((d)=>{
@@ -78,6 +79,10 @@ this.ssarr= this.prodetail.ssext.split(',');
 // }
 // alert("after pushing"+this.ssarr);
   }
+  // mkedit()
+  // {
+  //   document.getElementById('aa').contentEditable="true";
+  // }
 
   myFunction() 
   {

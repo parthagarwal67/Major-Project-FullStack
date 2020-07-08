@@ -109,7 +109,7 @@ collection.find({email:req.body.email}).toArray((err,docs)=>{
     collection.insert(req.body,(err,r)=>{
     if(!err)
     {
-        sendMail("agarwalparth672000@gmail.com", "hoovjadjioeutgot" , req.body.email, "Project Hub SignUp Successful", `this is content   <h3>Hi</h3><br><h6>Congratulations your sign up is successful on Project Hub.</h6>` )
+        sendMail("agarwalparth672000@gmail.com", "ccmcdwwivizwtole" , req.body.email, "Projectize SignUp Successful", `this is content   <h3>Hi</h3><br><h6>Congratulations you've been signed up successfully on Projectize.</h6>` )
         res.send({Status:"ok",resultData:"Created Successfully"});
         // location.reload();
         // window.location.href="http://localhost:4200/login";
@@ -123,6 +123,23 @@ collection.find({email:req.body.email}).toArray((err,docs)=>{
 })
 
 })
+
+app.post('/forgot-password',bodyParser.json(),(req,res)=>{
+    console.log(req.body);
+    var collection=connection.db('projectize').collection('accountholder');
+    collection.find({email:req.body.email}).toArray((err,docs)=>{
+      if(!err && docs.length > 0)
+      {
+        res.send({Status:"ok",resultData:docs});
+        sendMail("agarwalparth672000@gmail.com", "ccmcdwwivizwtole" ,req.body.email, "Forgot Password",
+         '<h3>Hi</h3><br><p> your password is:</p>'+ JSON.stringify(docs[0].password))
+      }
+      else
+      {
+          res.send({Status:"failed",resultData:err});
+      }
+    })
+  })
 
 app.get('/get-projects',(req,res)=>{
     // res.send(users);

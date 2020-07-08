@@ -26,12 +26,16 @@ loginAccount( d ):any
   return this.http.post('http://localhost:4000/login-account',d);
 }
 
-postDataWithImage( d )
+postDataWithImage( d ):any
  {
 return this.http.post('http://localhost:4000/data-with-file',d)
  }
-projectRating( d )
+projectRating( d ):any
 {
   return this.http.post('http://localhost:4000/project-rating',d);
+}
+forgotpassword( d ):any
+{
+  return this.http.post('http://localhost:4000/forgot-password',d);
 }
 }

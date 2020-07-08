@@ -10,6 +10,7 @@ import { DisplayprojectComponent } from './displayproject/displayproject.compone
 import { UploadprojectComponent } from './uploadproject/uploadproject.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
                                            {path:'contact',component:ContactComponent}
                                           ]},
   {path:'login',component:LoginComponent},
+  {path:'forgot-password',component:ForgotPasswordComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'profile',component:ProfileComponent},
   ];

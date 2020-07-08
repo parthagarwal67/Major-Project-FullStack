@@ -27,7 +27,7 @@
         <span>or use your account</span>
         <input type="email" name="email" placeholder="Email" [(ngModel)]="accountdata.email" required>
         <input type="password" name="password" placeholder="Password" [(ngModel)]="accountdata.password" required>
-        <a href="#">Forgot Your Password</a>
+        <a routerLink="/forgot-password">Forgot Your Password</a>
         <button class="btn" (click)="login()">Sign In</button>
         </form>
     </div>
