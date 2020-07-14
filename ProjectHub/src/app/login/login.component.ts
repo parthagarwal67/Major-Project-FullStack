@@ -60,6 +60,7 @@ login()
       // alert("Login Successful");
       console.log(d.resultData);
       localStorage.setItem("name",d.resultData);
+      localStorage.setItem("email",d.resultMail);
       this.router.navigate(['/dashboard'],{queryParams:{account:d.resultData}});
     }
     else{

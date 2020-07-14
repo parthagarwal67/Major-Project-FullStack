@@ -1,6 +1,7 @@
 <div class="alert alert-success" style="text-align: center;">
     <strong>Hi there!</strong> You are requested to do upload your profile picture for Authentication Purpose. Also we sincerely ensure the safety of your data !!!     <a href="https://salvagni.dev/react-profile-picture/" target="_blank" rel="nofollow" style="color: #40989c;">you can see it in action here.</a>
-  </div>
+    <br><strong>Note *</strong> To adjust profile picture you can toggle on image. 
+</div>
 
 <form> 
 
@@ -8,7 +9,7 @@
     <div class="small-12 medium-2 large-2 columns">
       <div class="circle">
         <!-- User Profile Image -->
-        <img [src]="croppedImage" style="border-radius: 1000px;height: 128px;width: 128px;">
+        <img [src]="croppedImage" style="border-radius: 1000px;height: 128px;width: 128px;" (click)="toggle()">
         <!-- http://cdn.cutestpaw.com/wp-content/uploads/2012/07/l-Wittle-puppy-yawning.jpg -->
  
         <!-- Default Image -->
@@ -56,12 +57,13 @@
         </tr><br>
     </table>
     <button class="btn btn-primary" type="button" style="border-radius: 11px;font-weight: 500;background-color: #54acaf; font-size: larger; box-shadow: -5px -5px 5px grey; margin-bottom: 1rem;margin-left: -1.5rem;margin-right: auto;">save</button>
- </div>
+    <!-- <button class="btn btn-primary" type="button"  style="cursor: pointer;background-color: chartreuse;margin-bottom: 1rem;margin-left: -8.5rem;margin-right: auto;">click</button> -->
+</div>
 </form> 
 
 
 
-<image-cropper
+<image-cropper id="aa"
    [imageChangedEvent]="imageChangedEvent"
    [maintainAspectRatio]="true"
    [aspectRatio]="4 / 3"

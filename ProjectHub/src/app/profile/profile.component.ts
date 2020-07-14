@@ -31,6 +31,15 @@ loadImageFailed() {
     // show message
 }
 
+toggle() {
+    var x = document.getElementById("aa");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
 ngAfterViewInit()
 {
   $(document).ready(function() {

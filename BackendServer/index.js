@@ -24,7 +24,7 @@ var storage = multer.diskStorage({
         if(!req.hasTextDataProcessed)
         {
             var collection=connection.db('projectize').collection('projects');
-            collection.insert(req.body,(err,r)=>{
+            collection.insert({...req.body,ratings:[],comments:[]},(err,r)=>{
                 if(!err)
                 {
                     console.log(r);
@@ -157,6 +157,24 @@ app.get('/get-projects',(req,res)=>{
     })
   })
 
+//   app.get('/list-accounts',(req,res)=>{
+//     // res.send(users);
+ 
+//     var collection=connection.db('projectize').collection('accountholder');
+//     collection.find({email:req.body.email}).toArray((err,docs)=>{
+//         if(!err)
+//         {
+//             res.send({Status:"ok",resultData:docs[0].email});
+//         }
+//         else
+//         {
+//             res.send({Status:"failed",resultData:err});
+//         }
+//     })
+//   })
+
+
+
 
 /* 
 
@@ -182,36 +200,53 @@ collection.update({_id:ObjectId(req.body._id)},{$set:{fname:req.body.fname,rollN
 
 
 
-app.get('/project-rating',bodyParser.json(),(req,res)=>{
+app.post('/project-rating',bodyParser.json(),(req,res)=>{
     var collection=connection.db('projectize').collection('projects');
-    collection.update({_id:ObjectId(req.body._id)},{$set:{email:req.body.email,projectid:req.body.projectid,ratings:req.body.ratings}},(err,r)=>{
+    collection.update({_id:ObjectId(req.body._id)},{$pull:{"ratings":{"email":req.body.email}}},(err,r)=>{
     if(!err)
     {
-    collection.find({email:req.body.email,projectid:req.body.projectid,ratings:req.body.ratings}).toArray((err,docs)=>{
-        if(!err && docs.length>0)
-        {
-            res.send({status:"ok",resultData:docs});
-        }
-        else
-        {
-        collection.insert(req.body,(err,r)=>{
+        collection.update({_id:ObjectId(req.body._id)},{$push:{"ratings":{"email":req.body.email,"ratings":req.body.ratings}}},(err,docs)=>{
         if(!err)
         {
-           
-            res.send({status:"not found",resultData:r});
-            // location.reload();
-            // window.location.href="http://localhost:4200/login";
+            res.send({status:"ok",resultData:docs});
         }
         else
         {
             res.send({status:"failed",resultData:err});
         }
     })
+    }
+    else
+    {
+        res.send({status:"failed",resultData:err});
+    }    
+    })
+})
+
+app.post('/project-comments',bodyParser.json(),(req,res)=>{
+    var collection=connection.db('projectize').collection('projects');
+    // collection.update({_id:ObjectId(req.body._id)},{$pull:{"comments":{"email":req.body.email}}},(err,r)=>{
+    // if(!err)
+    // {
+        collection.update({_id:ObjectId(req.body._id)},{$push:{"comments":{"name":req.body.name,"email":req.body.email,"comments":req.body.comments,"date":req.body.date}}},(err,docs)=>{
+        if(!err)
+        {
+            res.send({status:"ok",resultData:docs});
+        }
+        else
+        {
+            res.send({status:"failed",resultData:err});
         }
     })
-}
+    // }
+    // else
+    // {
+    //     res.send({status:"failed",resultData:err});
+    // }    
+    // })
 })
-})
+
+
 
 
 app.post('/login-account',bodyParser.json(),(req,res)=>{
@@ -221,7 +256,7 @@ app.post('/login-account',bodyParser.json(),(req,res)=>{
         if(!err && docs.length>0)
         // req.body.email==docs.email && req.body.password==docs.password
         {
-            res.send({Status:"ok",resultData:docs[0].name});
+            res.send({Status:"ok",resultData:docs[0].name,resultMail:docs[0].email});
         }
         else
         {

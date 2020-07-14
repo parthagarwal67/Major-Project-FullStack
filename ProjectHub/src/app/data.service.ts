@@ -18,7 +18,12 @@ createAccount( d ):any
 
 getprojects(  ):any
 {
-return this.http.get('http://localhost:4000/get-projects',);
+return this.http.get('http://localhost:4000/get-projects');
+}
+
+listAccount():any
+{
+  return this.http.get('http://localhost:4000/list-accounts');
 }
 
 loginAccount( d ):any
@@ -33,6 +38,10 @@ return this.http.post('http://localhost:4000/data-with-file',d)
 projectRating( d ):any
 {
   return this.http.post('http://localhost:4000/project-rating',d);
+}
+projectComments( d ):any
+{
+  return this.http.post('http://localhost:4000/project-comments',d);
 }
 forgotpassword( d ):any
 {

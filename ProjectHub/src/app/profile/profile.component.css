@@ -12,14 +12,14 @@ body {
       display: none;
   }
   .circle {
-      background-color: rgb(233, 233, 233);
+      background-color: rgb(221, 220, 220);
       border-radius: 1000px !important;
       overflow: hidden;
       width: 128px;
       height: 128px;
       border: 8px solid rgba(165, 165, 158, -2.3);
       position: absolute;
-      top: 90px;
+      top: 108px;
       box-shadow: 6px 6px 5px grey;
       /* background: url('https://ssl.gstatic.com/accounts/ui/avatar_2x.png'); */
   }
@@ -29,7 +29,7 @@ body {
   }
   .p-image {
     position: absolute;
-    top: 185px;
+    top: 205px;
     left: 43rem;
     color: #776868;
     transition: all .3s cubic-bezier(.175, .885, .32, 1.275);

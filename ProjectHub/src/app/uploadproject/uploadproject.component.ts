@@ -26,6 +26,8 @@ export class UploadprojectComponent implements OnInit {
   ssext;
   setproext;
   coverext;
+  ratings=new Array();
+  comments=new Array();
   constructor(private ds:DataService,private router:Router) { }
 
   ngOnInit(): void {
@@ -92,6 +94,8 @@ postData()
   // }
   form.set('setproext',this.setproext);
   form.set('coverext',this.coverext);
+  // form.set('ratings',this.ratings.toString());
+  // form.set('comments',this.comments.toString());
   // form.set('screenshotsctr',this.screenshotsctr);
   for(var i=0;i<this.screenshots.length;i++)
   {
@@ -103,6 +107,7 @@ postData()
   form.set('report',this.report);
   form.set('setupproject',this.setupproject);
   form.set('covervideo',this.covervideo);
+
 
   this.ds.postDataWithImage(form).subscribe((d)=>{
    alert(JSON.stringify(d))

@@ -4,7 +4,7 @@
 }
 .zoom:hover
 {
-    transform: scale(1.5); ;
+    transform: scale(1.3) ;
 }
 
 ul{
@@ -32,6 +32,48 @@ ul li{
 .bb:hover{
   background-color: rgb(73, 206, 206);
 }
+.ucolor{
+  color: #000;
+}
+.ufont{
+  font-family: medium-content-sans-serif-font,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;
+  letter-spacing: 1;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: capitalize;
+  color: darkgrey;
+}
+.ufont:hover{
+  color: grey;
+}
+.ufont2{
+  font-family: medium-content-sans-serif-font,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;
+  letter-spacing: 1;
+  font-weight: 600;
+  font-style: normal;
+  /* text-transform: capitalize; */
+  color: darkgrey;
+  cursor: context-menu;
+}
+.ufont2:hover{
+  color: grey;
+}
+.gfont{
+  font-family: medium-content-sans-serif-font,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;
+  letter-spacing: 1;
+  font-weight: 400;
+  font-style: normal;
+  /* text-transform: capitalize; */
+  color: grey;
+}
+.cfont{
+    font-size: 18px;
+    line-height: 1.58;
+    letter-spacing: -.004em;
+    font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
 .column {
     float: left;
@@ -58,14 +100,14 @@ ul li{
   text-align: center;
   margin: auto auto;
   /* display: inline-block; */
-  padding: 6px 0;
+  padding: 2px 0;
   background: transparent;
   color: black;
   border-radius: 5px;
   /* border: thin solid #444; */
   border: none;
   overflow: hidden;
-  height: 60px;
+  height: 48px;
 }
 
 .cont2 {
@@ -87,7 +129,20 @@ ul li{
 div.stars {
   width: 270px;
   display: inline-block;
+  /* height: 23px; */
+  font-size: 30px;
 }
+.star{
+  font-size: 30px;
+}
+
+/* *[_ngcontent-qjb-c55]
+{margin:0;padding:0;font-family:roboto}body[_ngcontent-qjb-c55]{background:#000}.cont[_ngcontent-qjb-c55]{width:93%;max-width:350px;text-align:center;margin:4% auto;padding:30px 0;background:#111;color:#eee;border-radius:5px;border:thin solid #444;overflow:hidden}hr[_ngcontent-qjb-c55]{margin:20px;border:none;border-bottom:thin solid rgba(255,255,255,.1)}div.title[_ngcontent-qjb-c55]{font-size:2em}h1[_ngcontent-qjb-c55]   span[_ngcontent-qjb-c55]{font-weight:300;color:#fd4}div.stars[_ngcontent-qjb-c55]{width:270px;display:inline-block}input.star[_ngcontent-qjb-c55]{display:none}label.star[_ngcontent-qjb-c55]{float:right;padding:10px;font-size:30px;color:#444;transition:.2s}input.star[_ngcontent-qjb-c55]:checked ~ label.star[_ngcontent-qjb-c55]:before{content:"";color:#fd4;transition:.25s}input.star-5[_ngcontent-qjb-c55]:checked ~ label.star[_ngcontent-qjb-c55]:before{color:#fe7;text-shadow:0 0 20px #952}input.star-1[_ngcontent-qjb-c55]:checked ~ label.star[_ngcontent-qjb-c55]:before{color:#f62}label.star[_ngcontent-qjb-c55]:hover{-webkit-transform:rotate(-15deg) scale(1.3);transform:rotate(-15deg) scale(1.3)}label.star[_ngcontent-qjb-c55]:before{content:"";font-family:FontAwesome}
+
+.glyphicon.glyphicon-star, .glyphicon.glyphicon-star-empty {
+  font-size: 30px;
+} */
+
 /* ------------------ngx star rating ends--------- */
 
 
