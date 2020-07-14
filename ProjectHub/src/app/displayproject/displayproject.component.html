@@ -137,17 +137,18 @@
               
                 <!-- Modal content-->
                 <div class="modal-content" style="width: 750px;overflow-y: scroll;height: 91vh;">
-                  <div class="modal-header">
-                    <h4 class="modal-title column" style="margin-top: 0.5rem;">Project Details</h4>
+                  <div class="modal-header" style="height: 70px">
+                    <h4 class="modal-title column" style="margin-top: 0.2rem;">Project Details</h4>
                       <!-- <form [formGroup]="form"> -->
                         <div class="cont">
                           <div class="stars">
-                            <ngx-star-rating style="font-size: 14px;" *ngIf="avgrating" [(ngModel)]="avgrating" [id]="'rating2'" [disabled] ="true"></ngx-star-rating>
+                            <!-- <ngx-star-rating style="font-size: 14px;" *ngIf="avgrating" [(ngModel)]="avgrating" [id]="'rating2'" [disabled] ="true"></ngx-star-rating> -->
+                            <app-star></app-star>
                             <span *ngIf="!avgrating">Not Rated Yet</span>
                           </div>
                           
                           <!-- <div>Rating(Disabled): {{form.value.rating2}}</div> -->
-                      </div>
+                        </div>
                       <!-- </form> -->
                     <button type="button" class="close" data-dismiss="modal" style="outline: none;">&times;</button>
                   </div>
@@ -172,7 +173,7 @@
                             <tr>
                               <td class="ucolor">Screenshots:</td>
                               <td style="padding-left: 5rem;"> <input (click)="change()" type="button" value="View" id="myButton1" style="cursor: pointer;background-color: #777;outline:thick; color: aliceblue;"><br>
-                               <div id="mydiv" #mydiv style="display: none;"> <a class="column" *ngFor="let p of ssarr; let i=index;" href="http://localhost:4000/{{prodetail._id}}_screenshots_{{i+1}}.{{p}}">
+                               <div id="mydiv" style="display: none;"> <a class="column" *ngFor="let p of ssarr; let i=index;" href="http://localhost:4000/{{prodetail._id}}_screenshots_{{i+1}}.{{p}}">
                                   <img src="http://localhost:4000/{{prodetail._id}}_screenshots_{{i+1}}.{{p}}" alt="" style="width: 8rem;height:4rem;">
                                 </a>
                               </div> 

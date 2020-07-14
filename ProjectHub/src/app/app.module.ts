@@ -21,6 +21,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FirstExtPipe } from './first-ext.pipe';
 import { ElementFromStringPipe } from './element-from-string.pipe';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { StarComponent } from './star/star.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     ContactComponent,
     FirstExtPipe,
     ElementFromStringPipe,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    StarComponent
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,7 @@ declare var $;
   styleUrls: ['./displayproject.component.css']
 })
 export class DisplayprojectComponent implements OnInit {
-@ViewChild('mydiv') ss;
+// @ViewChild('mydiv') ss;
 projects;
 prodetail;
 ssarr;
@@ -169,18 +169,17 @@ this.avgrating=temp.ratings/len;
     $(':radio').change(function() {
       console.log('New star rating: ' + this.value);
     });
-    this.ss.nativeElement.style.display='none';
-    document.getElementById('star').style.fontsize='30px';
-
-//     var app = angular.module("myApp", []);
-//     app.controller("myCtrl", function($scope) {
-//     $scope.myObj = {
-//     // "color" : "white",
-//     // "background-color" : "coral",
-//     "font-size" : "30px",
-//     // "padding" : "50px"
-//   }
-// });
+    // this.ss.nativeElement.style.display='none';
+    
+    // $(document).ready(function(){
+    //   $("#myButton1").click(function(){
+    //     $("#mydiv").slideDown("slow");
+    //   });
+    //   $("#myButton1").click(function(){
+    //     $("#mydiv").slideUp();
+    //   });
+     
+    // });
 
   }
 }
