@@ -137,20 +137,27 @@
               
                 <!-- Modal content-->
                 <div class="modal-content" style="width: 750px;overflow-y: scroll;height: 91vh;">
-                  <div class="modal-header" style="height: 70px">
-                    <h4 class="modal-title column" style="margin-top: 0.2rem;">Project Details</h4>
-                      <!-- <form [formGroup]="form"> -->
-                        <div class="cont">
-                          <div class="stars">
-                            <!-- <ngx-star-rating style="font-size: 14px;" *ngIf="avgrating" [(ngModel)]="avgrating" [id]="'rating2'" [disabled] ="true"></ngx-star-rating> -->
-                            <app-star></app-star>
-                            <span *ngIf="!avgrating">Not Rated Yet</span>
-                          </div>
-                          
-                          <!-- <div>Rating(Disabled): {{form.value.rating2}}</div> -->
-                        </div>
-                      <!-- </form> -->
+                  <div class="modal-header" style="height: 80px">
+                   
+                   <div class="projectHeader">
+                   <div class="projectTitle">
+                     <h4 class="modal-title" style="margin-top: 0.2rem;">{{prodetail.title}}</h4>
+                     <span style="font-size: 1rem;">( {{prodetail.tech}} )</span>
+                   </div>
+
+
+                   <div class="AvgProjectRatings">
+                    <app-star [rating]="avgrating"></app-star>
+                    <span *ngIf="!avgrating">Not Rated Yet</span>
+                    <span>Average rating </span>
+                   </div>
+                  </div>
+
+                    
                     <button type="button" class="close" data-dismiss="modal" style="outline: none;">&times;</button>
+                  
+                  
+                  
                   </div>
                   <div class="modal-body">
                     
@@ -158,18 +165,18 @@
                       <div class="col-md-7">
                         <form >
                           <table>
-                            <tr>
+                            <!-- <tr>
                               <td class="ucolor">Title:</td>
                               <td style="padding-left: 5rem;" class="ufont">{{prodetail.title}}</td>
-                            </tr>
+                            </tr> -->
                             <tr>
                               <td class="ucolor">Description:</td>
                               <td style="padding-left: 5rem;" class="ufont">{{prodetail.desc}}</td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                               <td class="ucolor">Technologies Used:</td>
                               <td style="padding-left: 5rem;" class="ufont">{{prodetail.tech}}</td>
-                            </tr>
+                            </tr> -->
                             <tr>
                               <td class="ucolor">Screenshots:</td>
                               <td style="padding-left: 5rem;"> <input (click)="change()" type="button" value="View" id="myButton1" style="cursor: pointer;background-color: #777;outline:thick; color: aliceblue;"><br>
@@ -242,12 +249,15 @@
                               <td>
                                   <!-- <button class="btn-default btn">Comments&nbsp;<i class="fa fa-commenting-o" aria-hidden="true"></i></button> -->
                                 
-                                  <form [formGroup]="form">
+                                 
                                     <div class="cont2">
                                       <div class="stars">
-                                        <ngx-star-rating formControlName="rating1" [id]="'rating'" (change)="projectrating(prodetail._id)" ></ngx-star-rating>
+                                      <app-star [rating]="userInputRatting" (ratingChange) ="projectrating($event,prodetail._id)" ></app-star>
+                                      
                                       </div>
                                       <div>Rating: {{form.value.rating1}}</div>
+
+
                                       <!-- <p>form is valid: {{ form.valid ? 'true' : 'false' }}</p> -->
                                     </div>
                                     <!-- <div class="cont">
@@ -256,7 +266,7 @@
                                         </div>
                                         <div>Rating(Disabled): {{form.value.rating2}}</div>
                                     </div> -->
-                                    </form>
+                                  
                                     <!-- <div class="cont">
                                       <div class="stars">
                                         <ngx-star-rating [(ngModel)]="rating3" [id]="'rating3'" ></ngx-star-rating >

@@ -1,10 +1,10 @@
 <div>
     <ul>
-        <li [ngClass]="{yellow:rating>0}"><i class="fa fa-star"></i></li>
-        <li [ngClass]="{yellow:rating>1}"><i class="fa fa-star"></i></li>
-        <li [ngClass]="{yellow:rating>2}"><i class="fa fa-star"></i></li>
-        <li [ngClass]="{yellow:rating>3}"><i class="fa fa-star"></i></li>
-        <li [ngClass]="{yellow:rating>4}"><i class="fa fa-star"></i></li>
+        <li (click)="rate(1)"><i [ngClass]="{yellow:rating>0}" class="fa fa-star "></i></li>
+        <li (click)="rate(2)" ><i [ngClass]="{yellow:rating>1}" class="fa fa-star "></i></li>
+        <li (click)="rate(3)" ><i [ngClass]="{yellow:rating>2}" class="fa fa-star "></i></li>
+        <li (click)="rate(4)"><i [ngClass]="{yellow:rating>3}" class="fa fa-star "></i></li>
+        <li (click)="rate(5)"><i [ngClass]="{yellow:rating>4}" class="fa fa-star "></i></li>
     </ul>
-    <!-- <p>dnsjfsdjfjefejje</p> -->
+    
 </div>

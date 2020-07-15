@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-star',
@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./star.component.css']
 })
 export class StarComponent implements OnInit {
-rating;
+@Input() rating;
+@Output() ratingChange = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  rate(r)
+  {
+    
+    this.ratingChange.emit(r);
   }
 
 }

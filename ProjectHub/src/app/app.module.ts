@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ImageCropperModule } from 'ngx-image-cropper';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgxStarRatingModule } from 'ngx-star-rating';
+// import { NgxStarRatingModule } from 'ngx-star-rating';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -47,7 +46,7 @@ import { StarComponent } from './star/star.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgxStarRatingModule,
+    // NgxStarRatingModule,
     ReactiveFormsModule,
     ImageCropperModule
   ],

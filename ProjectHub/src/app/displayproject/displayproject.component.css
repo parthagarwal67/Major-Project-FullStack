@@ -352,3 +352,27 @@ a {
   }
 
   /* ---------------star ends---------------- */
+
+
+  .projectHeader{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .projectTitle{
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  .AvgProjectRatings{
+    float: right;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+  }

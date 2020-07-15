@@ -21,7 +21,7 @@ ssarr;
 mail;
 comments;
 cts;
-
+userInputRatting;
 
 avgrating;
 rating3: number;
@@ -41,13 +41,14 @@ public form: FormGroup;
   // this.route.queryParamMap.subscribe((d)=>{this.email=d.get('dd');})
 }
 
-projectrating(a)
+projectrating(rat,a)
 {
-// alert(this.form.value.rating1)
+  this.userInputRatting=rat;
+// alert(rat);
 // alert(a)
 this.mail=localStorage.getItem("email")
 // alert(this.mail)
-this.ds.projectRating({_id:a,email:this.mail,ratings:this.form.value.rating1}).subscribe((d)=>{
+this.ds.projectRating({_id:a,email:this.mail,ratings:rat}).subscribe((d)=>{
   if(d.status=="ok")
   {
     alert("Ratings Submitted Successfully")
