@@ -144,6 +144,10 @@ this.avgrating=temp.ratings/len;
     var popup = document.getElementById("myPopup");
     popup.classList.toggle("show");
   }
+  // scroll()
+  // {
+  //   window.scrollTo(0, 500);
+  // }
   change()
   { 
     var elem = document.getElementById("myButton1");
@@ -170,6 +174,27 @@ this.avgrating=temp.ratings/len;
     $(':radio').change(function() {
       console.log('New star rating: ' + this.value);
     });
+
+  //   $('a[href^="#"]').on('click', function(event) {
+
+  //     var target = $(this.getAttribute('href'));
+  
+  //     if( target.length ) {
+  //         event.preventDefault();
+  //         $('html, body').stop().animate({
+  //             scrollTop: target.offset().top
+  //         }, 1000);
+  //     }
+  
+  // });
+
+
+  //   $('#link a').on("click", function () {
+  //     $('body,html').animate({
+  //         scrollDown: $('#cmts')
+  //     }, 1000);
+  //     return false;
+  // });
     // this.ss.nativeElement.style.display='none';
     
     // $(document).ready(function(){
