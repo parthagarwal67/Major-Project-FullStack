@@ -124,9 +124,9 @@
                         <p>
                            {{a.desc}}
                         </p>
-                        <p>
+                        <!-- <p>
                           technologies like {{a.tech}}, etc.. are used.
-                        </p>
+                        </p> -->
                         <!-- <div class="AvgProjectRatings" style="float: left;width:100%;height: 40px;font-size: 14px;margin-left: auto;margin-right: auto;justify-content: center;align-items: center;">
                           <app-star *ngIf="avgrating" [rating]="avgrating" style="float: left;height: 40px;width: 100%;margin-left: auto;margin-right: auto;"></app-star>
                           <span *ngIf="!avgrating" style="cursor: context-menu;">Not Rated Yet</span>
@@ -141,7 +141,7 @@
               
                 <!-- Modal content-->
                 <div class="modal-content" style="width: 750px;overflow-y: scroll;height: 91vh;">
-                  <div class="modal-header" style="height: 80px">
+                  <div class="modal-header" style="height: 80px;margin-top: -0.8rem;">
                    
                 <div class="projectHeader">
                    <div class="projectTitle">
@@ -198,17 +198,12 @@
                         <a href="http://localhost:4000/{{prodetail._id}}_report_1.{{prodetail.reportext}}" style="margin-top: 1rem;" download><i class="ti-download"></i>&nbsp;Project Report</a>
                         <a href="http://localhost:4000/{{prodetail._id}}_setupproject_1.{{prodetail.setproext}}" style="margin-top: 1rem;" download><i class="ti-download"></i>&nbsp;Setup Instructions</a>
                         <a href="http://localhost:4000/{{prodetail._id}}_covervideo_1.{{prodetail.coverext}}" style="margin-top: 1rem;" download>&nbsp;<i class="fa fa-play"></i>&nbsp;Presentation Video</a>
-                        <button style="margin-left:15px;color:white; background-color: cornflowerblue;margin-top: 1rem;" class="btn btn-primary btt">&nbsp;Read Feedback</button> 
+                        <button style="margin-left:15px;color:white; background-color: cornflowerblue;margin-top: 1rem;" id="butt" class="btn btn-primary btt" (click)="scroll()">&nbsp;Read Feedback</button> 
 
                       </div>
                       <div class="col-md-12" style="box-sizing: border-box;">
                        
                         <p style="cursor: context-menu; padding-top: 15px; font-family: sans-serif; font-size: 14px;" >{{prodetail.desc}}
-                        
-
- Lorem ipsum dolor sit amet consectetur adipisicing elit. In sed saepe ducimus laborum. Ex deserunt ipsa ratione tenetur, repellat nesciunt provident. Praesentium corrupti doloremque quidem itaque corporis sapiente delectus similique.
- Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint asperiores cum neque dolore quisquam. Fugit unde minima tempore veritatis assumenda illum officia esse, ipsa provident a. Blanditiis odit a delectus.
-
                         </p>
                       
                        </div>
@@ -220,41 +215,27 @@
                       </div>
 
                                             
-                        <div class="col-md-7" style="max-width: 80%;margin-top: 1rem;">
-                          <table>
-                            <tr>
-                              <td class="ucolor" style="cursor: context-menu;padding-bottom: 0rem; width: 6rem;font-family: sans-serif;">
-                                
+                        <div class="col-md-7" style="max-width: 100%;margin-top: 1rem;">
+                          <div style="width: fit-content;float: left;">
+                            <div class="ucolor" style="cursor: context-menu;padding-left: 1rem; width: 9rem;font-family: sans-serif;">
                                 Rate this project: 
-                              </td>
-                              <td>
-                                 
-                                    <!-- <div class="cont2" style="float: left;"> -->
-                                      <div class="stars" style="cursor: pointer;">
-                                      <app-star [rating]="userInputRatting" (ratingChange) ="projectrating($event,prodetail._id)" ></app-star>
-                                      
-                                      </div>
+                            </div>
+                            <div class="stars" style="cursor: pointer;">
+                            <app-star [rating]="userInputRatting" (ratingChange) ="projectrating($event,prodetail._id)" ></app-star>
+                            </div>
+                          </div>
                                
-                                    <!-- </div> -->
-
-                                    
-                                   
                                   
-
-                              </td>
-                                
-                            </tr><br>
-                            <tr rowspan="2">
-                              <td colspan="2">
-
+ 
+                        
                                 <!-- <textarea name="comments" id="comments" cols="87.5" rows="4" placeholder="Place Your Comments Here" onfocus="this.placeholder=''" onblur="this.placeholder='Place Your Comments Here'"></textarea>
                                 <br><button style="margin-left: 41.5rem;margin-top:-4%;"><i class="ti-arrow-right"></i></button>
                               -->
 
                                 <!-- <div class="input-wrap">
                                   <form #cc="ngForm" class="form-box d-flex justify-content-between"> -->
-                                    <textarea name="comments" id="comments" style="padding:15px;font-family: sans-serif;width: 100%;background-color: rgb(239, 246, 253); border-radius: 6px;outline: none;resize:none;word-wrap:off; border: none;box-shadow: 0 1px 8px rgba(0,0,0,.03);" rows="3" [(ngModel)]="comments" placeholder="Place Your Comments Here" onfocus="this.placeholder=''" onblur="this.placeholder='Place Your Comments Here'"></textarea>
-                                    <button type="submit" style="margin-left: 38.5rem;font-family: sans-serif;" class="btn btn-default bb" (click)="projectcomments(prodetail._id)"><span class="svgIcon svgIcon--response svgIcon--29px"><svg class="svgIcon-use" width="29" height="29">
+                                    <textarea name="comments" id="comments" style="margin-left: 2rem; padding:15px;font-family: sans-serif;width: 72%;background-color: rgb(239, 246, 253); border-radius: 6px;outline: none;resize:none;word-wrap:off; border: none;box-shadow: 0 1px 8px rgba(0,0,0,.03);" rows="3" [(ngModel)]="comments" placeholder="Place Your Comments Here" onfocus="this.placeholder=''" onblur="this.placeholder='Place Your Comments Here'"></textarea>
+                                    <button type="submit" style="margin-left: 37rem;font-family: sans-serif;" class="btn btn-default bb" (click)="projectcomments(prodetail._id)"><span class="svgIcon svgIcon--response svgIcon--29px"><svg class="svgIcon-use" width="29" height="29">
                                       <path d="M21.27 20.058c1.89-1.826 2.754-4.17 2.754-6.674C24.024 8.21 19.67 4 14.1 4 8.53 4 4 8.21 4 13.384c0 5.175 4.53 9.385 10.1 9.385 1.007 0 2-.14 2.95-.41.285.25.592.49.918.7 1.306.87 2.716 1.31 4.19 1.31.276-.01.494-.14.6-.36a.625.625 0 0 0-.052-.65c-.61-.84-1.042-1.71-1.282-2.58a5.417 5.417 0 0 1-.154-.75zm-3.85 1.324l-.083-.28-.388.12a9.72 9.72 0 0 1-2.85.424c-4.96 0-8.99-3.706-8.99-8.262 0-4.556 4.03-8.263 8.99-8.263 4.95 0 8.77 3.71 8.77 8.27 0 2.25-.75 4.35-2.5 5.92l-.24.21v.32c0 .07 0 .19.02.37.03.29.1.6.19.92.19.7.49 1.4.89 2.08-.93-.14-1.83-.49-2.67-1.06-.34-.22-.88-.48-1.16-.74z">
                                       </path>
                                     </svg></span><span class="button-label  js-buttonLabel">post</span></button>
@@ -276,8 +257,7 @@
                                 </div> -->
 
 
-                              </td>
-                            </tr><br>
+                              
                             <!-- <tr rowspan="2">
                               <td colspan="2"> 
 
@@ -308,17 +288,17 @@
 
                               </td>
                             </tr> -->
-                            <tr rowspan="2">
-                              <td colspan="2"> 
-                                <div id="cmts" style="width: 97%;margin-left: auto;margin-right: auto;margin-bottom: 2rem; box-shadow: 0px 0px 2px grey;padding-left: 1.8rem;padding-right: 1rem; padding-top: 1rem;padding-bottom: 1rem;" *ngFor="let c of prodetail.comments">
-                                    <div style="height: 60px;width: 60px;margin-top: 1%;margin-left: 1%;float: left;">
+                            <!-- <tr rowspan="2">
+                              <td colspan="2">  -->
+                                <div id="cmts" style="width: 97%;margin-left: auto;margin-right: auto;margin-top: 2rem; margin-bottom: 2rem; box-shadow: 0px 0px 5px grey;padding-left: 1.8rem;padding-right: 1rem; padding-top: 1rem;padding-bottom: 1rem;" *ngFor="let c of prodetail.comments">
+                                    <div style="height: 50px;width: 50px;margin-top: 1%;margin-left: 1%;float: left;">
                                       <img src="assets/img/img_avatar.png" alt="" height="45px" width="45px" style="border-radius: 50%;">
                                     </div>
                                     <div style="height: 60px;width: 90%;margin-top: 0;margin-left: 2rem;margin-right: -1rem; padding-left: 2rem;padding-top: 0.2rem;">
                                     <p style="color: #03a87c;text-transform: capitalize;">{{c.name}}</p> <p style="margin-top: -1rem;" class="gfont"> {{c.date|date}} </p>
                                     </div>
                                     <div class="cfont" style="color: black;width: 98%;">
-                                        {{c.comments}}
+                                       {{c.comments}}
                                     </div>
                                     <!-- <div style="width: 98%;height: 60px;margin-top: 1%;margin-left: auto;margin-right: auto;padding-top: 1rem;">
                                      
@@ -327,9 +307,9 @@
 
                                     </div> -->
                                 </div>
-                              </td>
+                              <!-- </td>
                             </tr>
-                          </table>  
+                          </table>   -->
                         </div>  
                       </div>  
                   </div>

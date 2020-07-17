@@ -79,6 +79,7 @@ ul li{
 .btt{
   outline: none;
   opacity: 0.8;
+  scroll-behavior: smooth;
 }
 .btt:hover{
   opacity: 1;
@@ -144,7 +145,7 @@ ul li{
 }
 
 div.stars {
-  width: 270px;
+  width: 152px;
   display: inline-block;
   /* height: 23px; */
   font-size: 30px;

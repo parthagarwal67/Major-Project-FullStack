@@ -144,30 +144,31 @@ this.avgrating=temp.ratings/len;
     var popup = document.getElementById("myPopup");
     popup.classList.toggle("show");
   }
-  // scroll()
-  // {
-  //   window.scrollTo(0, 500);
-  // }
-  change()
-  { 
-    var elem = document.getElementById("myButton1");
-    if (elem.value=="Hide") 
-    {
-      elem.value = "View";
-    }
-    else 
-    {
-      elem.value = "Hide";
-    }
-    
-      var x = document.getElementById("mydiv");
-      if (x.style.display === "none") 
-      {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
+  scroll()
+  {
+    var elmnt = document.getElementById("cmts");
+    elmnt.scrollIntoView();
   }
+  // change()
+  // { 
+  //   var elem = document.getElementById("myButton1");
+  //   if (elem.value=="Hide") 
+  //   {
+  //     elem.value = "View";
+  //   }
+  //   else 
+  //   {
+  //     elem.value = "Hide";
+  //   }
+    
+  //     var x = document.getElementById("mydiv");
+  //     if (x.style.display === "none") 
+  //     {
+  //       x.style.display = "block";
+  //     } else {
+  //       x.style.display = "none";
+  //     }
+  // }
 
   ngAfterViewInit()
   {
