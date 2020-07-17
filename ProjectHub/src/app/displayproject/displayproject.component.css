@@ -72,12 +72,9 @@ ul li{
   color: grey;
 }
 .cfont{
-    font-size: 18px;
-    line-height: 1.58;
-    letter-spacing: -.004em;
+    font-size: 14px;
     font-family:sans-serif;
-    font-weight: 400;
-    font-style: normal;
+    
 }
 
 .column {
