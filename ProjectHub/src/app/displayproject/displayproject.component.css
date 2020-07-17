@@ -76,6 +76,13 @@ ul li{
     font-family:sans-serif;
     
 }
+.btt{
+  outline: none;
+  opacity: 0.8;
+}
+.btt:hover{
+  opacity: 1;
+}
 
 .column {
     float: left;
@@ -88,7 +95,6 @@ ul li{
     width: 33.33%;
     /* width: 100%; */
     /* padding-top: 5px; */
-
   }
 
   
@@ -388,7 +394,7 @@ a {
   }
 
   .projectTitle{
-      width: 70%;
+      width: 60%;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -396,7 +402,7 @@ a {
   }
   .AvgProjectRatings{
     float: right;
-    width: 30%;
+    width: 35%;
     display: flex;
     justify-content: center;
     flex-direction: column;
