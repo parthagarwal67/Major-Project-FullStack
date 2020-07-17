@@ -101,7 +101,7 @@
   </div>
 
   <section class="feature-area" style="margin-top:-4rem;">
-    <div class="container">
+    <div class="container" style="padding-bottom: 7rem;">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="section-title text-center">
@@ -117,7 +117,7 @@
         </div>
         <div class="feature-inner row">
             <div class="col-lg-4 col-md-6a" (click)="details(a)" data-toggle="modal" data-target="#myModal" *ngFor="let a of projects">
-                <div class="feature-item">
+                <div class="feature-item" style="word-break: break-word;">
                   <a href="http://localhost:4000/{{a._id}}_screenshots_1.{{a.ssext|elementFromString:',':0}}" download> <img src="http://localhost:4000/{{a._id}}_screenshots_1.{{a.ssext|elementFromString:',':0}}" alt="" class="zoom" style=" width: 100%;height:9rem;" download></a> 
                     <h4 style="text-transform: capitalize; cursor: context-menu;">{{a.title}}</h4>
                     <div class="wow fadeIn ufont2" data-wow-duration="1s" data-wow-delay=".1s">
@@ -182,8 +182,8 @@
                                 <a href="http://localhost:4000/{{prodetail._id}}_screenshots_{{i+1}}.{{p}}">
                                 <img src="http://localhost:4000/{{prodetail._id}}_screenshots_{{i+1}}.{{p}}" alt="Slide" class="d-block w-100" style="height: 250px;">
                                 </a> 
-                             </div>
-                            </ng-container>
+                              </div>
+                              </ng-container>
                           
                           </div>
                           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -199,13 +199,13 @@
                         <a href="http://localhost:4000/{{prodetail._id}}_zipfile_1.{{prodetail.zipext}}" class="column2" download><i class="ti-download"></i>&nbsp;Zip</a><a href="http://localhost:4000/{{prodetail._id}}_ppt_1.{{prodetail.pptext}}" class="column2" download><i class="ti-download"></i>&nbsp;PPT</a><a href="http://localhost:4000/{{prodetail._id}}_report_1.{{prodetail.reportext}}" download><i class="ti-download"></i>&nbsp;Report</a>
                         </div>   -->
                       </div>
-                      <div class="col-md-4" style=" height: 250px; margin-top: 25px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; box-sizing: border-box;height: 200px;">
-                        <a  href="http://localhost:4000/{{prodetail._id}}_zipfile_1.{{prodetail.zipext}}" class="column2 btn bt-default" download><i class="ti-download"></i>&nbsp;Code Zip</a>
-                        <a href="http://localhost:4000/{{prodetail._id}}_ppt_1.{{prodetail.pptext}}" class="column2 btn bt-default" download><i class="ti-download"></i>&nbsp; presentation PPT</a>
-                        <a href="http://localhost:4000/{{prodetail._id}}_report_1.{{prodetail.reportext}}" class="btn bt-default" download><i class="ti-download"></i>&nbsp;Project Report</a>
-                        <a class="btn bt-default" href="http://localhost:4000/{{prodetail._id}}_setupproject_1.{{prodetail.setproext}}" download><i class="ti-download"></i>&nbsp;Setup Instructions</a>
-                        <a class="btn bt-default" href="http://localhost:4000/{{prodetail._id}}_covervideo_1.{{prodetail.coverext}}" download><i class="fa fa-play"></i>&nbsp; Presentation Video</a>
-                        <button style="margin-left:15px;color:white; background-color: cornflowerblue;" class="btn btn-primary">&nbsp;Read Feedback</button> 
+                      <div class="col-md-4" style="padding-left: 30px;padding-right: 30px; margin-top: 25px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; box-sizing: border-box;height: 230px;">
+                        <a href="http://localhost:4000/{{prodetail._id}}_zipfile_1.{{prodetail.zipext}}" style="outline: none;margin-top: 0rem;" download><i class="ti-download"></i>&nbsp;Code Zip</a>
+                        <a href="http://localhost:4000/{{prodetail._id}}_ppt_1.{{prodetail.pptext}}" style="margin-top: 1rem;" download><i class="ti-download"></i>&nbsp;Presentation PPT</a>
+                        <a href="http://localhost:4000/{{prodetail._id}}_report_1.{{prodetail.reportext}}" style="margin-top: 1rem;" download><i class="ti-download"></i>&nbsp;Project Report</a>
+                        <a href="http://localhost:4000/{{prodetail._id}}_setupproject_1.{{prodetail.setproext}}" style="margin-top: 1rem;" download><i class="ti-download"></i>&nbsp;Setup Instructions</a>
+                        <a href="http://localhost:4000/{{prodetail._id}}_covervideo_1.{{prodetail.coverext}}" style="margin-top: 1rem;" download>&nbsp;<i class="fa fa-play"></i>&nbsp;Presentation Video</a>
+                        <button style="margin-left:15px;color:white; background-color: cornflowerblue;margin-top: 1rem;" class="btn btn-primary btt">&nbsp;Read Feedback</button> 
 
                       </div>
                       <div class="col-md-12" style="margin-left: 1%;box-sizing: border-box;">
@@ -217,14 +217,14 @@
                       
                       <div class="alert alert-success fadeIn" style="width:100%; margin-left: 15px; margin-right: 15px; box-sizing: border-box; text-align: center;visibility: visible;animation-duration: 4s;animation-name: fadeIn;" data-wow-duration="4s">
                         “Don't forget to give your feedback below by rating and your valuable comment” <br>
-                        <strong>Thank You</strong> 
+                        <strong>Thank You !</strong> 
                       </div>
 
                                             
                         <div class="col-md-7" style="max-width: 80%;margin-top: 1rem;">
                           <table>
                             <tr>
-                              <td class="ucolor" style="cursor: context-menu;padding-bottom: 1rem; width: 6rem;font-family: sans-serif;">
+                              <td class="ucolor" style="cursor: context-menu;padding-bottom: 0rem; width: 6rem;font-family: sans-serif;">
                                 
                                 Ratings: 
                               </td>
