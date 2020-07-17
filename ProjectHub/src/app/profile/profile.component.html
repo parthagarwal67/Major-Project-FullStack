@@ -9,7 +9,7 @@
     <div class="small-12 medium-2 large-2 columns">
       <div class="circle">
         <!-- User Profile Image -->
-        <img [src]="croppedImage" style="border-radius: 1000px;height: 128px;width: 128px;" (click)="toggle()">
+        <img [src]="croppedImage" style="border-radius: 1000px;height: 128px;width: 128px;">
         <!-- http://cdn.cutestpaw.com/wp-content/uploads/2012/07/l-Wittle-puppy-yawning.jpg -->
  
         <!-- Default Image -->
@@ -19,11 +19,37 @@
        <a style="color: rgb(92, 87, 87);"><i class="fa fa-camera upload-button"></i></a> 
          <input class="file-upload" type="file" accept="image/*" (change)="fileChangeEvent($event)"/>
       </div>
+      <!--Creates the popup body-->
+<div class="popup-overlay">
+    <!--Creates the popup content-->
+    <div class="popup-content">
+      <!-- <h2>Pop-Up</h2>
+      <p> This is an example pop-up that you can make using jQuery.</p> -->
+    <div style="margin-left: 5rem;height: 228px;width: 228px;">
+      <image-cropper id="aa"
+      [imageChangedEvent]="imageChangedEvent"
+      [maintainAspectRatio]="true"
+      [aspectRatio]="4 / 3"
+      format="png"
+      (imageCropped)="imageCropped($event)"
+      (imageLoaded)="imageLoaded()"
+      (cropperReady)="cropperReady()"
+      (loadImageFailed)="loadImageFailed()"
+      style="width: 228px;height: 228px;">
+      </image-cropper>
+    </div>  
+      <!--popup's close button-->
+      <button class="close" style="border: none;margin-top: -57%;margin-right: 1rem;outline: none;">&times;</button>
+    </div>
+</div>
+  <!--Content shown when popup is not displayed-->
+  <!-- <h2>jQuery Pop-Up Example</h2> -->
+  <button class="open but" style="outline: thin;cursor: pointer;" (click)="toggle()"><i class="ti-pencil"></i>&nbsp;Edit</button>
    </div>
  </div>
  
 
- <div style="margin-top: 8rem;margin-bottom: 1rem; margin-left: auto;padding-left:2%;padding-top: 1.5%;padding-bottom: -1%; width: 40%;box-shadow: 10px 10px 5px grey;border-radius: 3%; background-color: #b7d6d7;text-align: center;margin-right: auto;">
+ <div style="margin-top: rem;margin-bottom: 1rem; margin-left: auto;padding-left:2%;padding-top: 1.5%;padding-bottom: -1%; width: 40%;box-shadow: 10px 10px 5px grey;border-radius: 3%; background-color: #b7d6d7;text-align: center;margin-right: auto;">
  
     <table style="margin-left: auto;margin-right: auto;width: 40vw;font-weight: bolder;">
         <tr>
@@ -63,16 +89,7 @@
 
 
 
-<image-cropper id="aa"
-   [imageChangedEvent]="imageChangedEvent"
-   [maintainAspectRatio]="true"
-   [aspectRatio]="4 / 3"
-   format="png"
-   (imageCropped)="imageCropped($event)"
-   (imageLoaded)="imageLoaded()"
-   (cropperReady)="cropperReady()"
-   (loadImageFailed)="loadImageFailed()"
-style="width: 228px;height: 228px;" ></image-cropper>
+
 
 
 <!-- --------------------------------------------------------------------- -->

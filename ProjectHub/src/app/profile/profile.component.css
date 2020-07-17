@@ -81,5 +81,55 @@ body {
       background-color: #dff0d8;
       border-color: #d6e9c6;
   }
+
+  .popup-overlay {
+    /*Hides pop-up when there is no "active" class*/
+    visibility: hidden;
+    position: absolute;
+    background: #ffffff;
+    border: 3px solid #666666;
+    width: 40%;
+    height: 50%;
+    left: 55%;
+    /* content: ""; */
+  }
+  
+  .popup-overlay.active {
+    /*displays pop-up when "active" class is present*/
+    visibility: visible;
+    text-align: center;
+    content: "";
+  }
+  
+  .popup-content {
+    /*Hides pop-up content when there is no "active" class */
+    visibility: hidden;
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .popup-content.active {
+    /*Shows pop-up content when "active" class is present */
+    visibility: visible;
+  }
+  
+  .but {
+    display: inline-block;
+    /* vertical-align: middle; */
+    border-radius: 30px;
+    margin-left: 10rem;
+    margin-top: 6rem;
+    font-size: 1rem;
+    color: #666666;
+    background: #ffffff;
+    border: 1px solid #666666;
+  }
+  
+  .but:hover {
+    border: 1px solid #666666;
+    background: #666666;
+    color: #ffffff;
+  }
   
   
