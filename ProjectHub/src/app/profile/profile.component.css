@@ -15,12 +15,14 @@ body {
       background-color: rgb(221, 220, 220);
       border-radius: 1000px !important;
       overflow: hidden;
-      width: 128px;
-      height: 128px;
+      width: 150px;
+      height: 150px;
       border: 8px solid rgba(165, 165, 158, -2.3);
       position: absolute;
-      top: 108px;
+      top: 115px;
       box-shadow: 6px 6px 5px grey;
+      background-position: center;
+      background-size: cover;
       /* background: url('https://ssl.gstatic.com/accounts/ui/avatar_2x.png'); */
   }
   img {
@@ -29,8 +31,8 @@ body {
   }
   .p-image {
     position: absolute;
-    top: 205px;
-    left: 43rem;
+    top: 225px;
+    left: 44rem;
     color: #776868;
     transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
   }
@@ -48,10 +50,15 @@ body {
 
   table, th, td {
     /* border: 1px solid black; */
-    padding: 5px;
+    padding: 8px;
     text-align: left;
   }
 
+  .zz:hover{
+    /* color: blue; */
+    color: rgba(9, 33, 36, 0.705);
+    opacity: 0.7;
+}
   .dd:hover
   {
     background-color: #b7d6d7;
@@ -130,6 +137,41 @@ body {
     border: 1px solid #666666;
     background: #666666;
     color: #ffffff;
+  }
+.in{
+  outline: none;
+}
+
+  .in:hover .edit{
+    display: block;
+  }
+  
+  .edit {
+    padding-top: 2px;	
+    /* padding-right: 7px; */
+    position: absolute;
+    margin-top: -1.8rem;
+    margin-left: 10.6rem;
+    display: none;
+    color: #000;
+  }
+  .edit2 {
+    padding-top: 2px;	
+    /* padding-right: 7px; */
+    position: absolute;
+    margin-top: -1.8rem;
+    margin-left: 9.6rem;
+    display: none;
+    color: #000;
+  }
+  .edit1 {
+    /* //padding-top: 2px;	
+    // padding-right: 7px; */
+    position: absolute;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    display: visible;
+    color: #000;
   }
   
   

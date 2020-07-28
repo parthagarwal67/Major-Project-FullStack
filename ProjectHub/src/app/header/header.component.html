@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row align-items-center justify-content-between d-flex">
             <div id="logo">
-                <a routerLink="/"><img src="assets/img/logo1.png" style="height: 60px;width: 100px;" alt="" title="" />&nbsp;<span style="color: white;font-weight:bolder;font-size:x-large;">Projectize</span> </a>
+                <a routerLink="/" style="cursor: context-menu;"><img src="assets/img/logo1.png" style="height: 60px;width: 100px;" alt="" title="" />&nbsp;<span style="color: white;font-weight:bolder;font-size:x-large;">Projectize</span> </a>
             </div>
             <nav id="nav-menu-container">
                 <ul class="nav-menu" style="right: 6rem;">
@@ -24,11 +24,16 @@
                     </li> -->
                     <li><a routerLink="/contact"><i class="fa fa-phone"></i>&nbsp;Contact</a></li>
                     <li *ngIf="!curuser" class="but"><a routerLink="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;Login / SignUp</a></li>
-                    <li *ngIf="curuser" class="menu-has-children"><a routerLink=""><i class="fa fa-user-circle"></i>&nbsp; {{curuser}}</a>
-                        <ul>
-                            <div class="dropdown-header noti-title">
-                                <h6 class="text-overflow m-0">Welcome !</h6>
-                              </div>
+                    <li *ngIf="curuser" class="menu-has-children"><a routerLink="">
+                        <img *ngIf="loginid" src="http://localhost:4000/profile_{{loginid}}.jpg" alt="" class="zoom" style="border-radius: 1000px;height: 15px;width: 15px;">
+                        <img *ngIf="!loginid" src="assets/img/uimage.png" alt="" style="border-radius: 1000px;height: 15px;width: 15px;">
+                        <!-- <span *ngIf="!loginid"><i class="fa fa-user-circle"></i></span> -->
+                        &nbsp; {{curuser}}</a>
+                        
+                        <ul style="margin: 10px 0 0 -20px;"> 
+                            <div class="dropdown-header noti-title" style="cursor: context-menu;vertical-align: middle;glyph-orientation-horizontal: inherit;">
+                                <code class="text-overflow m-0" style="font-size:12.3px;">Welcome<code style="font-size: 15.3px;">!</code><code style="font-size: 13px;"> 🙏</code></code>
+                            </div>
                             <li><a routerLink="/profile"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span>My Profile</span></a></li>
                             <li><a routerLink="/dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp;&nbsp;<span>Dashdoard</span></a></li>
                             <li><a routerLink="/login" (click)="logout2()"><i class="fa fa-exchange" aria-hidden="true"></i>&nbsp;&nbsp;<span>Switch Accounts</span></a></li>

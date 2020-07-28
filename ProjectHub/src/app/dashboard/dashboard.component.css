@@ -8,8 +8,8 @@
 }
 
 .avatar {
-    width: 19px;
-    height: 19px;
+    width: 23px;
+    height: 23px;
     border-radius: 50%;
     vertical-align:text-bottom
   }
@@ -268,7 +268,57 @@ glow {
 
 /* //------------------------------------------// */
 
+/* ---------------profile not used------------- */
 
+.rc-ProfilePhotoUploader .image-selector-controls .image-selector-image.preview {
+  background-color: #42afd8;
+}
+
+.rc-ProfilePhotoUploader .image-selector-controls .image-selector-image {
+  width: 120px;
+  min-width: 120px;
+  height: 120px;
+  margin-right: 12px;
+}
+.vertical-box {
+  /* display: flexbox; */
+  /* display: box; */
+  display: flex;
+  box-orient: vertical;
+  /* flex-direction: column; */
+  flex-direction: column;
+}
+.align-items-absolute-center, .pagination-controls-container .box {
+  box-pack: center;
+  /* flex-pack: center; */
+  justify-content: center;
+  box-align: center;
+  /* flex-align: center; */
+  align-items: center;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+/* <style> */
+._ufjrdd {
+  display: inline-block;
+  vertical-align: middle;
+  color: rgb(54, 59, 66);
+  user-select: none;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+}
+._ufjrdd {
+  display: inline-block;
+  vertical-align: middle;
+  color: #363B42;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  /* transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; */
+  /* user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; */
+  user-select: none;
+}
 
 
 

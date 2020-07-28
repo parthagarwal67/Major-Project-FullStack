@@ -22,6 +22,10 @@ mail;
 comments;
 cts;
 userInputRatting;
+loginid;
+gender;
+len=0;
+
 
 avgrating;
 rating3: number;
@@ -38,6 +42,10 @@ public form: FormGroup;
     this.ds.getprojects().subscribe((d)=>{
       this.projects=d.resultData;
   })
+
+  this.loginid=localStorage.getItem('loginid');
+  this.gender=localStorage.getItem('gen');
+  // alert(this.projects)
   // this.route.queryParamMap.subscribe((d)=>{this.email=d.get('dd');})
 }
 
@@ -62,10 +70,9 @@ if(this.prodetail.ratings.length>0){
       var temp=this.prodetail.ratings.reduce((a,b)=>{
         return {ratings:a.ratings+b.ratings};
       })
-      var len=this.prodetail.ratings.length;
-      this.avgrating=temp.ratings/len;
+      this.len=this.prodetail.ratings.length;
+      this.avgrating=temp.ratings/this.len;
     }
-
       this.ssarr= this.prodetail.ssext.split(',');
     })
   }
@@ -81,7 +88,7 @@ projectcomments(b)
   var name=localStorage.getItem("name")
   var date=new Date();
   this.mail=localStorage.getItem("email")
-  this.ds.projectComments({_id:b,name:name,email:this.mail,comments:this.comments,date:date}).subscribe((d)=>{
+  this.ds.projectComments({_id:b,loginid:this.loginid,name:name,email:this.mail,comments:this.comments,date:date}).subscribe((d)=>{
     if(d.status=="ok")
   {
     alert("Comment Posted Successfully")
@@ -120,8 +127,8 @@ if(this.prodetail.ratings.length>0){
  var temp=this.prodetail.ratings.reduce((a,b)=>{
   return {ratings:a.ratings+b.ratings};
 })
-var len=this.prodetail.ratings.length;
-this.avgrating=temp.ratings/len;
+this.len=this.prodetail.ratings.length;
+this.avgrating=temp.ratings/this.len;
 }
 // this.star.nativeElement.style.fontsize='30px';
 // alert(this.ssarr)

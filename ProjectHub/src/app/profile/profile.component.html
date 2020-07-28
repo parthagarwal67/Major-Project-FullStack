@@ -1,55 +1,72 @@
-<div class="alert alert-success" style="text-align: center;">
+<div class="alert alert-success" style="text-align: center;cursor: context-menu;">
     <strong>Hi there!</strong> You are requested to do upload your profile picture for Authentication Purpose. Also we sincerely ensure the safety of your data !!!     <a href="https://salvagni.dev/react-profile-picture/" target="_blank" rel="nofollow" style="color: #40989c;">you can see it in action here.</a>
     <!-- <br><strong>Note *</strong> To adjust profile picture you can toggle on image.  -->
 </div>
 
+<div style="width: 10%;">
+    <ul>
+      <li class="zz"><a class="nav-link" (click)="goBack()" type="button" style="font-size: 17px;margin-left: 2rem;font-family: sans-serif;color: black;"><i class='fa fa-angle-left' style='font-size:18px'></i>&nbsp;<span>Back</span></a></li>
+      <!-- <li class="zz"><a class="nav-link" routerLink="/uploadproject" type="button" style="color: black; font-weight: 7rem;font-size: large;margin-left: 34rem;">Upload&nbsp;<i class='fa fa-angle-right' style='font-size:18px;'></i></a></li> -->
+    </ul>
+  </div>
+
 <form> 
 
-<div class="row" style="margin-left: 36.6rem;">
+<div class="row" style="margin-left: 36.6rem;width: 50%;">
     <div class="small-12 medium-2 large-2 columns">
+        <div id="info" style="display: none; position: absolute;top: 17%;left: 61.5%;width: 9%;transform: translate(-50%, -50%);font-size: 11.7px;font-family: sans-serif;">Maximum size of 1MB. JPG, GIF, or PNG.</div>
       <div class="circle">
         <!-- User Profile Image -->
-        <img [src]="croppedImage" style="border-radius: 1000px;height: 128px;width: 128px;">
+        <!-- <a href="http://localhost:4000/{{a._id}}_profile_1.{{a.profileext|elementFromString:',':0}}"> -->
+        <img id="image" src="http://localhost:4000/profile_{{loginid}}.jpg" alt="" class="" style="border-radius: 1000px;height: 150px;width: 150px;">
+        <img [src]="croppedImage" style="border-radius: 1000px;height: 150px;width: 150px;">
         <!-- http://cdn.cutestpaw.com/wp-content/uploads/2012/07/l-Wittle-puppy-yawning.jpg -->
- 
+      
         <!-- Default Image -->
         <!-- <i class="fa fa-user fa-5x"></i> -->
       </div>
       <div class="p-image">
        <a style="color: rgb(92, 87, 87);"><i class="fa fa-camera upload-button"></i></a> 
-         <input class="file-upload" type="file" accept="image/*" (change)="fileChangeEvent($event)"/>
+         <input class="file-upload" type="file" accept="image/*" [(ngModel)]="profile" name="profile" (change)="fileChangeEvent($event)"/>
       </div>
+    </div>
+
+
       <!--Creates the popup body-->
-<div class="popup-overlay">
+<!-- <div class="popup-overlay"> -->
     <!--Creates the popup content-->
-    <div class="popup-content">
+    <!-- <div class="popup-content"> -->
       <!-- <h2>Pop-Up</h2>
       <p> This is an example pop-up that you can make using jQuery.</p> -->
-    <div style="margin-left: 5rem;height: 228px;width: 228px;">
-      <image-cropper id="aa"
-      [imageChangedEvent]="imageChangedEvent"
-      [maintainAspectRatio]="true"
-      [aspectRatio]="4 / 3"
-      format="png"
-      (imageCropped)="imageCropped($event)"
-      (imageLoaded)="imageLoaded()"
-      (cropperReady)="cropperReady()"
-      (loadImageFailed)="loadImageFailed()"
-      style="width: 228px;height: 228px;">
-      </image-cropper>
-    </div>  
+    
       <!--popup's close button-->
-      <button class="close" style="border: none;margin-top: -57%;margin-right: 1rem;outline: none;">&times;</button>
+
+      <!-- <button class="close" style="border: none;margin-top: -57%;margin-right: 1rem;outline: none;">&times;</button>
     </div>
-</div>
+</div> -->
+
   <!--Content shown when popup is not displayed-->
   <!-- <h2>jQuery Pop-Up Example</h2> -->
-  <button class="open but" style="outline: thin;cursor: pointer;" (click)="toggle()"><i class="ti-pencil"></i>&nbsp;Edit</button>
-   </div>
- </div>
- 
+  <button class="but" style="outline: thin;cursor: pointer;" (click)="toggle()"><i class="ti-pencil"></i>&nbsp;Edit</button>
+  <button class="but" style="outline: thin;cursor: pointer;margin-left: 1rem;" id="tub">Remove</button>
 
- <div style="margin-top: rem;margin-bottom: 1rem; margin-left: auto;padding-left:2%;padding-top: 1.5%;padding-bottom: -1%; width: 40%;box-shadow: 10px 10px 5px grey;border-radius: 3%; background-color: #b7d6d7;text-align: center;margin-right: auto;">
+  <div id="aa" style="margin-left: 0rem;margin-top: 0rem; height: 128px;width: 128px;">
+    <image-cropper 
+    [imageChangedEvent]="imageChangedEvent"
+    [maintainAspectRatio]="true"
+    [aspectRatio]="4 / 3"
+    format="png"
+    (imageCropped)="imageCropped($event)"
+    (imageLoaded)="imageLoaded()"
+    (cropperReady)="cropperReady()"
+    (loadImageFailed)="loadImageFailed()"
+    style="width: 128px;height: 128px;">
+    </image-cropper>
+  </div>  
+
+</div>
+
+ <div style="margin-top: 1rem;margin-bottom: 1rem; margin-left: auto;padding-left:2%;padding-top: 1.5%;padding-bottom: -1%; width: 40%;box-shadow: 10px 10px 5px grey;border-radius: 3%; background-color: #b7d6d7;text-align: center;margin-right: auto;">
  
     <table style="margin-left: auto;margin-right: auto;width: 40vw;font-weight: bolder;">
         <tr>
@@ -57,32 +74,35 @@
             <th>Last Name</th>
         </tr>
         <tr>
-            <td><input type="text" name="fname" placeholder="Enter First Name" onfocus="this.placeholder=''" onblur="this.placeholder='Enter First Name'"></td>
-            <td><input type="text" name="lname" placeholder="Enter Last Name" onfocus="this.placeholder=''" onblur="this.placeholder='Enter Last Name'"></td>
+            <td class="in"><input id="a" type="text" [(ngModel)]="fname" name="fname" placeholder="Enter First Name" onfocus="this.placeholder=''" onblur="this.placeholder='Enter First Name'"><div class="edit"><i class="fa fa-pencil"></i></div></td>
+            <td class="in"><input id="b" type="text" [(ngModel)]="lname" name="lname" placeholder="Enter Last Name" onfocus="this.placeholder=''" onblur="this.placeholder='Enter Last Name'"><div class="edit"><i class="fa fa-pencil"></i></div></td>
         </tr><br>
         <tr>
             <th>Email</th>
         </tr>
         <tr>
-            <td colspan="2"><input style="width: 460px" type="email" id="email" name="email" placeholder="Enter Email Address" onfocus="this.placeholder=''" onblur="this.placeholder='Enter Email Address'" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></td>
+            <td colspan="2"><input style="width: 460px" type="email" id="email" name="email" value="{{mail}}" disabled></td>
         </tr><br>
         <tr>
             <th>Gender</th>
         </tr>
-        <tr>
-            <td><input style="margin-left: 4rem;" type="radio" name="gender" checked>&nbsp;Male</td> 
-            <td><input style="margin-left: 3.5rem;" type="radio" name="gender">&nbsp;Female</td> 
+        <tr> 
+            <td><input [checked]="gender=='male'" id="c" style="margin-left: 4rem;" type="radio" value="male" name="gender" (click)="myfun('male')">&nbsp;Male</td> 
+            <!-- <div class="edit1"><i class="fa fa-pencil"></i></div> -->
+            <td><input [checked]="gender=='female'" id="d" style="margin-left: 3.5rem;" type="radio" value="female" name="gender" (click)="myfun('female')">&nbsp;Female</td> 
         </tr><br>
         <tr>
             <th>Phone Number</th>
             <th>Pincode</th>
         </tr>
         <tr>
-            <td><input type="text" id="country_code" name="country_code" pattern="[+][0-9]{2}" placeholder="+91" onfocus="this.placeholder=''" onblur="this.placeholder='+'" style="width:2.3rem;"><input type="number" name="phone" pattern="[0-9]{10}" placeholder="Enter Number" onfocus="this.placeholder=''" onblur="this.placeholder='Enter Number'" style="width: 9.5rem;"></td>
-            <td><input type="number" name="pincode" pattern="[0-9]{6}" placeholder="Enter pin" onfocus="this.placeholder=''" onblur="this.placeholder='Enter pin'"></td>
+            <td class="in"><input type="text" id="country_code" [(ngModel)]="country_code" name="country_code" pattern="[+][0-9]{2}" placeholder="+91" onfocus="this.placeholder=''" onblur="this.placeholder='+'" style="width:2.3rem;">
+                <input id="e" type="number" [(ngModel)]="phone" name="phone" pattern="[0-9]{10}" placeholder="Enter Number" onfocus="this.placeholder=''" onblur="this.placeholder='Enter Number'" style="width: 9.5rem;" maxlength="10">
+                <div class="edit" style="margin-left:9.6rem;"><i class="fa fa-pencil"></i></div></td>
+            <td class="in"><input id="f" type="number" [(ngModel)]="pincode" name="pincode" pattern="[0-9]{6}" placeholder="Enter pin" onfocus="this.placeholder=''" onblur="this.placeholder='Enter pin'"><div class="edit" style="margin-left:9.6rem;"><i class="fa fa-pencil"></i></div></td>
         </tr><br>
     </table>
-    <button class="btn btn-primary" type="button" style="border-radius: 11px;font-weight: 500;background-color: #54acaf; font-size: larger; box-shadow: -5px -5px 5px grey; margin-bottom: 1rem;margin-left: -1.5rem;margin-right: auto;">save</button>
+    <button class="btn btn-primary" (click)="postData()" type="button" style="border-radius: 11px;font-weight: 500;background-color: #54acaf; font-size: larger; box-shadow: -5px -5px 5px grey; margin-bottom: 1rem;margin-left: -1.5rem;margin-right: auto;">save changes</button>
     <!-- <button class="btn btn-primary" type="button"  style="cursor: pointer;background-color: chartreuse;margin-bottom: 1rem;margin-left: -8.5rem;margin-right: auto;">click</button> -->
 </div>
 </form> 

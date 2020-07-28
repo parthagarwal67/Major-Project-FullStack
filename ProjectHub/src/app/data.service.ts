@@ -20,6 +20,10 @@ getprojects(  ):any
 {
 return this.http.get('http://localhost:4000/get-projects');
 }
+getprofile(  ):any
+{
+return this.http.get('http://localhost:4000/get-profile');
+}
 
 listAccount():any
 {
@@ -35,6 +39,11 @@ postDataWithImage( d ):any
  {
 return this.http.post('http://localhost:4000/data-with-file',d)
  }
+ postDataWithProfile( d ):any
+ {
+return this.http.post('http://localhost:4000/data-with-profile',d)
+ }
+
 projectRating( d ):any
 {
   return this.http.post('http://localhost:4000/project-rating',d);
@@ -46,5 +55,9 @@ projectComments( d ):any
 forgotpassword( d ):any
 {
   return this.http.post('http://localhost:4000/forgot-password',d);
+}
+profiledata( d ):any
+{
+  return this.http.post('http://localhost:4000/profile-data',d);
 }
 }

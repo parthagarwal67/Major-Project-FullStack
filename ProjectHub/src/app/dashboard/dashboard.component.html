@@ -1,28 +1,29 @@
 <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
-    <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="bg-light border-right" id="sidebar-wrapper" style="position: fixed;margin-top: 3.3rem;">
       <div class="sidebar-heading logo">  <a routerLink="/"><img src="assets/img/logo1.png" style="height: 50px;width: 60px;" alt="" title="" />&nbsp;<span style="color: white;font-weight:bolder;font-size:larger;">Projectize</span> </a> </div>
       <div class="dropdown-divider2"></div>
       <div class="list-group list-group-flush">
         <!-- <div class="dropdown-divider2"></div> -->
-        <a routerLink="/dashboard" class="list-group-item list-group-item-action bg-light"><i class="fa fa-book zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Dashboard</span></a>
+        <a routerLink="/dashboard" target="_top" class="list-group-item list-group-item-action bg-light" style="padding: 1.3rem;"><i class="fa fa-book zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Dashboard</span></a>
         <!-- <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a> -->
-        <a routerLink="/displayproject" class="list-group-item list-group-item-action bg-light"><i class="fa fa-eye zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>View Projects</span></a>
-        <a routerLink="/uploadproject" class="list-group-item list-group-item-action bg-light"><i class="ti-export zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Upload Projects</span></a>
-        <a routerLink="/profile" class="list-group-item list-group-item-action bg-light"><i class="fa fa-user-secret zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Profile</span></a>
-        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-bar-chart zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Status</span></a>
-        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-sellsy zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Explore</span></a>
-        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fa fa-podcast zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Podcast</span></a>
-        <a routerLink="/dashboard" class="list-group-item list-group-item-action bg-light menu-active"><i class="fa fa-bullhorn zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Announcements</span></a>
+        <a routerLink="/displayproject" class="list-group-item list-group-item-action bg-light" style="padding: 1.3rem;"><i class="fa fa-eye zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>View Projects</span></a>
+        <a routerLink="/uploadproject" class="list-group-item list-group-item-action bg-light" style="padding: 1.3rem;"><i class="fa fa-upload zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Upload Projects</span></a>
+        <a routerLink="/profile" class="list-group-item list-group-item-action bg-light" style="padding: 1.3rem;"><i class="fa fa-user-secret zoom" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span>Profile</span></a>
+        <a routerLink="/displayproject" class="list-group-item list-group-item-action bg-light" style="padding: 1.3rem;"><i class="fa fa-sellsy zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Explore</span></a>
+        <a routerLink="/dashboard" (click)="scroll()" class="list-group-item list-group-item-action bg-light" style="padding: 1.3rem;"><i class="fa fa-podcast zoom" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;<span>Podcast</span></a>
+        <a routerLink="/dashboard" (click)="scroll2()" target="_top" class="list-group-item list-group-item-action bg-light menu-active" style="padding: 1.3rem;"><i class="fa fa-bullhorn zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Announcements</span></a>
+        <a routerLink="/" class="list-group-item list-group-item-action bg-light" (click)="logout()" style="padding: 1.3rem;"><i class="fa fa-sign-out zoom" aria-hidden="true"></i>&nbsp;&nbsp;<span>Logout</span></a>
       </div>
     </div>
+    <!-- <div class="bg-light border-right" id="sidebar-wrapper" style="position: fixed;margin-top: 3.3rem;left: 0%;width: 240px;z-index: -1;background-color: rgb(4,17,64,15.075);"></div> -->
     <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" style="position: fixed;width: 100%;">
         <button class="btn btn-primary" id="menu-toggle"><i class="fa fa-bars zoom" aria-hidden="true" style="width: 20px;color: papayawhip;"></i></button>
 
         <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,9 +40,9 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-          <h2 style="padding-left: 70px;color: #d1c8ba;font-family:comic sans MS">Dashboard</h2>
+          <h2 style="padding-left: 120px;color: #d1c8ba;font-family:comic sans MS">Dashboard</h2>
          
-          <div class="input-wrap" #mm style="display: flex; align-items: center; justify-content: center; text-align: center; padding-left: 180px;">
+          <div class="input-wrap" #mm style="display: flex; align-items: center; justify-content: center; text-align: center; padding-left: 230px;">
             <form action="" class="form-box d-flex justify-content-between">
                 <input type="text" pattern="[^'\x22]+" id="search" placeholder="Search Anything...." class="form-control" name="username" (click)="myFunction()" style="border-style:dotted;width: 20rem; background-color: transparent;">&nbsp;
                 <button type="submit" class="btn search-btn" (click)="search()" style="background-color: transparent;color: papayawhip;"> <i class="fa fa-search zoom" aria-hidden="true" ></i></button>
@@ -49,30 +50,33 @@
           </div>
 
 
-          <ul class="navbar-nav ml-auto mt-2 mt-lg-0" style="padding-right:60px;">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0" style="margin-right: 0rem;font-size: 20px;width: 14rem;justify-content: center;">
             <li class="nav-item">
-              <a class="nav-link" routerLink="/"><i class="fa fa-home zoom" aria-hidden="true"></i> <span class="sr-only">(current)</span></a>
+              <a class="nav-link" routerLink="/" style="font-size:22px;"><i class="fa fa-home" aria-hidden="true"></i> <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink=""><i class="fa fa-bell zoom i" aria-hidden="true"></i></a>
+              <a class="nav-link" routerLink=""><i class="fa fa-bell i" aria-hidden="true"></i></a>
             </li>
             <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell" aria-hidden="true"></i></a>
             </li> -->
             <li class="nav-item">
-              <a class="nav-link" routerLink="/profile" >
+              <a class="nav-link" >
                 <!-- id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
                 <!-- <i class="fa fa-user-circle zoom" aria-hidden="true"></i> -->
-                <img src="assets/img/img_avatar.png" alt="Avatar" class="avatar zoom">
+                <i *ngIf="gender!='male' && gender!='female'" class="fa fa-cog fa-spin" aria-hidden="true"></i>
+                <img *ngIf="gender=='male'" src="assets/img/img_avatar.png" alt="Avatar" class="avatar" routerLink="/profile" style="outline: none;">
+                <img *ngIf="gender=='female'" src="assets/img/img_avatar2.png" alt="Avatar" class="avatar" routerLink="/profile" style="outline: none;">
+                <span *ngIf="fname" style="color: papayawhip;font-size: 16px;font-family: comic sans MS">&nbsp;&nbsp;{{fname}}</span>
               </a>
             </li>  
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" routerLink="" >  
-                <i class="fa fa-cog fa-spin zoom" aria-hidden="true"></i>
+                
                 <span class="sr-only">Saving. Hang tight!</span>
               </a>
-            </li>  
+            </li>   -->
 
               <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Action</a>
@@ -85,16 +89,23 @@
         </div>
       </nav>
 
-      <div class="container-fluid" style="margin-left: 2rem;">
-        <h2 class="mt-4" >Announcements&nbsp;<i class="fa fa-ravelry" aria-hidden="true"></i></h2>
+      <div class="container-fluid" style="margin-left: 15rem;margin-top: 5rem;">
+        <h2 id="ann" class="mt-4">Announcements&nbsp;<i class="fa fa-ravelry" aria-hidden="true"></i></h2>
 
         <!-- <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
         <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p> -->
-         <h3 class="mt-4 glow" (click)="goto()" style="font-family: cursive;margin-left: auto;margin-right: auto;cursor: pointer;">New Projects Added</h3>
-      
-
-         
-          
+         <h3 class="mt-4 glow" style="width: 24%;font-family: cursive;margin-left: 23rem;margin-right: auto;cursor: context-menu;">New Projects Added</h3>
+      </div>
+      <div class="container-fluid" style="margin-left: 15rem;" id="pod">
+         <h2 class="mt-4">Podcast&nbsp;<i class="fa fa-podcast" aria-hidden="true"></i></h2>
+<!-- <br><br><br><br>
+<div class="image-selector-image preview vertical-box align-items-absolute-center" style="background-color:#42afd8;width: 120px;height: 120px;border-radius: 50%;">
+  <svg class="_ufjrdd" viewBox="0 0 48 48" role="img" aria-labelledby="UserFilleded332206-9456-463b-f027-98ebaa136a36 UserFilleded332206-9456-463b-f027-98ebaa136a36Desc" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(255, 255, 255); height: 64px; width: 64px;">
+    <title id="UserFilleded332206-9456-463b-f027-98ebaa136a36">User Filled</title>
+    <path d="M33.5,10.4C33.7,5.1,29.2,1,24,1s-9.8,4.2-9.5,9.4c0.1,1.1,1.1,6.3,1.1,6.3c0.8,4.5,3.8,8.3,8.4,8.3s7.6-3.8,8.4-8.4C32.4,16.6,33.4,11.4,33.5,10.4z" role="presentation"></path>
+    <path d="M47,47H1l1.1-8.2c0.5-2.7,2.9-4.3,5.6-4.9L24,31l16.3,2.9c2.7,0.6,5.1,2.2,5.5,4.9L47,47z" role="presentation"></path>
+  </svg>
+</div> -->
 
          
       </div>

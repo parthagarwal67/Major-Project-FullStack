@@ -29,13 +29,15 @@ export class DashboardComponent implements OnInit {
 // ssext;
 // setproext;
 // coverext;
-
-
+gender;
+fname;
   constructor(private ds:DataService,private router:Router) {}
   
 
   ngOnInit(): void {
-   
+   this.gender=localStorage.getItem('gen');
+   this.fname=localStorage.getItem('fname');
+  //  alert(this.gender)
   }
 
 
@@ -115,11 +117,23 @@ search()
 {
   this.router.navigate(['/displayproject']);
 }
-
-goto()
-{
-  this.router.navigate(['/displayproject']);
-}
+logout()
+  {
+  localStorage.removeItem('name');
+  window.location.href="http://localhost:4200";
+  }
+scroll()
+  {
+    var elmnt = document.getElementById("pod");
+    elmnt.scrollIntoView();
+    location.reload()
+  }
+scroll2()
+  {
+    var elmnt = document.getElementById("ann");
+    elmnt.scrollIntoView();
+    location.reload()
+  }
 
   ngAfterViewInit()
 {

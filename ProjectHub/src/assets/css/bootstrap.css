@@ -41,14 +41,17 @@
 ::before {
     box-sizing: border-box
 }
-
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
 html {
     font-family: sans-serif;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-    -ms-overflow-style: scrollbar;
-    -webkit-tap-highlight-color: transparent
+    -ms-overflow-style: marquee;
+    -webkit-tap-highlight-color: transparent;
 }
 
 @-ms-viewport {
@@ -1145,7 +1148,7 @@ pre code {
         -ms-flex: 0 0 50%;
         flex: 0 0 50%;
         max-width: 50%;
-        height: 26rem;
+        /* height: 26rem; */
         border-radius: 6%;
     }
 

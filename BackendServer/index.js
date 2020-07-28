@@ -61,7 +61,73 @@ var storage = multer.diskStorage({
     }
 })
 
+
+var storage1 = multer.diskStorage({
+    destination: function(req,file,cb){
+        console.log("in destination");
+        cb(null,'uploads')
+    },
+    filename:function(req,file,cb){
+        console.log(file);
+        var ext = file.originalname.split('.').pop();
+        console.log(ext);
+        console.log(req.body._id);
+        cb(null,file.fieldname+"_"+req.body._id+"."+ext);
+        // if(!req.hasTextDataProcessed)
+        // {
+        //     var collection=connection.db('projectize').collection('profile');
+        //     collection.remove({email:req.body.email},(err,res)=>{
+        //      if(!err)
+        //      {
+        //         collection.insert(req.body,(err,r)=>{
+        //         if(!err)
+        //         {
+        //              console.log(r);
+        //             //  res.send({Status:"ok",resultData:r[0].gender})
+        //              var insertedId1=  r.insertedIds['0'];
+                    
+        //              console.log("inserted id is returned as->"+insertedId1)
+        //              req.hasTextDataProcessed = true;
+        //              req.insertedId1=insertedId1;
+        //              req.profileCtr = 1;
+        //             //  req.pptCtr = 1;
+        //             //  req.reportCtr = 1;
+        //             //  req.screenshotsCtr = 1;
+        //             //  req.setupprojectCtr = 1;
+        //             //  req.covervideoCtr = 1;
+        //              cb(null,req.insertedId1+"_"+file.fieldname+"_"+req[file.fieldname+'Ctr']++ +"."+ext);
+       
+                  
+        //         }
+        //         else
+        //         {
+        //             return null;
+        //         }
+        //     })
+        //      }
+        //      else
+        //      {
+        //        return null;
+        //      }
+
+        // })
+        // }
+        // else{
+
+        //     cb(null,req.insertedId1+"_"+file.fieldname+"_"+req[file.fieldname+'Ctr']++ +"."+ext);
+       
+        
+        // }
+
+
+    }
+})
+
+
+
+
 var upload=multer({storage:storage})
+var upload1=multer({storage:storage1})
 
 
 var app = express();
@@ -124,6 +190,7 @@ collection.find({email:req.body.email}).toArray((err,docs)=>{
 
 })
 
+
 app.post('/forgot-password',bodyParser.json(),(req,res)=>{
     console.log(req.body);
     var collection=connection.db('projectize').collection('accountholder');
@@ -141,6 +208,8 @@ app.post('/forgot-password',bodyParser.json(),(req,res)=>{
     })
   })
 
+
+
 app.get('/get-projects',(req,res)=>{
     // res.send(users);
  
@@ -157,11 +226,53 @@ app.get('/get-projects',(req,res)=>{
     })
   })
 
+
+  
+app.post('/profile-data',bodyParser.json(),(req,res)=>{
+    console.log(req.body)
+    var collection=connection.db('projectize').collection('accountholder');
+    collection.update({email:req.body.email},{$set:req.body},(err,r)=>{
+        if(!err)
+        {
+            res.send({Status:'updated'})
+        }
+        else
+        {
+            // collection.insert(req.body,(err,docs)=>{
+            //     if(!err)
+            //     {
+            //         res.send({Status:'ok'})
+            //     }
+            //     else
+            //     {
+                    res.send({Status:'failed'})
+                // }
+            // })
+        }
+    })
+})
+
+  app.get('/get-profile',(req,res)=>{
+    // res.send(users);
+ 
+    var collection=connection.db('projectize').collection('accountholder');
+    collection.find().toArray((err,docs)=>{
+        if(!err)
+        {
+            res.send({Status:"ok",resultData:docs});
+        }
+        else
+        {
+            res.send({Status:"failed",resultData:err});
+        }
+    })
+  })
+
 //   app.get('/list-accounts',(req,res)=>{
 //     // res.send(users);
  
 //     var collection=connection.db('projectize').collection('accountholder');
-//     collection.find({email:req.body.email}).toArray((err,docs)=>{
+//     collection.find().toArray((err,docs)=>{
 //         if(!err)
 //         {
 //             res.send({Status:"ok",resultData:docs[0].email});
@@ -228,7 +339,7 @@ app.post('/project-comments',bodyParser.json(),(req,res)=>{
     // collection.update({_id:ObjectId(req.body._id)},{$pull:{"comments":{"email":req.body.email}}},(err,r)=>{
     // if(!err)
     // {
-        collection.update({_id:ObjectId(req.body._id)},{$push:{"comments":{"name":req.body.name,"email":req.body.email,"comments":req.body.comments,"date":req.body.date}}},(err,docs)=>{
+        collection.update({_id:ObjectId(req.body._id)},{$push:{"comments":{"_id":req.body.loginid,"name":req.body.name,"email":req.body.email,"comments":req.body.comments,"date":req.body.date}}},(err,docs)=>{
         if(!err)
         {
             res.send({status:"ok",resultData:docs});
@@ -247,8 +358,6 @@ app.post('/project-comments',bodyParser.json(),(req,res)=>{
 })
 
 
-
-
 app.post('/login-account',bodyParser.json(),(req,res)=>{
     // console.log(req.body)
     var collection=connection.db('projectize').collection('accountholder');
@@ -256,7 +365,7 @@ app.post('/login-account',bodyParser.json(),(req,res)=>{
         if(!err && docs.length>0)
         // req.body.email==docs.email && req.body.password==docs.password
         {
-            res.send({Status:"ok",resultData:docs[0].name,resultMail:docs[0].email});
+            res.send({Status:"ok",resultData:docs[0].name,resultMail:docs[0].email,resultGender:docs[0].gender,loginid:docs[0]._id,resultFname:docs[0].fname});
         }
         else
         {
@@ -271,6 +380,11 @@ app.post('/data-with-file',
                             (req,res)=>{console.log("in last"); res.send({status:"ok"})   
                         });
 
+app.post('/data-with-profile',
+
+                            upload1.fields([{name:'profile',maxcount:1}]),
+                            (req,res)=>{console.log("in last"); res.send({status:"ok"})   
+                        });
 
 
 app.listen(4000,()=>{

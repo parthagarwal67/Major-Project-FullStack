@@ -153,7 +153,7 @@
                    <div class="AvgProjectRatings">
                     <app-star *ngIf="avgrating" [rating]="avgrating"></app-star>
                     <span *ngIf="!avgrating" style="cursor: context-menu;font-family: sans-serif;">Not Rated Yet</span>
-                    <span style="cursor: context-menu;font-family: sans-serif;">Average rating </span>
+                    <span style="cursor: context-menu;font-family: sans-serif;">{{len}} Reviews</span>
                    </div>
                 </div>
 
@@ -216,7 +216,7 @@
 
                                             
                         <div class="col-md-7" style="max-width: 100%;margin-top: 1rem;">
-                          <div style="width: fit-content;float: left;">
+                          <div style="width: fit-content;float: left;margin-top: 1rem;">
                             <div class="ucolor" style="cursor: context-menu;padding-left: 1rem; width: 9rem;font-family: sans-serif;">
                                 Rate this project: 
                             </div>
@@ -292,10 +292,18 @@
                               <td colspan="2">  -->
                                 <div id="cmts" style="width: 97%;margin-left: auto;margin-right: auto;margin-top: 2rem; margin-bottom: 2rem; box-shadow: 0px 0px 5px grey;padding-left: 1.8rem;padding-right: 1rem; padding-top: 1rem;padding-bottom: 1rem;" *ngFor="let c of prodetail.comments">
                                     <div style="height: 50px;width: 50px;margin-top: 1%;margin-left: 1%;float: left;">
-                                      <img src="assets/img/img_avatar.png" alt="" height="45px" width="45px" style="border-radius: 50%;">
+                                      <!-- <img src="http://localhost:4000/profile_{{c._id}}.jpg" alt="" height="45px" width="45px" style="border-radius: 50%;border-style: solid;border-width: 1px;padding: 2px; border-color: rgb(189, 184, 184);"> -->
+                                      
+                                      <object data="assets/img/img_avatar.png" type="image/png" height="45px" width="45px" style="border-radius: 50%;border-style: solid;border-width: 1px;padding: 2px; border-color: rgb(189, 184, 184);">
+                                        <img src="http://localhost:4000/profile_{{c._id}}.jpg" alt="Stack Overflow logo and icons and such" height="45px" width="45px" style="border-radius: 50%;border-style: solid;border-width: 1px;padding: 2px; border-color: rgb(189, 184, 184);">
+                                      </object>
+                                  
+                                      
+                                      <!-- <img *ngIf="gender=='male' && !loginid" src="assets/img/img_avatar.png" alt="" height="45px" width="45px" style="border-radius: 50%;border-style: solid;border-width: 1px;padding: 2px; border-color: rgb(189, 184, 184);">
+                                      <img *ngIf="gender=='female' && !loginid" src="assets/img/img_avatar2.png" alt="" height="45px" width="45px" style="border-radius: 50%;border-style: solid;border-width: 1px;padding: 2px; border-color: rgb(189, 184, 184);"> -->
                                     </div>
                                     <div style="height: 60px;width: 90%;margin-top: 0;margin-left: 2rem;margin-right: -1rem; padding-left: 2rem;padding-top: 0.2rem;">
-                                    <p style="color: #03a87c;text-transform: capitalize;">{{c.name}}</p> <p style="margin-top: -1rem;" class="gfont"> {{c.date|date}} </p>
+                                    <p style="color: #03a87c;text-transform: capitalize;">{{c.name}}</p> <p style="margin-top: -1rem;color: rgb(111, 111, 111);font-size: 13px;font-family: sans-serif;" class="">Published On {{c.date|date}} </p>
                                     </div>
                                     <div class="cfont" style="color: black;width: 98%;">
                                        {{c.comments}}

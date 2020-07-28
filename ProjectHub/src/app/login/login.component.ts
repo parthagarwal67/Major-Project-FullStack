@@ -61,7 +61,10 @@ login()
       console.log(d.resultData);
       localStorage.setItem("name",d.resultData);
       localStorage.setItem("email",d.resultMail);
-      this.router.navigate(['/dashboard'],{queryParams:{account:d.resultData}});
+      localStorage.setItem('gen',d.resultGender);
+      localStorage.setItem("loginid",d.loginid);
+      localStorage.setItem("fname",d.resultFname);
+      this.router.navigate(['/'],{queryParams:{account:d.resultData}});
     }
     else{
       alert("Invalid Account Entry.. Try Again!!");
