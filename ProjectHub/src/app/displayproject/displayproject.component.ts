@@ -25,6 +25,9 @@ userInputRatting;
 loginid;
 gender;
 len=0;
+clen=0;
+searchprojects; //value is undefined
+keyword;
 
 
 avgrating;
@@ -39,17 +42,40 @@ public form: FormGroup;
    }
 
   ngOnInit(): void {
-    this.ds.getprojects().subscribe((d)=>{
-      this.projects=d.resultData;
-  })
+    
 
   this.loginid=localStorage.getItem('loginid');
   this.gender=localStorage.getItem('gen');
-  // alert(this.projects)
-  // this.route.queryParamMap.subscribe((d)=>{this.email=d.get('dd');})
+  // alert(this.searchprojects)
+
+  
+
+  this.route.queryParamMap.subscribe((d)=>{
+    var keyword=d.get('searchedpro');
+  //  alert(keyword);
+   if(keyword!=null)
+   {
+    this.ds.searchprojects({key:keyword}).subscribe((d)=>{
+      // this.searchedpro=d.resultData;
+     this.projects=d.resultData;
+
+    //  alert(JSON.stringify(this.searchprojects))
+    })
+  }
+  else
+  {
+    this.ds.getprojects().subscribe((d)=>{
+      this.projects=d.resultData;
+      // alert(this.gender)
+  })
+  }
+  })
+  // alert(this.searchprojects)   //value is null
 }
 
 projectrating(rat,a)
+{
+if(this.loginid!=null)
 {
   this.userInputRatting=rat;
 // alert(rat);
@@ -82,8 +108,16 @@ if(this.prodetail.ratings.length>0){
   }
 })
 }
+else
+{
+  alert('Please Login First!!');
+  window.location.href="http://localhost:4200/login";
+}
+}
 
 projectcomments(b)
+{
+  if(this.loginid!=null)
 {
   var name=localStorage.getItem("name")
   var date=new Date();
@@ -98,7 +132,9 @@ projectcomments(b)
         return d._id==this.prodetail._id;
       })
       this.prodetail=tmp[0];
-
+      if(this.prodetail.comments.length>0){
+        this.clen=this.prodetail.comments.length;
+      }
   })
 // document.getElementById('comments')=='';
 location.reload();
@@ -110,10 +146,42 @@ location.reload();
   }
   })
 }
+else
+{
+  alert('Please Login First!!');
+  window.location.href="http://localhost:4200/login";
+}
+}
 
 
   goBack() {
     window.history.go(-1);
+  }
+  show(){
+    document.getElementById('search').value='';
+    this.ds.getprojects().subscribe((d)=>{
+      this.projects=d.resultData;
+      // alert(this.gender)
+  })
+  }
+  search(){
+    // document.getElementById('search').value='';
+    if(this.keyword!=null)
+    {
+     this.ds.searchprojects({key:this.keyword}).subscribe((d)=>{
+       // this.searchedpro=d.resultData;
+      this.projects=d.resultData;
+ 
+     //  alert(JSON.stringify(this.searchprojects))
+     })
+   }
+   else
+   {
+     this.ds.getprojects().subscribe((d)=>{
+       this.projects=d.resultData;
+       // alert(this.gender)
+   })
+   }
   }
 
   details(d)
@@ -129,6 +197,7 @@ if(this.prodetail.ratings.length>0){
 })
 this.len=this.prodetail.ratings.length;
 this.avgrating=temp.ratings/this.len;
+this.clen=this.prodetail.comments.length;
 }
 // this.star.nativeElement.style.fontsize='30px';
 // alert(this.ssarr)
@@ -183,6 +252,7 @@ this.avgrating=temp.ratings/this.len;
       console.log('New star rating: ' + this.value);
     });
 
+    $(document).load().scrollTop(0);
   //   $('a[href^="#"]').on('click', function(event) {
 
   //     var target = $(this.getAttribute('href'));

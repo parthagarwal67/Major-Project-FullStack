@@ -1,8 +1,3 @@
-/* *{
-  font-family: sans-serif;
-} */
-
-
 .zoom
 {
     transition: transform .2s;
@@ -19,12 +14,15 @@ ul{
 
 ul li{
     float: left;
-    width: 662px;
+    width: 150px;
     /* background-color: black; */
     color: black;
     height: 55px;
     line-height: 50px;
     /* text-align: center; */
+}
+.zz{
+  color: black;
 }
 .zz:hover{
     /* color: blue; */

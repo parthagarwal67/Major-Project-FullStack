@@ -11,6 +11,8 @@ import { UploadprojectComponent } from './uploadproject/uploadproject.component'
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { DashboardViewProjectsComponent } from './dashboard-view-projects/dashboard-view-projects.component';
+import { DashboardUpdateProjectsComponent } from './dashboard-update-projects/dashboard-update-projects.component';
 
 
 const routes: Routes = [
@@ -18,13 +20,18 @@ const routes: Routes = [
                                       children:[
                                            {path:'',component:HomeComponent},
                                            {path:'displayproject',component:DisplayprojectComponent},
-                                           {path:'uploadproject',component:UploadprojectComponent},
                                            {path:'about',component:AboutComponent},
                                            {path:'contact',component:ContactComponent}
                                           ]},
   {path:'login',component:LoginComponent},
   {path:'forgot-password',component:ForgotPasswordComponent},
-  {path:'dashboard',component:DashboardComponent},
+  {path:'dashboard',component:DashboardComponent,
+        children:[
+          {path:'profile',component:ProfileComponent},
+          {path:'uploadproject',component:UploadprojectComponent},
+          {path:'dashboardViewProjects',component:DashboardViewProjectsComponent},
+          {path:'dashboardUpdateProjects',component:DashboardUpdateProjectsComponent}
+        ]},
   {path:'profile',component:ProfileComponent},
   ];
 

@@ -1,6 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Directive, ElementRef, HostListener } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+// @Directive({
+//     selector:'img[appImgFallback]'
+// })
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -8,9 +11,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   @Input() curuser;
+  // @Input() appImgFallback:string;
   loginid;
   // name;
   constructor(private router:Router,private route:ActivatedRoute) { }
+
+
 
   ngOnInit(): void {
     // this.route.queryParamMap.subscribe((d)=>{this.name=d.get('account');})

@@ -28,9 +28,11 @@ export class UploadprojectComponent implements OnInit {
   coverext;
   ratings=new Array();
   comments=new Array();
+  loginid;
   constructor(private ds:DataService,private router:Router) { }
 
   ngOnInit(): void {
+    this.loginid=localStorage.getItem('loginid');
   }
 
   getZipfile(e)
@@ -71,6 +73,8 @@ export class UploadprojectComponent implements OnInit {
 
 postData()
 {
+//  if(this.loginid!=null) 
+//  {
   var technologies=this.tech.split(',').map((d)=>{
     return d.trim();
   })
@@ -80,6 +84,7 @@ postData()
   // console.log(technologies);
   // console.log(keyword);
   var form= new FormData();
+  form.set('loginid',this.loginid);
   form.set('title',this.title);
   form.set('desc',this.desc);
   form.set('tech',technologies);
@@ -113,6 +118,12 @@ postData()
    alert(JSON.stringify(d))
     location.reload();
   });
+// }
+// else
+// {
+//   alert('Please Login First');
+//   window.location.href="http://localhost:4200/login";
+// } 
 }
 
 ngAfterViewInit()

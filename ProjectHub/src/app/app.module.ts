@@ -21,6 +21,9 @@ import { FirstExtPipe } from './first-ext.pipe';
 import { ElementFromStringPipe } from './element-from-string.pipe';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { StarComponent } from './star/star.component';
+import { DashboardViewProjectsComponent } from './dashboard-view-projects/dashboard-view-projects.component';
+import { ImgFallbackDirective } from './img-fallback.directive';
+import { DashboardUpdateProjectsComponent } from './dashboard-update-projects/dashboard-update-projects.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { StarComponent } from './star/star.component';
     FirstExtPipe,
     ElementFromStringPipe,
     ForgotPasswordComponent,
-    StarComponent
+    StarComponent,
+    DashboardViewProjectsComponent,
+    ImgFallbackDirective,
+    DashboardUpdateProjectsComponent
   ],
   imports: [
     BrowserModule,

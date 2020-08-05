@@ -1,3 +1,6 @@
-/* ::-webkit-scrollbar {
-    display: none;
-} */
+.c{
+    color: #777777;
+}
+.c:hover{
+    color: white;
+}

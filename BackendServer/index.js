@@ -72,7 +72,7 @@ var storage1 = multer.diskStorage({
         var ext = file.originalname.split('.').pop();
         console.log(ext);
         console.log(req.body._id);
-        cb(null,file.fieldname+"_"+req.body._id+"."+ext);
+        cb(null,file.fieldname+"_"+req.body._id+"."+"jpg");
         // if(!req.hasTextDataProcessed)
         // {
         //     var collection=connection.db('projectize').collection('profile');
@@ -123,11 +123,63 @@ var storage1 = multer.diskStorage({
     }
 })
 
+var storage2 = multer.diskStorage({
+    destination: function(req,file,cb){
+        console.log("in destination");
+        cb(null,'uploads')
+    },
+    filename:function(req,file,cb){
+        console.log(file);
+        var ext = file.originalname.split('.').pop();
+        console.log(ext);
+
+
+        if(!req.hasTextDataProcessed)
+        {
+            var collection=connection.db('projectize').collection('projects');
+            collection.update({_id:ObjectId(req.body._id)},{$set:req.body},(err,r)=>{
+                if(!err)
+                {
+                    console.log(r);
+              var insertedId=  r.insertedIds['0'];
+                    
+                      console.log("inserted id is returned as->"+insertedId)
+                      req.hasTextDataProcessed = true;
+                     req.insertedId=insertedId;
+                     req.zipfileCtr = 1;
+                     req.pptCtr = 1;
+                     req.reportCtr = 1;
+                     req.screenshotsCtr = 1;
+                     req.setupprojectCtr = 1;
+                     req.covervideoCtr = 1;
+                     cb(null,req.insertedId+"_"+file.fieldname+"_"+req[file.fieldname+'Ctr']++ +"."+ext);
+       
+                  
+                }
+                else
+                {
+                    return null;
+                }
+            })
+
+        }
+        else{
+
+            cb(null,req.insertedId+"_"+file.fieldname+"_"+req[file.fieldname+'Ctr']++ +"."+ext);
+       
+        
+        }
+
+
+    }
+})
+
 
 
 
 var upload=multer({storage:storage})
 var upload1=multer({storage:storage1})
+var upload2=multer({storage:storage2})
 
 
 var app = express();
@@ -209,6 +261,24 @@ app.post('/forgot-password',bodyParser.json(),(req,res)=>{
   })
 
 
+  app.post('/get-searched-projects',bodyParser.json(),(req,res)=>{
+    // res.send(users);
+    console.log(req.body.key)
+    var collection=connection.db('projectize').collection('projects');
+    collection.find({$text:{$search:req.body.key}}).toArray((err,docs)=>{
+        if(!err)
+        {
+            console.log(docs)
+            res.send({Status:"ok",resultData:docs});
+            
+        }
+        else
+        {
+            console.log(err)
+            res.send({Status:"failed",resultData:err});
+        }
+    })
+  })
 
 app.get('/get-projects',(req,res)=>{
     // res.send(users);
@@ -226,6 +296,26 @@ app.get('/get-projects',(req,res)=>{
     })
   })
 
+app.post('/update-projects-data',bodyParser.json(),(req,res)=>{
+    console.log(req.body)
+    console.log(req.body._id)
+    var collection=connection.db('projectize').collection('projects');
+    // {title:req.body.title,desc:req.body.desc,tech:req.body.tech,key:req.body.key}
+    collection.updateOne({_id:ObjectId(req.body._id)},{$set:{title:req.body.title,desc:req.body.desc,tech:req.body.tech,key:req.body.key}},(err,r)=>{
+        if(!err)
+        {
+            console.log(r)
+            res.send({Status:'updated'})
+            
+           
+        }
+        else
+        {
+            console.log(err)
+            res.send({Status:'failed'})
+        }
+    })
+})
 
   
 app.post('/profile-data',bodyParser.json(),(req,res)=>{
@@ -379,6 +469,12 @@ app.post('/data-with-file',
                             upload.fields([{name:'zipfile',maxcount:1},{name:'ppt',maxcount:1},{name:'report',maxcount:1},{name:'screenshots',maxcount:8},{name:'setupproject',maxcount:1},{name:'covervideo',maxcount:1}]),
                             (req,res)=>{console.log("in last"); res.send({status:"ok"})   
                         });
+
+app.post('/project-file',
+
+                        upload2.fields([{name:'zipfile',maxcount:1},{name:'ppt',maxcount:1},{name:'report',maxcount:1},{name:'screenshots',maxcount:8},{name:'setupproject',maxcount:1},{name:'covervideo',maxcount:1}]),
+                        (req,res)=>{console.log("in last"); res.send({status:"ok"})   
+                    });                        
 
 app.post('/data-with-profile',
 

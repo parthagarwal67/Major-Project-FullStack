@@ -1,0 +1,407 @@
+.zoom
+{
+    transition: transform .2s;
+}
+.zoom:hover
+{
+    transform: scale(1.3) ;
+}
+
+ul{
+    list-style: none;
+    margin-top: 1rem;
+}
+
+ul li{
+    float: left;
+    width: 662px;
+    /* background-color: black; */
+    color: black;
+    height: 55px;
+    line-height: 50px;
+    /* text-align: center; */
+}
+.zz:hover{
+    /* color: blue; */
+    color: rgba(9, 33, 36, 0.705);
+}
+
+.bb{
+  background-color: darkcyan;
+}
+.bb:hover{
+  background-color: rgb(73, 206, 206);
+}
+.ucolor{
+  color: #000;
+}
+.ufont{
+  font-family: sans-serif;
+  letter-spacing: 1;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: capitalize;
+  color: darkgrey;
+}
+.ufont:hover{
+  color: grey;
+}
+.ufont2{
+  font-family: sans-serif;
+  letter-spacing: 1;
+  font-weight: 600;
+  font-style: normal;
+  /* text-transform: capitalize; */
+  color: darkgrey;
+  cursor: context-menu;
+}
+.ufont2:hover{
+  color: grey;
+}
+.gfont{
+  font-family: sans-serif;
+  letter-spacing: 1;
+  font-weight: 400;
+  font-style: normal;
+  /* text-transform: capitalize; */
+  color: grey;
+}
+.cfont{
+    font-size: 14px;
+    font-family:sans-serif;
+    
+}
+.btt{
+  outline: none;
+  opacity: 0.8;
+  scroll-behavior: smooth;
+}
+.btt:hover{
+  opacity: 1;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  .column2 {
+    float: left;
+    /* overflow: hidden; */
+    width: 33.33%;
+    /* width: 100%; */
+    /* padding-top: 5px; */
+  }
+
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+/* .tt:hover{
+    /* color: blue; 
+    color: rgba(16, 196, 219, 0.705);
+} */
+
+/* ------------------ngx star rating starts--------- */
+.cont {
+  width: 100%;
+  max-width: 262px;
+  text-align: center;
+  margin: auto auto;
+  /* display: inline-block; */
+  padding: 2px 0;
+  background: transparent;
+  color: black;
+  border-radius: 5px;
+  /* border: thin solid #444; */
+  border: none;
+  overflow: hidden;
+  height: 40px;
+}
+
+.cont2 {
+  width: 100%;
+  max-width: 150px;
+  text-align: center;
+  margin: -0.7rem 0;
+  /* margin-right: 4rem; */
+  /* display: inline-block; */
+  padding: 6px 0;
+  background: transparent;
+  color: black;
+  border-radius: 5px;
+  /* border: thin solid #444; */
+  border: none;
+  overflow: hidden;
+  height: 50px;
+}
+
+div.stars {
+  width: 152px;
+  display: inline-block;
+  /* height: 23px; */
+  font-size: 30px;
+}
+.star{
+  font-size: 30px;
+}
+
+/* *[_ngcontent-qjb-c55]
+{margin:0;padding:0;font-family:roboto}body[_ngcontent-qjb-c55]{background:#000}.cont[_ngcontent-qjb-c55]{width:93%;max-width:350px;text-align:center;margin:4% auto;padding:30px 0;background:#111;color:#eee;border-radius:5px;border:thin solid #444;overflow:hidden}hr[_ngcontent-qjb-c55]{margin:20px;border:none;border-bottom:thin solid rgba(255,255,255,.1)}div.title[_ngcontent-qjb-c55]{font-size:2em}h1[_ngcontent-qjb-c55]   span[_ngcontent-qjb-c55]{font-weight:300;color:#fd4}div.stars[_ngcontent-qjb-c55]{width:270px;display:inline-block}input.star[_ngcontent-qjb-c55]{display:none}label.star[_ngcontent-qjb-c55]{float:right;padding:10px;font-size:30px;color:#444;transition:.2s}input.star[_ngcontent-qjb-c55]:checked ~ label.star[_ngcontent-qjb-c55]:before{content:"";color:#fd4;transition:.25s}input.star-5[_ngcontent-qjb-c55]:checked ~ label.star[_ngcontent-qjb-c55]:before{color:#fe7;text-shadow:0 0 20px #952}input.star-1[_ngcontent-qjb-c55]:checked ~ label.star[_ngcontent-qjb-c55]:before{color:#f62}label.star[_ngcontent-qjb-c55]:hover{-webkit-transform:rotate(-15deg) scale(1.3);transform:rotate(-15deg) scale(1.3)}label.star[_ngcontent-qjb-c55]:before{content:"";font-family:FontAwesome}
+
+.glyphicon.glyphicon-star, .glyphicon.glyphicon-star-empty {
+  font-size: 30px;
+} */
+
+/* ------------------ngx star rating ends--------- */
+
+.alert {
+    font-family: sans-serif;
+    padding: 15px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    /* width: 100%; */
+}
+
+.alert-success {
+    color: #2e682f;
+    background-color: #d0e0c9;
+    border-color: #d6e9c6;
+    cursor: context-menu;
+}
+
+/*------------------comments starts-----------------*/
+
+.responsesStream-editor {
+  margin-top: 5px;
+  padding: 0 20px;
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.03);
+  box-shadow: 0 1px 4px rgba(0,0,0,.03);
+}
+.cardChromeless {
+  background: #fff;
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  border: 1px solid rgba(0,0,0,.09);
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  height: 100px;
+}
+.u-paddingRight20 {
+  padding-right: 20px!important;
+}
+.u-paddingLeft20 {
+  padding-left: 20px!important;
+}
+.u-marginBottom20 {
+  margin-bottom: 20px!important;
+}
+/* .postArticle.postArticle--short:not(.postArticle--letter) {
+  padding-top: 5px;
+  padding-bottom: 0;
+}
+.postArticle {
+  position: relative;
+}
+.postArticle:after, .postArticle:before {
+  display: table;
+  content: " ";
+}
+.u-paddingTop5 {
+  padding-top: 5px!important;
+}
+.u-marginBottom15 {
+  margin-bottom: 15px!important;
+}
+a, button, input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a {
+  background-color: transparent;
+}
+.postArticle--short .postArticle-content {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.postArticle--short .postArticle-content {
+  cursor: pointer;
+}
+.postArticle-content, .postArticle-content:focus {
+  outline: 0;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+.postArticle-content {
+  position: relative;
+  margin-bottom: 0;
+}
+.postArticle-content:after, .postArticle-content:before {
+  display: table;
+  content: " ";
+} */
+
+
+/*------------------comments ends-----------------*/
+
+
+
+/* ---------------popup starts---------------- */
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  /* The actual popup */
+  .popup .popuptext {
+    visibility: hidden;
+    width: 260px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+  }
+  
+  /* Popup arrow */
+  .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  /* Toggle this class - hide and show the popup */
+  .popup .show {
+    visibility: visible;
+    animation: fadeIn 1s;
+  }
+  
+  /* Add animation (fade in the popup) */
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+  /* ---------------popup ends---------------- */
+
+
+
+  /* ---------------star starts---------------- */
+
+  .rating {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    font-size: 50px;
+  }
+  
+  .rating label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  .rating label:last-child {
+    position: static;
+  }
+  
+  .rating label:nth-child(1) {
+    z-index: 5;
+  }
+  
+  .rating label:nth-child(2) {
+    z-index: 4;
+  }
+  
+  .rating label:nth-child(3) {
+    z-index: 3;
+  }
+  
+  .rating label:nth-child(4) {
+    z-index: 2;
+  }
+  
+  .rating label:nth-child(5) {
+    z-index: 1;
+  }
+  
+  .rating label input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+  
+  .rating label .icon {
+    float: left;
+    color: transparent;
+    /* border-radius: 2%; */
+  }
+  
+  .rating label:last-child .icon {
+    color: #000;
+  }
+  
+  .rating:not(:hover) label input:checked ~ .icon,
+  .rating:hover label:hover input ~ .icon {
+    /* color: #09f; */
+    color: #fd4;
+  }
+  
+  .rating label input:focus:not(:checked) ~ .icon:last-child {
+    color: #000;
+    text-shadow: 0 0 5px #fd4;
+  }
+
+  /* ---------------star ends---------------- */
+
+
+  .projectHeader{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .projectTitle{
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+  }
+  .AvgProjectRatings{
+    float: right;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+  }

@@ -1,10 +1,14 @@
 .zoom
 {
     transition: transform .2s;
+    opacity: 1;
 }
 .zoom:hover
 {
-    transform: scale(1.5); ;
+    transform: scale(1.5);
+}
+.ucolor{
+  color: #000;
 }
 
 .tooltip_wrap {

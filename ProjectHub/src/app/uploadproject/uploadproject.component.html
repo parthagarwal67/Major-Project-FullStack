@@ -1,43 +1,4 @@
-<section class="home-banner-area relative" style="height: 100px;background: rgba(4, 70, 87, 3.705);">   
-    <!-- rgba(9, 33, 36, 1.705) -->
-    <div class="container">
-        <div class="row fullscreen d-flex align-items-center justify-content-center">
-            <!-- <div class="banner-content col-lg-8 col-md-12">
-               <br><br> <h1 class="wow fadeIn" data-wow-duration="4s"> We Rank the Best Projects <br> on the Web</h1>
-                <p class="text-white">
-                    In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space
-                    telescope.
-                </p>
-
-                <div class="input-wrap">
-                    <form #cc="ngForm" class="form-box d-flex justify-content-between">
-                        <input type="text" id="ss" placeholder="Search Project" class="form-control" [(ngModel)]="keyword" name="keyword" required>
-                        <button *ngIf="cc.valid" type="submit" class="btn search-btn" (click)="search()">Search</button>
-                    </form>
-                </div>
-                <h4 class="text-white">Top technologies</h4>
-
-                <div class="courses pt-20">
-                    <a href="/" data-wow-duration="1s" data-wow-delay=".3s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Ruby on Rails</a>
-                    <a href="/" data-wow-duration="1s" data-wow-delay=".6s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Python</a>
-                    <a href="/" data-wow-duration="1s" data-wow-delay=".9s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Marketing</a>
-                    <a href="/" data-wow-duration="1s" data-wow-delay="1.2s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">UI/UX Design</a>
-                    <a href="/" data-wow-duration="1s" data-wow-delay="1.5s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Android</a>
-                    <a href="/" data-wow-duration="1s" data-wow-delay="1.8s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Data Science</a>
-                    <a href="/" data-wow-duration="1s" data-wow-delay="2.1s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Cryptocurrency</a>
-                    <a href="/" data-wow-duration="1s" data-wow-delay="2.4s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Javascript</a>
-                    <a href="/" data-wow-duration="1s" data-wow-delay="2.7s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Html / CSS</a>
-                </div>
-            </div> -->
-        </div>
-    </div>
-    <!-- <div class="rocket-img">
-        <img src="assets/img/rocket.png" alt="">
-    </div> -->
-</section>
-
-<div class="container-fluid" style="margin-top: 3rem;margin-left: 16rem;width: 63%;margin-bottom: 3rem;box-shadow: 0px 0px 5px;padding-top: 1.5rem;
-">
+<div class="container-fluid" style="margin:0 auto;width: 90%;box-shadow: 0px 0px 65px lightgrey;padding: 2rem 3.5rem;height: auto;">
     <div class="row"> 
       <div class="col-md-7">
     <!-- <h2 class="mt-4">Dashboard</h2>
@@ -47,7 +8,7 @@
     <form #f="ngForm">
       <table>
         <tr>
-          <td>Title</td>
+          <td class="ucolor">Title</td>
           <td><input type="text" #n="ngModel" [(ngModel)]="title" name="title" style="width: 15rem;"></td>
         </tr>
         <tr>
@@ -59,13 +20,13 @@
           <td></td>
         </tr>
         <tr>
-          <td>Description</td>
+          <td class="ucolor">Description</td>
           <td><textarea type="text" #n="ngModel" [(ngModel)]="desc" name="desc" style="height: 80px; width: 15rem;" minlength="100" maxlength="500"></textarea> </td>
         </tr>
         <tr>
-          <td>Technologies Used</td>
+          <td class="ucolor">Technologies Used</td>
           <td><input type="text" #n="ngModel" [(ngModel)]="tech" name="tech" style="width: 15rem;">&nbsp;&nbsp;
-             <a class="test" data-toggle="tooltip" data-placement="right" title="Technologies used in the project should be written here seperated with commas ( , ). For Ex: if your project is on Full Stack Development the technologies used must be written like this -> javascript,html,css, etc.."> <i class="fa fa-info-circle"></i></a>
+             <a class="test" style="color: inherit;" data-toggle="tooltip" data-placement="right" title="Technologies used in the project should be written here seperated with commas ( , ). For Ex: if your project is on Full Stack Development the technologies used must be written like this -> javascript,html,css, etc.."> <i class="fa fa-info-circle"></i></a>
           </td>
         </tr>
         <tr>
@@ -73,35 +34,37 @@
           <td></td>
         </tr>
         <tr>
-          <td>Keywords</td>
+          <td class="ucolor">Keywords</td>
           <td><input type="text" #n="ngModel" [(ngModel)]="key" name="key" style="width: 15rem;">&nbsp;&nbsp;
-            <a class="test" data-toggle="tooltip" data-placement="right" title="Keywords should be written here seperated with commas ( , ). It is used to advertise your project to users with any of these keywords."> <i class="fa fa-info-circle"></i></a>
+            <a class="test" style="color: inherit;" data-toggle="tooltip" data-placement="right" title="Keywords should be written here seperated with commas ( , ). It is used to advertise your project to users with any of these keywords."> <i class="fa fa-info-circle"></i></a>
           </td>
         </tr> <br>
         <tr>
-          <td><label>Upload your file In Zip Code</label></td>
-          <td><label>Upload your ppt file</label></td>
-          <td><label>Upload Your Report File </label></td>
+          <th><label>Upload your file In Zip Code</label></th>
+          <th><label>Upload your ppt file</label></th>
+          <th><label>Upload Your Report File </label></th>
         </tr>
         <tr>
-         <td><input type="file" name="zipfile" (change)="getZipfile($event)"></td>
-         <td><input type="file" name="ppt" (change)="getPpt($event)"></td>
-         <td><input type="file" name="report" (change)="getReport($event)"></td>
+         <td class="ucolor"><input type="file" name="zipfile" (change)="getZipfile($event)"></td>
+         <td class="ucolor"><input type="file" name="ppt" (change)="getPpt($event)"></td>
+         <td class="ucolor"><input type="file" name="report" (change)="getReport($event)"></td>
         </tr>
          <br>
         <tr>
-          <td><label>Screenshots</label></td>
-          <td><label>How To Setup Project</label></td>
-          <td><label>Cover Video</label></td>
+          <th><label>Screenshots</label></th>
+          <th><label>How To Setup Project</label></th>
+          <th><label>Cover Video</label></th>
         </tr>
         <tr>
-          <td><input type="file" multiple [(ngModel)]="screenshots" name="screenshots" (change)="getScreenshots($event)"></td>
-          <td><input type="file" name="setupproject" (change)="getSetupproject($event)"></td>
-          <td><input type="file" name="covervideo" (change)="getCovervideo($event)"></td>
+          <td class="ucolor"><input type="file" multiple [(ngModel)]="screenshots" name="screenshots" (change)="getScreenshots($event)"></td>
+          <td class="ucolor"><input type="file" name="setupproject" (change)="getSetupproject($event)"></td>
+          <td class="ucolor"><input type="file" name="covervideo" (change)="getCovervideo($event)"></td>
          </tr>
       </table><br>
-      <button style="margin-left: 10rem;border-radius: 10%;background-color: rgba(22, 32, 88, 0.425);" class="button btn zoom" routerLink="/displayproject">Display</button>&nbsp;&nbsp;
-      <button style="margin-left: 14rem;border-radius: 10%;background-color: rgba(22, 32, 88, 0.425);" class="button btn zoom" (click)="postData()">Upload</button>
+      <button style="margin-left: 25rem;border-radius: 10%;background-color: rgba(22, 32, 88, 0.425);cursor: pointer;" class="button" (click)="postData()">Upload</button>
+      <!-- &nbsp;&nbsp;
+      <button style="margin-left: 18rem;border-radius: 10%;background-color: rgba(22, 32, 88, 0.425);cursor: pointer;" class="button" >Upload</button> -->
+     
       <!-- <input type="text" #n="ngModel" [(ngModel)]="name" name="name"> <br>
       <input type="file" value="Choose" name="profile" (change)="getProfile($event)"><br>
       <input type="file" multiple name="gallery" (change)="getGallery($event)"> <br>

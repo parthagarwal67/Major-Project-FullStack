@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { DataService } from '../data.service';
 
 declare var $:any;
 declare var jQuery:any;
@@ -15,20 +16,28 @@ declare var WOW:any;
 export class HomeComponent implements OnInit {
 name;
 keyword;
-  constructor(private route:ActivatedRoute,private router:Router) { }
+// searchedpro; //value is undefined
+// loginid;
+  constructor(private route:ActivatedRoute,private router:Router,private ds:DataService) { }
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe((d)=>{this.name=d.get('account');})
+    // this.loginid=localStorage.getItem('loginid')
+    // alert(this.searchedpro)
   }
 search()
 {
-    this.router.navigate(['/displayproject']);
+  this.router.navigate(['/displayproject'],{queryParams:{searchedpro:this.keyword}});    
+}
+searchpro(a)
+{
+  this.router.navigate(['/displayproject'],{queryParams:{searchedpro:a}}); 
 }
 
 
 ngAfterViewInit()
 {
-
+  $(document).load().scrollTop(0);
   
   var window_width = $(window).width(),
   window_height = window.innerHeight,

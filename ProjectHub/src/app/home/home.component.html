@@ -19,15 +19,15 @@
                 <h4 class="text-white">Top technologies</h4>
 
                 <div class="courses pt-20">
-                    <a routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay=".3s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Ruby on Rails</a>
-                    <a routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay=".6s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Python</a>
-                    <a routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay=".9s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Marketing</a>
-                    <a routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay="1.2s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">UI/UX Design</a>
-                    <a routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay="1.5s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Android</a>
-                    <a routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay="1.8s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Data Science</a>
-                    <a routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay="2.1s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Cryptocurrency</a>
-                    <a routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay="2.4s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Javascript</a>
-                    <a routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay="2.7s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Html / CSS</a>
+                    <a (click)="searchpro('Ruby on Rails')" target="_top" data-wow-duration="1s" data-wow-delay=".3s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Ruby on Rails</a>
+                    <a (click)="searchpro('Python')" target="_top" data-wow-duration="1s" data-wow-delay=".6s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Python</a>
+                    <a (click)="searchpro('Marketing')" target="_top" data-wow-duration="1s" data-wow-delay=".9s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Marketing</a>
+                    <a (click)="searchpro('UI/UX Design')" target="_top" data-wow-duration="1s" data-wow-delay="1.2s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">UI/UX Design</a>
+                    <a (click)="searchpro('Android')" target="_top" data-wow-duration="1s" data-wow-delay="1.5s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Android</a>
+                    <a (click)="searchpro('Data Science')" target="_top" data-wow-duration="1s" data-wow-delay="1.8s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Data Science</a>
+                    <a (click)="searchpro('Cryptocurrency')" target="_top" data-wow-duration="1s" data-wow-delay="2.1s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Cryptocurrency</a>
+                    <a (click)="searchpro('Javascript')" target="_top" data-wow-duration="1s" data-wow-delay="2.4s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Javascript</a>
+                    <a (click)="searchpro('Html / CSS')" target="_top" data-wow-duration="1s" data-wow-delay="2.7s" class="primary-btn transparent mr-10 mb-10 wow fadeInDown">Html / CSS</a>
                 </div>
             </div>
         </div>
@@ -87,88 +87,88 @@
                 <div class="courses-right">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-12">
-                            <ul class="courses-list">
+                            <ul class="courses-list c">
                                 <li>
-                                    <a class="wow fadeInLeft" routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay=".1s">
+                                    <a class="wow fadeInLeft" (click)="searchpro('Development')" target="_top" data-wow-duration="1s" data-wow-delay=".1s">
                                         <i class="fa fa-book"></i> Development
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="wow fadeInLeft" routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay=".3s">
+                                    <a class="wow fadeInLeft" (click)="searchpro('IT & Software')" target="_top" data-wow-duration="1s" data-wow-delay=".3s">
                                         <i class="fa fa-book"></i> IT & Software
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="wow fadeInLeft" routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <a class="wow fadeInLeft" (click)="searchpro('Photography')" target="_top" data-wow-duration="1s" data-wow-delay=".5s">
                                         <i class="fa fa-book"></i> Photography
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="wow fadeInLeft" routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay=".7s">
+                                    <a class="wow fadeInLeft" (click)="searchpro('Language')" target="_top" data-wow-duration="1s" data-wow-delay=".7s">
                                         <i class="fa fa-book"></i> Language
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="wow fadeInLeft" routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay=".9s">
+                                    <a class="wow fadeInLeft" (click)="searchpro('Life Science')" target="_top" data-wow-duration="1s" data-wow-delay=".9s">
                                         <i class="fa fa-book"></i> Life Science
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="wow fadeInLeft" routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay="1.1s">
+                                    <a class="wow fadeInLeft" (click)="searchpro('Business')" target="_top" data-wow-duration="1s" data-wow-delay="1.1s">
                                         <i class="fa fa-book"></i> Business
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="wow fadeInLeft" routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay="1.3s">
+                                    <a class="wow fadeInLeft" (click)="searchpro('Social Science')" target="_top" data-wow-duration="1s" data-wow-delay="1.3s">
                                         <i class="fa fa-book"></i> Social Science
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="wow fadeInLeft" routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay="1.6s">
+                                    <a class="wow fadeInLeft" (click)="searchpro('MEAN Stack')" target="_top" data-wow-duration="1s" data-wow-delay="1.6s">
                                         <i class="fa fa-book"></i> MEAN Stack
                                     </a>
                                 </li>
                             </ul>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12">
-                            <ul class="courses-list">
+                            <ul class="courses-list c">
                                 <li>
-                                    <a class="wow fadeInRight" routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay="1.6s">
+                                    <a class="wow fadeInRight" (click)="searchpro('MERN Stack')" target="_top" data-wow-duration="1s" data-wow-delay="1.6s">
                                         <i class="fa fa-book"></i> MERN Stack
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="wow fadeInRight" routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay="1.3s">
+                                    <a class="wow fadeInRight" (click)="searchpro('Data Science')" target="_top" data-wow-duration="1s" data-wow-delay="1.3s">
                                         <i class="fa fa-book"></i> Data Science
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="wow fadeInRight" routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay="1.1s">
+                                    <a class="wow fadeInRight" (click)="searchpro('Design')" target="_top" data-wow-duration="1s" data-wow-delay="1.1s">
                                         <i class="fa fa-book"></i> Design
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="wow fadeInRight" routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay=".9s">
+                                    <a class="wow fadeInRight" (click)="searchpro('Training')" target="_top" data-wow-duration="1s" data-wow-delay=".9s">
                                         <i class="fa fa-book"></i> Training
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="wow fadeInRight" routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay=".7s">
+                                    <a class="wow fadeInRight" (click)="searchpro('Humanities')" target="_top" data-wow-duration="1s" data-wow-delay=".7s">
                                         <i class="fa fa-book"></i> Humanities
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="wow fadeInRight" routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <a class="wow fadeInRight" (click)="searchpro('Marketing')" target="_top" data-wow-duration="1s" data-wow-delay=".5s">
                                         <i class="fa fa-book"></i> Marketing
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="wow fadeInRight" routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay=".3s">
+                                    <a class="wow fadeInRight" (click)="searchpro('Economics')" target="_top" data-wow-duration="1s" data-wow-delay=".3s">
                                         <i class="fa fa-book"></i> Economics
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="wow fadeInRight" routerLink="/displayproject" target="_top" data-wow-duration="1s" data-wow-delay=".1s">
+                                    <a class="wow fadeInRight" (click)="searchpro('Personal Dev')" target="_top" data-wow-duration="1s" data-wow-delay=".1s">
                                         <i class="fa fa-book"></i> Personal Dev
                                     </a>
                                 </li>

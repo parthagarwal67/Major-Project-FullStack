@@ -1,0 +1,316 @@
+<section class="feature-area" style="margin-top:-8rem;">
+    <div class="container" style="padding-bottom: 7rem;">
+        <!-- <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title text-center">
+                    <h1>Projects You Might Need</h1>
+                    <p>
+                      “A good plan can help with risk analysis, but it will never guarantee the smooth running of the project.”
+                    </p>
+                    <p>
+                      “Operations keeps the lights on, strategy provides a light at the end of the tunnel, but project management is the train engine that moves the organization forward.”
+                    </p>
+                </div>
+            </div>
+        </div> -->
+        <div class="feature-inner row">
+            <div class="col-lg-4 col-md-6a" (click)="details(a)" data-toggle="modal" data-target="#myModal" *ngFor="let a of projects1">
+                <div class="feature-item" style="word-break: break-word;">
+                  <a href="http://localhost:4000/{{a._id}}_screenshots_1.{{a.ssext|elementFromString:',':0}}" download> <img src="http://localhost:4000/{{a._id}}_screenshots_1.{{a.ssext|elementFromString:',':0}}" alt="" class="zoom" style=" width: 100%;height:9rem;" download></a> 
+                    <h4 style="text-transform: capitalize; cursor: context-menu;">{{a.title}}</h4>
+                    <div class="wow fadeIn ufont2" data-wow-duration="1s" data-wow-delay=".1s">
+                        <p style="visibility: visible;">
+                           {{a.desc}}
+                        </p>
+                        <!-- <p>
+                          technologies like {{a.tech}}, etc.. are used.
+                        </p> -->
+                        <!-- <div class="AvgProjectRatings" style="float: left;width:100%;height: 40px;font-size: 14px;margin-left: auto;margin-right: auto;justify-content: center;align-items: center;">
+                          <app-star *ngIf="avgrating" [rating]="avgrating" style="float: left;height: 40px;width: 100%;margin-left: auto;margin-right: auto;"></app-star>
+                          <span *ngIf="!avgrating" style="cursor: context-menu;">Not Rated Yet</span>
+                         // <span style="cursor: context-menu;">Average rating </span>
+                        </div> -->
+                        
+                    </div>
+                    <!-- <button class="primary-btn" routerLink="/dashboard/dashboardUpdateProjects" (click)="update(projects1._id)" style="margin-top: 1rem;margin-bottom: -2rem;left: 4.7rem;width: 35%;padding-left: 0px;padding-right: 0px;"><i class="ti-pencil-alt" style="font-size: 11px;color: white;"></i>&nbsp;Edit</button> -->
+                </div>
+                <!-- <button class="primary-btn" (click)="update()" style="margin-top: -1rem;margin-bottom: rem;left: 4.7rem;width: 35%;padding-left: 0px;padding-right: 0px;"><i class="ti-pencil-alt" style="font-size: 11px;color: white;"></i>&nbsp;Edit</button> -->
+            </div>
+            
+
+            <div *ngIf="prodetail" class="modal fade" id="myModal" role="dialog" style="height: 100vh;">
+              <div class="modal-dialog modal-lg" >
+              
+                <!-- Modal content-->
+                <div class="modal-content" style="width: 750px;overflow-y: scroll;height: 91vh;">
+                  <div class="modal-header" style="height: 80px;margin-top: -0.8rem;">
+                   
+                  <div class="projectHeader">
+                   <div class="projectTitle">
+                     <h4 class="modal-title" style="margin-top: 0.1rem;cursor: context-menu;font-family: sans-serif;">{{prodetail.title}}</h4>
+                     <span  class="ufont" style="cursor: context-menu;">( {{prodetail.tech}} )</span>
+                   </div>
+                   <a class="test btt" (click)="update(prodetail._id)" style="color: inherit;height: 15px;margin: auto 0;cursor: pointer;" data-toggle="tooltip" data-placement="right" title="Click To Edit this project">
+                    <i class="ti-pencil-alt" style="font-size: 15px;"></i>
+                   </a>
+
+                   <div class="AvgProjectRatings">
+                    <app-star *ngIf="avgrating" [rating]="avgrating"></app-star>
+                    <span *ngIf="!avgrating" style="cursor: context-menu;font-family: sans-serif;">Not Rated Yet</span>
+                    <span style="cursor: context-menu;font-family: sans-serif;">{{len}} Reviews</span>
+                   </div>
+                  </div>
+
+                    
+                    <button type="button" #close class="close" data-dismiss="modal" style="outline: none;">&times;</button>
+                  
+                  
+                  
+                  </div>
+                  <div class="modal-body">
+                    
+                    <div class="row"> 
+                      
+                      <div class="col-md-8" style="box-sizing: border-box;">
+                        
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 250px;overflow: hidden;margin-top:15px;">
+                       
+                          <div class="carousel-inner" style="height: 250px;">
+                              <ng-container *ngFor="let p of ssarr;let i=index">
+                              <div [ngClass]="{'carousel-item':true, 'active':i==0}" >                           
+                                <a href="http://localhost:4000/{{prodetail._id}}_screenshots_{{i+1}}.{{p}}">
+                                <img src="http://localhost:4000/{{prodetail._id}}_screenshots_{{i+1}}.{{p}}" alt="Slide" class="d-block w-100" style="height: 250px;">
+                                </a> 
+                              </div>
+                              </ng-container>
+                          
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </div>
+                       
+                      </div>
+                      <div class="col-md-4" style="padding-left: 30px;padding-right: 30px; margin-top: 25px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; box-sizing: border-box;height: 230px;">
+                        <a href="http://localhost:4000/{{prodetail._id}}_zipfile_1.{{prodetail.zipext}}" style="outline: none;margin-top: 0rem;" download><i class="ti-download"></i>&nbsp;Code Zip</a>
+                        <a href="http://localhost:4000/{{prodetail._id}}_ppt_1.{{prodetail.pptext}}" style="margin-top: 1rem;" download><i class="ti-download"></i>&nbsp;Presentation PPT</a>
+                        <a href="http://localhost:4000/{{prodetail._id}}_report_1.{{prodetail.reportext}}" style="margin-top: 1rem;" download><i class="ti-download"></i>&nbsp;Project Report</a>
+                        <a href="http://localhost:4000/{{prodetail._id}}_setupproject_1.{{prodetail.setproext}}" style="margin-top: 1rem;" download><i class="ti-download"></i>&nbsp;Setup Instructions</a>
+                        <a href="http://localhost:4000/{{prodetail._id}}_covervideo_1.{{prodetail.coverext}}" style="margin-top: 1rem;" download>&nbsp;<i class="fa fa-play"></i>&nbsp;Presentation Video</a>
+                        <button style="margin-left:15px;color:white; background-color: cornflowerblue;margin-top: 1rem;" id="butt" class="btn btn-primary btt" (click)="scroll()">&nbsp;Read Feedback</button> 
+
+                      </div>
+                      <div class="col-md-12" style="box-sizing: border-box;">
+                       
+                        <p style="cursor: context-menu; padding-top: 15px; font-family: sans-serif; font-size: 14px;" >{{prodetail.desc}}
+                        </p>
+                      
+                       </div>
+                      <div class="dropdown-divider" style="margin-top: 15px;width: 96%;margin-left: auto;margin-right: auto;"></div>
+                      
+                      <div class="alert alert-success fadeIn" style="width:100%; margin-left: 15px; margin-right: 15px; box-sizing: border-box; text-align: center;visibility: visible;animation-duration: 4s;animation-name: fadeIn;" data-wow-duration="4s">
+                        “Don't forget to give your feedback below by rating and your valuable comment” <br>
+                        <strong>Thank You !</strong> 
+                      </div>
+
+                                            
+                        <div class="col-md-7" style="max-width: 100%;margin-top: 1rem;">
+                          <div style="width: fit-content;float: left;margin-top: 1rem;">
+                            <div class="ucolor" style="cursor: context-menu;padding-left: 1rem; width: 9rem;font-family: sans-serif;">
+                                Rate this project: 
+                            </div>
+                            <div class="stars" style="cursor: pointer;">
+                            <app-star [rating]="userInputRatting" (ratingChange) ="projectrating($event,prodetail._id)" ></app-star>
+                            </div>
+                          </div>
+                               
+                                  
+ 
+                        
+                                <!-- <textarea name="comments" id="comments" cols="87.5" rows="4" placeholder="Place Your Comments Here" onfocus="this.placeholder=''" onblur="this.placeholder='Place Your Comments Here'"></textarea>
+                                <br><button style="margin-left: 41.5rem;margin-top:-4%;"><i class="ti-arrow-right"></i></button>
+                              -->
+
+                                <!-- <div class="input-wrap">
+                                  <form #cc="ngForm" class="form-box d-flex justify-content-between"> -->
+                                    <textarea name="comments" id="comments" style="margin-left: 2rem; padding:15px;font-family: sans-serif;width: 72%;background-color: rgb(239, 246, 253); border-radius: 6px;outline: none;resize:none;word-wrap:off; border: none;box-shadow: 0 1px 8px rgba(0,0,0,.03);" rows="3" [(ngModel)]="comments" placeholder="Place Your Comments Here" onfocus="this.placeholder=''" onblur="this.placeholder='Place Your Comments Here'"></textarea> 
+                                    <div style="margin-left: 30rem;margin-top: 1.5rem;width: 110px;">{{clen}} comments</div>
+                                    <button type="submit" style="margin-left: 37rem;margin-top: -3rem;font-family: sans-serif;" class="btn btn-default bb" (click)="projectcomments(prodetail._id)">
+                                        <span class="svgIcon svgIcon--response svgIcon--29px">
+                                            <svg class="svgIcon-use" width="29" height="29">
+                                                <path d="M21.27 20.058c1.89-1.826 2.754-4.17 2.754-6.674C24.024 8.21 19.67 4 14.1 4 8.53 4 4 8.21 4 13.384c0 5.175 4.53 9.385 10.1 9.385 1.007 0 2-.14 2.95-.41.285.25.592.49.918.7 1.306.87 2.716 1.31 4.19 1.31.276-.01.494-.14.6-.36a.625.625 0 0 0-.052-.65c-.61-.84-1.042-1.71-1.282-2.58a5.417 5.417 0 0 1-.154-.75zm-3.85 1.324l-.083-.28-.388.12a9.72 9.72 0 0 1-2.85.424c-4.96 0-8.99-3.706-8.99-8.262 0-4.556 4.03-8.263 8.99-8.263 4.95 0 8.77 3.71 8.77 8.27 0 2.25-.75 4.35-2.5 5.92l-.24.21v.32c0 .07 0 .19.02.37.03.29.1.6.19.92.19.7.49 1.4.89 2.08-.93-.14-1.83-.49-2.67-1.06-.34-.22-.88-.48-1.16-.74z">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                        <span class="button-label  js-buttonLabel">post</span></button>
+                                  <!-- </form>
+                                </div> -->
+
+                                <!-- <div class="responsesStream-editor cardChromeless u-marginBottom20 u-paddingLeft20 u-paddingRight20 js-responsesStreamEditor">
+                                  <div class="u-paddingTop30 u-paddingBottom30 u-paddingLeft0 u-paddingRight0 u-borderBottomLightest js-responsesLoggedOutPrompt" style="margin-top: 2rem;">
+                                    <button style="border: none;cursor: pointer;" (click)="mkedit()" class="button button--chromeless is-touchIconBlackPulse u-baseColor--buttonNormal button--withIcon button--withSvgIcon button--withIconAndLabel button--loggedOutPrompt" data-action="sign-up-prompt" data-redirect="https://medium.com/p/c3cb01b90037/responses/show" data-skip-onboarding="true" data-action-source="logged_out_response_prompt--------------------------respond_box">
+                                      <span class="svgIcon svgIcon--response svgIcon--29px">
+                                        <svg class="svgIcon-use" width="29" height="29">
+                                          <path d="M21.27 20.058c1.89-1.826 2.754-4.17 2.754-6.674C24.024 8.21 19.67 4 14.1 4 8.53 4 4 8.21 4 13.384c0 5.175 4.53 9.385 10.1 9.385 1.007 0 2-.14 2.95-.41.285.25.592.49.918.7 1.306.87 2.716 1.31 4.19 1.31.276-.01.494-.14.6-.36a.625.625 0 0 0-.052-.65c-.61-.84-1.042-1.71-1.282-2.58a5.417 5.417 0 0 1-.154-.75zm-3.85 1.324l-.083-.28-.388.12a9.72 9.72 0 0 1-2.85.424c-4.96 0-8.99-3.706-8.99-8.262 0-4.556 4.03-8.263 8.99-8.263 4.95 0 8.77 3.71 8.77 8.27 0 2.25-.75 4.35-2.5 5.92l-.24.21v.32c0 .07 0 .19.02.37.03.29.1.6.19.92.19.7.49 1.4.89 2.08-.93-.14-1.83-.49-2.67-1.06-.34-.22-.88-.48-1.16-.74z">
+                                          </path>
+                                        </svg>
+                                      </span>
+                                      <span class="button-label  js-buttonLabel">Write a response…</span>
+                                    </button>
+                                  </div>
+                                </div> -->
+
+
+                              
+                            <!-- <tr rowspan="2">
+                              <td colspan="2"> 
+
+                                <div class="" style=" width: 100%;margin-bottom: 0.5%; border: 1px thin grey;box-shadow: 5px 5px 8px grey;">
+                                <div class="input-wrap" *ngFor="let c of prodetail.comments" style="margin-bottom: 1%;">
+                                 
+                                        <div style="margin-left: 1%; height: 60px;width: 60px;margin-top: 1%;float: left;">
+                                            <img src="assets/img/img_avatar.png" alt="Avatar" height="60px" width="60px">
+                                        </div>
+                                        <div style="margin-right: 1%;margin-left: 1%;float: bottom; font-family: medium-content-sans-serif-font,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;letter-spacing: 0;font-weight: 400;font-style: normal; padding-left: 1%;padding-top: 0.5%; height: 60px;width: 90%;margin-top: 1%;">
+                                          <p style="color: #03a87c;"> {{c.name}}</p>  <p style="margin-top: -1rem;color: rgba(0,0,0,.54);"> <time datetime="2020-07-10T23:47:20.683Z">10 July 2020</time></p>
+                                        </div>
+
+                                        <div class="" style="width: 90%;display: block; height: 100px;margin-top: 1%;margin-left: 1%;margin-right: 1%; border: 1px solid black;">
+                                              {{c.comments}}
+                                        </div>
+                                        
+
+
+                                        <div style="width: 100%;display: block; height: 40px;margin-top: 1%;margin-left: 1%;border: 1px solid black;">
+                                            kddjkajd
+                                        </div>
+                                   
+                                  
+                                </div>
+                                
+                              </div>
+
+                              </td>
+                            </tr> -->
+                            <!-- <tr rowspan="2">
+                              <td colspan="2">  -->
+                                <div id="cmts" style="width: 97%;margin-left: auto;margin-right: auto;margin-top: 2rem; margin-bottom: 2rem; box-shadow: 0px 0px 5px grey;padding-left: 1.8rem;padding-right: 1rem; padding-top: 1rem;padding-bottom: 1rem;" *ngFor="let c of prodetail.comments">
+                                    <div style="height: 50px;width: 50px;margin-top: 1%;margin-left: 1%;float: left;">
+                                      <!-- <img src="http://localhost:4000/profile_{{c._id}}.jpg" alt="" height="45px" width="45px" style="border-radius: 50%;border-style: solid;border-width: 1px;padding: 2px; border-color: rgb(189, 184, 184);"> -->
+                                      
+                                      <!-- <object data="assets/img/uimage.png" type="image/png" height="45px" width="45px" style="border-radius: 50%;border-style: solid;border-width: 1px;padding: 2px; border-color: rgb(189, 184, 184);">
+                                        <img src="http://localhost:4000/profile_{{c._id}}.jpg" alt="Stack Overflow logo and icons and such" height="45px" width="45px" style="border-radius: 50%;border-style: solid;border-width: 1px;padding: 2px; border-color: rgb(189, 184, 184);">
+                                      </object> -->
+                                      <!-- {{c._id}}
+                                      {{loginid}} -->
+                                      <img src="http://localhost:4000/profile_{{c._id}}.jpg" alt="" height="45px" width="45px" style="border-radius: 50%;border-style: solid;border-width: 1px;padding: 2px; border-color: rgb(189, 184, 184);" appImgFallback="assets/img/uimage.png">
+                                      
+                                      <!-- <img *ngIf="gender=='male' && !loginid" src="assets/img/img_avatar.png" alt="" height="45px" width="45px" style="border-radius: 50%;border-style: solid;border-width: 1px;padding: 2px; border-color: rgb(189, 184, 184);">
+                                      <img *ngIf="gender=='female' && !loginid" src="assets/img/img_avatar2.png" alt="" height="45px" width="45px" style="border-radius: 50%;border-style: solid;border-width: 1px;padding: 2px; border-color: rgb(189, 184, 184);"> -->
+                                    </div>
+                                    <div style="height: 60px;width: 90%;margin-top: 0;margin-left: 2rem;margin-right: -1rem; padding-left: 2rem;padding-top: 0.2rem;">
+                                    <p style="color: #03a87c;text-transform: capitalize;">{{c.name}}</p> <p style="margin-top: -1rem;color: rgb(111, 111, 111);font-size: 13px;font-family: sans-serif;" class="">Published On {{c.date|date}} </p>
+                                    </div>
+                                    <div class="cfont" style="color: black;width: 98%;">
+                                       {{c.comments}}
+                                    </div>
+                                    <!-- <div style="width: 98%;height: 60px;margin-top: 1%;margin-left: auto;margin-right: auto;padding-top: 1rem;">
+                                     
+                                      <span class="button-defaultState" style="cursor: pointer;"><span class="svgIcon svgIcon--clap svgIcon--25px is-flushLeft"><svg class="svgIcon-use" width="25" height="25"><g fill-rule="evenodd"><path d="M11.739 0l.761 2.966L13.261 0z"></path><path d="M14.815 3.776l1.84-2.551-1.43-.471z"></path><path d="M8.378 1.224l1.84 2.551L9.81.753z"></path><path d="M20.382 21.622c-1.04 1.04-2.115 1.507-3.166 1.608.168-.14.332-.29.492-.45 2.885-2.886 3.456-5.982 1.69-9.211l-1.101-1.937-.955-2.02c-.315-.676-.235-1.185.245-1.556a.836.836 0 0 1 .66-.16c.342.056.66.28.879.605l2.856 5.023c1.179 1.962 1.379 5.119-1.6 8.098m-13.29-.528l-5.02-5.02a1 1 0 0 1 .707-1.701c.255 0 .512.098.707.292l2.607 2.607a.442.442 0 0 0 .624-.624L4.11 14.04l-1.75-1.75a.998.998 0 1 1 1.41-1.413l4.154 4.156a.44.44 0 0 0 .624 0 .44.44 0 0 0 0-.624l-4.152-4.153-1.172-1.171a.998.998 0 0 1 0-1.41 1.018 1.018 0 0 1 1.41 0l1.172 1.17 4.153 4.152a.437.437 0 0 0 .624 0 .442.442 0 0 0 0-.624L6.43 8.222a.988.988 0 0 1-.291-.705.99.99 0 0 1 .29-.706 1 1 0 0 1 1.412 0l6.992 6.993a.443.443 0 0 0 .71-.501l-1.35-2.856c-.315-.676-.235-1.185.246-1.557a.85.85 0 0 1 .66-.16c.342.056.659.28.879.606L18.628 14c1.573 2.876 1.067 5.545-1.544 8.156-1.396 1.397-3.144 1.966-5.063 1.652-1.713-.286-3.463-1.248-4.928-2.714zM10.99 5.976l2.562 2.562c-.497.607-.563 1.414-.155 2.284l.265.562-4.257-4.257a.98.98 0 0 1-.117-.445c0-.267.104-.517.292-.706a1.023 1.023 0 0 1 1.41 0zm8.887 2.06c-.375-.557-.902-.916-1.486-1.011a1.738 1.738 0 0 0-1.342.332c-.376.29-.61.656-.712 1.065a2.1 2.1 0 0 0-1.095-.562 1.776 1.776 0 0 0-.992.128l-2.636-2.636a1.883 1.883 0 0 0-2.658 0 1.862 1.862 0 0 0-.478.847 1.886 1.886 0 0 0-2.671-.012 1.867 1.867 0 0 0-.503.909c-.754-.754-1.992-.754-2.703-.044a1.881 1.881 0 0 0 0 2.658c-.288.12-.605.288-.864.547a1.884 1.884 0 0 0 0 2.659l.624.622a1.879 1.879 0 0 0-.91 3.16l5.019 5.02c1.595 1.594 3.515 2.645 5.408 2.959a7.16 7.16 0 0 0 1.173.098c1.026 0 1.997-.24 2.892-.7.279.04.555.065.828.065 1.53 0 2.969-.628 4.236-1.894 3.338-3.338 3.083-6.928 1.738-9.166l-2.868-5.043z"></path></g></svg></span></span>
+                                      <span class="js-add-to-bookmarks" style="float: right;cursor: pointer;"><span class="svgIcon svgIcon--bookmark svgIcon--25px is-flushRight"><svg class="svgIcon-use" width="25" height="25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></span></span>
+
+                                    </div> -->
+                                </div>
+                              <!-- </td>
+                            </tr>
+                          </table>   -->
+                        </div>  
+                      </div>  
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-info btn-lg" style="height: 45px;" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+
+
+            <!-- <div class="col-lg-4 col-md-6a">
+                <div class="feature-item">
+                  <img src="http://localhost:4000/{{a._id}}_screenshots_1.{{a.ssext}}" alt="" class="zoom" style=" width: 13rem;height:6rem;padding-left: 3rem;">
+                    <h4>{{a.title}}</h4>
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+                      <p>
+                        {{a.desc}}
+                     </p>
+                     <p>
+                       technologies like {{a.tech}}, etc.. are used.
+                     </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6a">
+                <div class="feature-item">
+                  <img src="http://localhost:4000/{{a._id}}_screenshots_1.{{a.ssext}}" alt="" class="zoom" style=" width: 13rem;height:6rem;padding-left: 3rem;">
+                    <h4>{{a.title}}</h4>
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                      <p>
+                        {{a.desc}}
+                     </p>
+                     <p>
+                       technologies like {{a.tech}}, etc.. are used.
+                     </p>
+                    </div>
+                </div>
+            </div><br>
+            <div class="col-lg-4 col-md-6a">
+                <div class="feature-item">
+                  <img src="http://localhost:4000/{{a._id}}_screenshots_1.{{a.ssext}}" alt="" class="zoom" style=" width: 13rem;height:6rem;padding-left: 3rem;">
+                    <h4>{{a.title}}</h4>
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+                      <p>
+                        {{a.desc}}
+                     </p>
+                     <p>
+                       technologies like {{a.tech}}, etc.. are used.
+                     </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6a">
+                <div class="feature-item">
+                  <img src="http://localhost:4000/{{a._id}}_screenshots_1.{{a.ssext}}" alt="" class="zoom" style=" width: 13rem;height:6rem;padding-left: 3rem;">
+                    <h4>{{a.title}}</h4>
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+                      <p>
+                        {{a.desc}}
+                     </p>
+                     <p>
+                       technologies like {{a.tech}}, etc.. are used.
+                     </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6a">
+                <div class="feature-item">
+                  <img src="http://localhost:4000/{{a._id}}_screenshots_1.{{a.ssext}}" alt="" class="zoom" style=" width: 13rem;height:6rem;padding-left: 3rem;">
+                    <h4>{{a.title}}</h4>
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                      <p>
+                        {{a.desc}}
+                     </p>
+                     <p>
+                       technologies like {{a.tech}}, etc.. are used.
+                     </p>
+                    </div>
+                </div>
+            </div>-->
+        </div> 
+    </div>
+</section>

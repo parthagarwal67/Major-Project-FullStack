@@ -26,6 +26,7 @@ export class ProfileComponent implements OnInit {
   loginid;
   imageChangedEvent: any = '';
   croppedImage: any = '';
+  currentdate=new Date();
   constructor(private ds:DataService,private router:Router) { }
 
   ngOnInit(): void {
@@ -46,10 +47,11 @@ export class ProfileComponent implements OnInit {
       this.pincode=pro[0].pincode;
       // alert(JSON.stringify(pro))
     })
+    
   }
 
   fileChangeEvent(event: any): void {
-    document.getElementById('info').style.display='block';
+    // document.getElementById('info').style.display='block';
     this.imageChangedEvent = event;
     this.profile=event.target.files[0];
     this.profileext=this.profile.name.split('.').pop();
@@ -124,6 +126,7 @@ toggle() {
 
     this.ds.postDataWithProfile(form).subscribe((d)=>{
       alert("Profile Photo Updated !!")
+      this.currentdate=new Date();
       //  location.reload();
   //      alert(JSON.stringify(d.resultData))
   //      if(d.Status=='ok')

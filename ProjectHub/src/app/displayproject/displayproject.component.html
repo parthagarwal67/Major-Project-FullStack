@@ -95,16 +95,29 @@
 
   <div style="width: 100%;">
     <ul>
-      <li class="zz"><a class="nav-link" (click)="goBack()" type="button" style="font-weight: 7rem;font-size: large;margin-left: 2rem;"><i class='fa fa-angle-left' style='font-size:18px'></i>&nbsp;<span>Back</span></a></li>
-      <li class="zz"><a class="nav-link" routerLink="/uploadproject" type="button" style="color: black; font-weight: 7rem;font-size: large;margin-left: 34rem;">Upload&nbsp;<i class='fa fa-angle-right' style='font-size:18px;'></i></a></li>
+      <li><a class="nav-link" (click)="goBack()" type="button" style="font-weight: 7rem;font-size: large;margin-left: 2rem;"><i class='fa fa-angle-left' style='font-size:18px;color: rgba(9, 33, 36, 0.705);'></i>&nbsp;<span class="zz">Back</span></a></li>
+      <!-- <li class="zz"><a class="nav-link" routerLink="/uploadproject" type="button" style="color: black; font-weight: 7rem;font-size: large;margin-left: 34rem;">Upload&nbsp;<i class='fa fa-angle-right' style='font-size:18px;'></i></a></li> -->
     </ul>
+
+     <!-- ------search bar------   -->
+          <div class="input-wrap" style="float: right;align-items: center; justify-content: center; text-align: center;width: 37.7rem;margin-left: 38rem;margin-right: 4rem;margin-top: -2rem;transform: translate(-50%, -50%);">
+            <form class="form-box d-flex justify-content-between">
+                <input type="text" id="search" pattern="[^'\x22]+" placeholder="Search Any Project...." onfocus="this.placeholder=''" onblur="this.placeholder='Search Any Project....'" class="form-control" [(ngModel)]="keyword" name="keyword" style="outline: none;border-radius: 5px 0 0 5px;border: 3px solid #00B4CC;border-right: none; width: 35rem; background-color: transparent;">
+                <button type="submit" class="btn search-btn" style="border: 1px solid #00B4CC;background: #00B4CC;text-align: center;color: #fff;border-left: none;height: 38px;width: 45px;border-radius: 0 5px 5px 0;" (click)="search()"> <i class="fa fa-search zoom" aria-hidden="true" ></i></button>
+            </form>
+          </div>
+
+ 
+     <!-- -----------show all projects button------------      -->
+     <a  class="primary-btn wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s" (click)="show()" style="color: whitesmoke; padding: 0 13px;margin-left: 62rem;margin-top: 0rem;margin-bottom: -1rem;">Click To See All Projects</a>
+
   </div>
 
-  <section class="feature-area" style="margin-top:-4rem;">
-    <div class="container" style="padding-bottom: 7rem;">
+<section class="feature-area" style="margin-top:-5.7rem;">
+    <div class="container" style="padding-bottom: 0rem;">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="section-title text-center">
+                <div class="section-title text-center" style="padding-bottom: 52px;">
                     <h1>Projects You Might Need</h1>
                     <p>
                       “A good plan can help with risk analysis, but it will never guarantee the smooth running of the project.”
@@ -143,7 +156,7 @@
                 <div class="modal-content" style="width: 750px;overflow-y: scroll;height: 91vh;">
                   <div class="modal-header" style="height: 80px;margin-top: -0.8rem;">
                    
-                <div class="projectHeader">
+                  <div class="projectHeader">
                    <div class="projectTitle">
                      <h4 class="modal-title" style="margin-top: 0.1rem;cursor: context-menu;font-family: sans-serif;">{{prodetail.title}}</h4>
                      <span  class="ufont" style="cursor: context-menu;">( {{prodetail.tech}} )</span>
@@ -155,7 +168,7 @@
                     <span *ngIf="!avgrating" style="cursor: context-menu;font-family: sans-serif;">Not Rated Yet</span>
                     <span style="cursor: context-menu;font-family: sans-serif;">{{len}} Reviews</span>
                    </div>
-                </div>
+                  </div>
 
                     
                     <button type="button" class="close" data-dismiss="modal" style="outline: none;">&times;</button>
@@ -234,11 +247,16 @@
 
                                 <!-- <div class="input-wrap">
                                   <form #cc="ngForm" class="form-box d-flex justify-content-between"> -->
-                                    <textarea name="comments" id="comments" style="margin-left: 2rem; padding:15px;font-family: sans-serif;width: 72%;background-color: rgb(239, 246, 253); border-radius: 6px;outline: none;resize:none;word-wrap:off; border: none;box-shadow: 0 1px 8px rgba(0,0,0,.03);" rows="3" [(ngModel)]="comments" placeholder="Place Your Comments Here" onfocus="this.placeholder=''" onblur="this.placeholder='Place Your Comments Here'"></textarea>
-                                    <button type="submit" style="margin-left: 37rem;font-family: sans-serif;" class="btn btn-default bb" (click)="projectcomments(prodetail._id)"><span class="svgIcon svgIcon--response svgIcon--29px"><svg class="svgIcon-use" width="29" height="29">
-                                      <path d="M21.27 20.058c1.89-1.826 2.754-4.17 2.754-6.674C24.024 8.21 19.67 4 14.1 4 8.53 4 4 8.21 4 13.384c0 5.175 4.53 9.385 10.1 9.385 1.007 0 2-.14 2.95-.41.285.25.592.49.918.7 1.306.87 2.716 1.31 4.19 1.31.276-.01.494-.14.6-.36a.625.625 0 0 0-.052-.65c-.61-.84-1.042-1.71-1.282-2.58a5.417 5.417 0 0 1-.154-.75zm-3.85 1.324l-.083-.28-.388.12a9.72 9.72 0 0 1-2.85.424c-4.96 0-8.99-3.706-8.99-8.262 0-4.556 4.03-8.263 8.99-8.263 4.95 0 8.77 3.71 8.77 8.27 0 2.25-.75 4.35-2.5 5.92l-.24.21v.32c0 .07 0 .19.02.37.03.29.1.6.19.92.19.7.49 1.4.89 2.08-.93-.14-1.83-.49-2.67-1.06-.34-.22-.88-.48-1.16-.74z">
-                                      </path>
-                                    </svg></span><span class="button-label  js-buttonLabel">post</span></button>
+                                    <textarea name="comments" id="comments" style="margin-left: 2rem; padding:15px;font-family: sans-serif;width: 72%;background-color: rgb(239, 246, 253); border-radius: 6px;outline: none;resize:none;word-wrap:off; border: none;box-shadow: 0 1px 8px rgba(0,0,0,.03);" rows="3" [(ngModel)]="comments" placeholder="Place Your Comments Here" onfocus="this.placeholder=''" onblur="this.placeholder='Place Your Comments Here'"></textarea> 
+                                    <div style="margin-left: 30rem;margin-top: 1.5rem;width: 110px;">{{clen}} comments</div>
+                                    <button type="submit" style="margin-left: 37rem;margin-top: -3rem;font-family: sans-serif;" class="btn btn-default bb" (click)="projectcomments(prodetail._id)">
+                                        <span class="svgIcon svgIcon--response svgIcon--29px">
+                                            <svg class="svgIcon-use" width="29" height="29">
+                                                <path d="M21.27 20.058c1.89-1.826 2.754-4.17 2.754-6.674C24.024 8.21 19.67 4 14.1 4 8.53 4 4 8.21 4 13.384c0 5.175 4.53 9.385 10.1 9.385 1.007 0 2-.14 2.95-.41.285.25.592.49.918.7 1.306.87 2.716 1.31 4.19 1.31.276-.01.494-.14.6-.36a.625.625 0 0 0-.052-.65c-.61-.84-1.042-1.71-1.282-2.58a5.417 5.417 0 0 1-.154-.75zm-3.85 1.324l-.083-.28-.388.12a9.72 9.72 0 0 1-2.85.424c-4.96 0-8.99-3.706-8.99-8.262 0-4.556 4.03-8.263 8.99-8.263 4.95 0 8.77 3.71 8.77 8.27 0 2.25-.75 4.35-2.5 5.92l-.24.21v.32c0 .07 0 .19.02.37.03.29.1.6.19.92.19.7.49 1.4.89 2.08-.93-.14-1.83-.49-2.67-1.06-.34-.22-.88-.48-1.16-.74z">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                        <span class="button-label  js-buttonLabel">post</span></button>
                                   <!-- </form>
                                 </div> -->
 
@@ -294,14 +312,15 @@
                                     <div style="height: 50px;width: 50px;margin-top: 1%;margin-left: 1%;float: left;">
                                       <!-- <img src="http://localhost:4000/profile_{{c._id}}.jpg" alt="" height="45px" width="45px" style="border-radius: 50%;border-style: solid;border-width: 1px;padding: 2px; border-color: rgb(189, 184, 184);"> -->
                                       
-                                      <object data="assets/img/img_avatar.png" type="image/png" height="45px" width="45px" style="border-radius: 50%;border-style: solid;border-width: 1px;padding: 2px; border-color: rgb(189, 184, 184);">
+                                      <!-- <object data="assets/img/img_avatar.png" type="image/png" height="45px" width="45px" style="border-radius: 50%;border-style: solid;border-width: 1px;padding: 2px; border-color: rgb(189, 184, 184);">
                                         <img src="http://localhost:4000/profile_{{c._id}}.jpg" alt="Stack Overflow logo and icons and such" height="45px" width="45px" style="border-radius: 50%;border-style: solid;border-width: 1px;padding: 2px; border-color: rgb(189, 184, 184);">
-                                      </object>
+                                      </object> -->
                                   
-                                      
-                                      <!-- <img *ngIf="gender=='male' && !loginid" src="assets/img/img_avatar.png" alt="" height="45px" width="45px" style="border-radius: 50%;border-style: solid;border-width: 1px;padding: 2px; border-color: rgb(189, 184, 184);">
-                                      <img *ngIf="gender=='female' && !loginid" src="assets/img/img_avatar2.png" alt="" height="45px" width="45px" style="border-radius: 50%;border-style: solid;border-width: 1px;padding: 2px; border-color: rgb(189, 184, 184);"> -->
-                                    </div>
+                                      <!-- {{c.loginid}} -->
+                                      <img src="http://localhost:4000/profile_{{c._id}}.jpg" alt="" height="45px" width="45px" style="border-radius: 50%;border-style: solid;border-width: 1px;padding: 2px; border-color: rgb(189, 184, 184);" appImgFallback="assets/img/uimage.png">
+                                      <!-- <img *ngIf="gender=='female'" src="http://localhost:4000/profile_{{c._id}}.jpg" alt="" height="45px" width="45px" style="border-radius: 50%;border-style: solid;border-width: 1px;padding: 2px; border-color: rgb(189, 184, 184);" appImgFallback="assets/img/img_avatar2.png">
+                                      <img *ngIf="gender=='undefined'" src="assets/img/uimage.png" alt=""height="45px" width="45px" style="border-radius: 50%;border-style: solid;border-width: 1px;padding: 2px; border-color: rgb(189, 184, 184);"> -->
+                                    </div> 
                                     <div style="height: 60px;width: 90%;margin-top: 0;margin-left: 2rem;margin-right: -1rem; padding-left: 2rem;padding-top: 0.2rem;">
                                     <p style="color: #03a87c;text-transform: capitalize;">{{c.name}}</p> <p style="margin-top: -1rem;color: rgb(111, 111, 111);font-size: 13px;font-family: sans-serif;" class="">Published On {{c.date|date}} </p>
                                     </div>

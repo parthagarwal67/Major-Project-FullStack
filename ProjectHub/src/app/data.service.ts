@@ -20,6 +20,15 @@ getprojects(  ):any
 {
 return this.http.get('http://localhost:4000/get-projects');
 }
+searchprojects( d ):any
+{
+  return this.http.post('http://localhost:4000/get-searched-projects',d);
+}
+updateData( d ):any
+{
+  return this.http.post('http://localhost:4000/update-projects-data',d);
+}
+
 getprofile(  ):any
 {
 return this.http.get('http://localhost:4000/get-profile');
@@ -39,6 +48,11 @@ postDataWithImage( d ):any
  {
 return this.http.post('http://localhost:4000/data-with-file',d)
  }
+projectFiles( d ):any
+{
+  return this.http.post('http://localhost:4000/project-file',d)
+}
+
  postDataWithProfile( d ):any
  {
 return this.http.post('http://localhost:4000/data-with-profile',d)

@@ -223,50 +223,9 @@ glow {
   }
 }
 
-
-/* 
-.test + .tooltip > .tooltip-inner
- {
-  background-color: red; 
-  color: #FFFFFF; 
-  border: 1px solid green; 
-  padding: 15px;
-  font-size: 20px;
-}
-
-.test + .tooltip.bottom > .tooltip-arrow 
-{
-  border-bottom: 5px solid blue;
-} */
-
-/* 
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-
-  /* Position the tooltip 
-  position: absolute;
-  z-index: 1;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-} */
-
-
-
 /* //------------------------------------------// */
+
+
 
 /* ---------------profile not used------------- */
 
@@ -319,6 +278,9 @@ svg:not(:root) {
   -ms-user-select: none; */
   user-select: none;
 }
+
+/* -------------------------------------------------------------------- */
+
 
 
 
