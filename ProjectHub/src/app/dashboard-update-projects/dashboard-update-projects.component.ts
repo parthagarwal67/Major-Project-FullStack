@@ -47,7 +47,7 @@ export class DashboardUpdateProjectsComponent implements OnInit {
       this.title=temp[0].title;
       this.desc=temp[0].desc;
       this.tech=temp[0].tech;
-      this.key=temp[0].key;
+      this.key=temp[0].key.toString();
   })
 })
 // alert(this.proid)
