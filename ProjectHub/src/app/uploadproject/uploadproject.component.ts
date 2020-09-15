@@ -115,7 +115,7 @@ postData()
 
 
   this.ds.postDataWithImage(form).subscribe((d)=>{
-   alert(JSON.stringify(d))
+   alert("Project Uploaded Successfully")
     location.reload();
   });
 // }

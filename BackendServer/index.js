@@ -316,6 +316,21 @@ app.post('/update-projects-data',bodyParser.json(),(req,res)=>{
         }
     })
 })
+app.post('/delete-project',bodyParser.json(),(req,res)=>{
+    console.log(req.body._id);
+    var collection=connection.db('projectize').collection('projects');
+    collection.deleteOne({_id:ObjectId(req.body._id)},(err)=>{
+        if(!err)
+        {
+            res.send({status:'ok'});
+            console.log("Project Deleted");
+        }
+        else
+        {
+            res.send({status:'failed'});
+        }
+    })
+})
 
   
 app.post('/profile-data',bodyParser.json(),(req,res)=>{

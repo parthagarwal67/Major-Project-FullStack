@@ -106,7 +106,9 @@ updatedata(){
   // form.set('key',keyword);
   
 this.ds.updateData({_id:this.proid,title:this.title,desc:this.desc,tech:technologies,key:keyword}).subscribe((d)=>{
-    alert("Data Updated")
+  if(d.Status=='updated')
+  {  
+  alert("Data Updated")
     
     this.ds.getprojects().subscribe((d)=>{
       var projectsforupdate=d.resultData;
@@ -118,7 +120,11 @@ this.ds.updateData({_id:this.proid,title:this.title,desc:this.desc,tech:technolo
       this.tech=temp[0].tech;
       this.key=temp[0].key;
   })
-
+}
+else
+{
+  alert("Failed Some Error is there")
+}
     // location.reload()
   })
 }

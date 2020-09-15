@@ -144,6 +144,16 @@ export class DashboardViewProjectsComponent implements OnInit {
       // window.location.reload()
       // window.location.href='http://localhost:4200/dashboard/dashboardUpdateProjects'
     }
+    delete(a){
+      //alert(a)
+      this.ds.deleteproject({_id:a}).subscribe((d)=>{
+        if(d.status=='ok')
+        alert("Project Deleted Successfully");
+        else
+        alert("Project Not Found")
+        location.reload();
+      })
+    }
   
     details(d)
     {

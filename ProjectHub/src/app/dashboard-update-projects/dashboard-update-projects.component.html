@@ -22,7 +22,7 @@
         <tr>
           <td class="ucolor">Description</td>
           <td><textarea type="text" #n="ngModel" [(ngModel)]="desc" name="desc" style="height: 80px; width: 15rem;" minlength="100" maxlength="500"></textarea> </td>
-          <td><button style="margin-left: 5rem;border-radius: 10%;background-color: rgba(22, 32, 88, 0.425);cursor: pointer;" class="button" (click)="updatedata()">Update</button></td>
+          <td><button style="margin-left: 5rem;border-radius: 10%;background-color: rgba(22, 32, 88, 0.425);cursor: pointer;" class="button wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s" (click)="updatedata()">Update</button></td>
         </tr>
         <tr>
           <td class="ucolor">Technologies Used</td>
@@ -61,8 +61,9 @@
           <td class="ucolor"><input type="file" name="setupproject" (change)="getSetupproject($event)"></td>
           <td class="ucolor"><input type="file" name="covervideo" (change)="getCovervideo($event)"></td>
          </tr>
-      </table><br>
-      <button style="margin-left: 25rem;border-radius: 10%;background-color: rgba(22, 32, 88, 0.425);cursor: pointer;" class="button" (click)="postData()">Update</button>
+      </table>
+      <!-- <br> -->
+      <!-- <button style="margin-left: 25rem;border-radius: 10%;background-color: rgba(22, 32, 88, 0.425);cursor: pointer;" class="button" (click)="postData()">Update</button> -->
       <!-- &nbsp;&nbsp;
       <button style="margin-left: 18rem;border-radius: 10%;background-color: rgba(22, 32, 88, 0.425);cursor: pointer;" class="button" >Upload</button> -->
      

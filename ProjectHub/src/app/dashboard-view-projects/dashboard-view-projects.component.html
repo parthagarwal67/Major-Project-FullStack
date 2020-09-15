@@ -30,7 +30,6 @@
                           <span *ngIf="!avgrating" style="cursor: context-menu;">Not Rated Yet</span>
                          // <span style="cursor: context-menu;">Average rating </span>
                         </div> -->
-                        
                     </div>
                     <!-- <button class="primary-btn" routerLink="/dashboard/dashboardUpdateProjects" (click)="update(projects1._id)" style="margin-top: 1rem;margin-bottom: -2rem;left: 4.7rem;width: 35%;padding-left: 0px;padding-right: 0px;"><i class="ti-pencil-alt" style="font-size: 11px;color: white;"></i>&nbsp;Edit</button> -->
                 </div>
@@ -50,8 +49,9 @@
                      <h4 class="modal-title" style="margin-top: 0.1rem;cursor: context-menu;font-family: sans-serif;">{{prodetail.title}}</h4>
                      <span  class="ufont" style="cursor: context-menu;">( {{prodetail.tech}} )</span>
                    </div>
-                   <a class="test btt" (click)="update(prodetail._id)" style="color: inherit;height: 15px;margin: auto 0;cursor: pointer;" data-toggle="tooltip" data-placement="right" title="Click To Edit this project">
-                    <i class="ti-pencil-alt" style="font-size: 15px;"></i>
+                   <a class="test" style="color: inherit;height: 15px;margin: auto 0;cursor: pointer;width: 6%;">
+                    <i class="ti-pencil-alt btt" (click)="update(prodetail._id)" style="font-size: 15px;" data-toggle="tooltip" data-placement="right" title="Edit project"></i>&nbsp;&nbsp;
+                    <i class="fa fa-trash-o btt" (click)="delete(prodetail._id)" style="font-size: 15px;" data-toggle="tooltip" data-placement="right" title="Delete project"></i>
                    </a>
 
                    <div class="AvgProjectRatings">

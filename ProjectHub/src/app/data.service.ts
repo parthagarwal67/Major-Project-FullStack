@@ -24,6 +24,10 @@ searchprojects( d ):any
 {
   return this.http.post('http://localhost:4000/get-searched-projects',d);
 }
+deleteproject( d ):any
+{
+  return this.http.post('http://localhost:4000/delete-project',d);
+}
 updateData( d ):any
 {
   return this.http.post('http://localhost:4000/update-projects-data',d);
