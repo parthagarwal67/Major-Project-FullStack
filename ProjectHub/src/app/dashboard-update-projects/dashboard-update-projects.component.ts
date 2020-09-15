@@ -90,12 +90,14 @@ export class DashboardUpdateProjectsComponent implements OnInit {
     this.coverext=this.covervideo.name.split('.').pop();
   }
 updatedata(){
-  var technologies=this.tech.split(',').map((d)=>{
-    return d.trim();
-  })
-  var keyword=this.key.split(',').map((d)=>{
-    return d.trim();
-  })
+  // var technologies=this.tech.split(',').map((d)=>{
+  //   return d.trim();
+  // })
+  // var keyword=this.key.split(',').map((d)=>{
+  //   return d.trim();
+  // })
+  var technologies =this.tech.trim();
+  var keyword =this.key.trim();
   console.log(technologies);
   console.log(keyword);
   // var form= new FormData();
@@ -106,8 +108,9 @@ updatedata(){
   // form.set('key',keyword);
   
 this.ds.updateData({_id:this.proid,title:this.title,desc:this.desc,tech:technologies,key:keyword}).subscribe((d)=>{
-    alert("Data Updated")
-    
+    if(d.Status=="success")
+    {
+      alert("data updated successfully")
     this.ds.getprojects().subscribe((d)=>{
       var projectsforupdate=d.resultData;
       var temp= projectsforupdate.filter((d)=>{
@@ -118,8 +121,13 @@ this.ds.updateData({_id:this.proid,title:this.title,desc:this.desc,tech:technolo
       this.tech=temp[0].tech;
       this.key=temp[0].key;
   })
+  }
+  else 
+  {
+    alert("some thing went wrong on server")
+  }
 
-    // location.reload()
+    location.reload()
   })
 }
 

@@ -297,24 +297,25 @@ app.get('/get-projects',(req,res)=>{
   })
 
 app.post('/update-projects-data',bodyParser.json(),(req,res)=>{
-    console.log(req.body)
-    console.log(req.body._id)
+    // console.log(req.body)
+    // console.log(req.body._id)
     var collection=connection.db('projectize').collection('projects');
-    // {title:req.body.title,desc:req.body.desc,tech:req.body.tech,key:req.body.key}
+  
     collection.updateOne({_id:ObjectId(req.body._id)},{$set:{title:req.body.title,desc:req.body.desc,tech:req.body.tech,key:req.body.key}},(err,r)=>{
+
         if(!err)
         {
-            console.log(r)
-            res.send({Status:'updated'})
-            
-           
+             res.send({Status:'success'})
+               
         }
         else
         {
-            console.log(err)
-            res.send({Status:'failed'})
+               res.send({Status:"failed"});
         }
+
     })
+
+   
 })
 
   
