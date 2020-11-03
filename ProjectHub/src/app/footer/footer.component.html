@@ -2,7 +2,7 @@
 <footer class="footer-area section-gap">
     <div class="container">
         <div class="row">
-            <div class="col-lg-2 col-md-6 single-footer-widget">
+            <!-- <div class="col-lg-2 col-md-6 single-footer-widget">
                 <h4>Top Products</h4>
                 <ul>
                     <li><a href="#">Managed Website</a></li>
@@ -10,8 +10,8 @@
                     <li><a href="#">Power Tools</a></li>
                     <li><a href="#">Marketing Service</a></li>
                 </ul>
-            </div>
-            <div class="col-lg-2 col-md-6 single-footer-widget">
+            </div> -->
+            <!-- <div class="col-lg-2 col-md-6 single-footer-widget">
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="#">Jobs</a></li>
@@ -19,8 +19,8 @@
                     <li><a href="#">Investor Relations</a></li>
                     <li><a href="#">Terms of Service</a></li>
                 </ul>
-            </div>
-            <div class="col-lg-2 col-md-6 single-footer-widget">
+            </div> -->
+            <!-- <div class="col-lg-2 col-md-6 single-footer-widget">
                 <h4>Features</h4>
                 <ul>
                     <li><a href="#">Jobs</a></li>
@@ -28,8 +28,8 @@
                     <li><a href="#">Investor Relations</a></li>
                     <li><a href="#">Terms of Service</a></li>
                 </ul>
-            </div>
-            <div class="col-lg-2 col-md-6 single-footer-widget">
+            </div> -->
+            <!-- <div class="col-lg-2 col-md-6 single-footer-widget">
                 <h4>Resources</h4>
                 <ul>
                     <li><a href="#">Guides</a></li>
@@ -37,16 +37,15 @@
                     <li><a href="#">Experts</a></li>
                     <li><a href="#">Agencies</a></li>
                 </ul>
-            </div>
-            <div class="col-lg-4 col-md-6 single-footer-widget">
+            </div> -->
+            <div class="col-lg-5 col-md-6 single-footer-widget">
                 <h4>Newsletter</h4>
-                <p>You can trust us. we only send promo offers,</p>
+                <p>You can trust us. we only send updates and promo offers.</p>
                 <div class="form-wrap" id="mc_embed_signup">
-                    <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                     method="get" class="form-inline">
-                        <input id="qq" class="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
-                         required="" type="email">
-                        <button style="height: 2.5rem;" class="click-btn btn btn-default" (click)="clear()"><span class="lnr lnr-arrow-right"></span></button>
+                    <form novalidate [formGroup]="usersubsForm" (ngSubmit)="clear()" class="form-inline">
+                        <input id="qq" class="form-control" name="email" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
+                         type="email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                        <button style="height: 2.5rem;" class="click-btn btn btn-default"><span class="lnr lnr-arrow-right"></span></button>
                         <div style="position: absolute; left: -5000px;">
                             <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
                         </div>
@@ -55,6 +54,14 @@
                     </form>
                 </div>
             </div>
+            <div class="col-lg-1 col-md-6 single-footer-widget"></div>
+            <div class="col-lg-2 col-md-6 single-footer-widget"></div>
+            <div class="col-lg-2 col-md-6 single-footer-widget">
+                <img src="assets/img/projects.png" alt="no image" height="70%" width="100%">
+            </div>
+            <div class="col-lg-2 col-md-6 single-footer-widget">
+                <img src="assets/img/logo1.png" alt="no image" height="80%" width="100%">
+            </div>
         </div>
         <div class="footer-bottom row align-items-center">
             <p class="footer-text m-0 col-lg-8 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -62,10 +69,10 @@ Copyright &copy; 2020<script>document.write(new Date().getFullYear());</script> 
 <!-- | This Website is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
             <div class="col-lg-4 col-md-12 footer-social">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-dribbble"></i></a>
-                <a href="#"><i class="fa fa-behance"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.dribbble.com" target="_blank"><i class="fa fa-dribbble"></i></a>
+                <a href="https://www.behance.net" target="_blank"><i class="fa fa-behance"></i></a>
             </div>
         </div>
     </div>

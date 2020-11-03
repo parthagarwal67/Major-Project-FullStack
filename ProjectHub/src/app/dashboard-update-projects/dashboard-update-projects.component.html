@@ -46,9 +46,9 @@
           <th><label>Upload Your Report File </label></th>
         </tr>
         <tr>
-         <td class="ucolor"><input type="file" name="zipfile" (change)="getZipfile($event)"></td>
-         <td class="ucolor"><input type="file" name="ppt" (change)="getPpt($event)"></td>
-         <td class="ucolor"><input type="file" name="report" (change)="getReport($event)"></td>
+         <td class="ucolor"><input type="file" name="zipfile" (change)="getZipfile($event)" data-toggle="tooltip" data-placement="bottom" title="File ext .zip/rar"></td>
+         <td class="ucolor"><input type="file" name="ppt" (change)="getPpt($event)" data-toggle="tooltip" data-placement="bottom" title="File ext .ppt/pptx"></td>
+         <td class="ucolor"><input type="file" name="report" (change)="getReport($event)" data-toggle="tooltip" data-placement="bottom" title="File format .docx/pdf"></td>
         </tr>
          <br>
         <tr>
@@ -57,9 +57,9 @@
           <th><label>Cover Video</label></th>
         </tr>
         <tr>
-          <td class="ucolor"><input type="file" multiple [(ngModel)]="screenshots" name="screenshots" (change)="getScreenshots($event)"></td>
-          <td class="ucolor"><input type="file" name="setupproject" (change)="getSetupproject($event)"></td>
-          <td class="ucolor"><input type="file" name="covervideo" (change)="getCovervideo($event)"></td>
+          <td class="ucolor"><input type="file" multiple [(ngModel)]="screenshots" name="screenshots" (change)="getScreenshots($event)" data-toggle="tooltip" data-placement="bottom" title="Image ext .png/jpg/jpeg"></td>
+          <td class="ucolor"><input type="file" name="setupproject" (change)="getSetupproject($event)" data-toggle="tooltip" data-placement="bottom" title="File format .pdf/docx"></td>
+          <td class="ucolor"><input type="file" name="covervideo" (change)="getCovervideo($event)" data-toggle="tooltip" data-placement="bottom" title="File format .mp4"></td>
          </tr>
       </table>
       <!-- <br> -->

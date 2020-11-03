@@ -24,6 +24,7 @@ import { StarComponent } from './star/star.component';
 import { DashboardViewProjectsComponent } from './dashboard-view-projects/dashboard-view-projects.component';
 import { ImgFallbackDirective } from './img-fallback.directive';
 import { DashboardUpdateProjectsComponent } from './dashboard-update-projects/dashboard-update-projects.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { DashboardUpdateProjectsComponent } from './dashboard-update-projects/da
     StarComponent,
     DashboardViewProjectsComponent,
     ImgFallbackDirective,
-    DashboardUpdateProjectsComponent
+    DashboardUpdateProjectsComponent,
+    TestimonialsComponent
   ],
   imports: [
     BrowserModule,

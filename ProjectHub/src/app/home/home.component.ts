@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Server } from 'http';
 import { DataService } from '../data.service';
 
 declare var $:any;
@@ -16,6 +17,7 @@ declare var WOW:any;
 export class HomeComponent implements OnInit {
 name;
 keyword;
+testimonials;
 // searchedpro; //value is undefined
 // loginid;
   constructor(private route:ActivatedRoute,private router:Router,private ds:DataService) { }
@@ -24,6 +26,9 @@ keyword;
     this.route.queryParamMap.subscribe((d)=>{this.name=d.get('account');})
     // this.loginid=localStorage.getItem('loginid')
     // alert(this.searchedpro)
+    this.ds.getTestimonials().subscribe((d)=>{
+        this.testimonials=d.resultData;
+    })
   }
 search()
 {
@@ -198,8 +203,9 @@ $(window).scroll(function () {
 
 
 // Owl Carousel
-if ($('.testi-slider').length) {
-  $('.testi-slider').owlCarousel({
+// alert($('.testi-slider1').length);
+if ($('.testi-slider1').length) {
+  $('.testi-slider1').owlCarousel({
       loop: true,
       margin: 30,
       items: 1,

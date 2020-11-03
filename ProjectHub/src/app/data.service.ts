@@ -52,9 +52,33 @@ postDataWithImage( d ):any
  {
 return this.http.post('http://localhost:4000/data-with-file',d)
  }
-projectFiles( d ):any
+// projectFiles( d ):any
+// {
+//   return this.http.post('http://localhost:4000/project-file',d)
+// }
+postZipfile( d ):any
 {
-  return this.http.post('http://localhost:4000/project-file',d)
+  return this.http.post('http://localhost:4000/project-zipfile',d)
+}
+postPptfile( d ):any
+{
+  return this.http.post('http://localhost:4000/project-pptfile',d)
+}
+postReportfile( d ):any
+{
+  return this.http.post('http://localhost:4000/project-reportfile',d)
+}
+postScreenshots( d ):any
+{
+  return this.http.post('http://localhost:4000/project-screenshots',d)
+}
+postSetupfile( d ):any
+{
+  return this.http.post('http://localhost:4000/project-setupfile',d)
+}
+postCoverfile( d ):any
+{
+  return this.http.post('http://localhost:4000/project-coverfile',d)
 }
 
  postDataWithProfile( d ):any
@@ -74,8 +98,20 @@ forgotpassword( d ):any
 {
   return this.http.post('http://localhost:4000/forgot-password',d);
 }
+usersubscription( d ):any
+{
+  return this.http.post('http://localhost:4000/user-subscription',d);
+}
 profiledata( d ):any
 {
   return this.http.post('http://localhost:4000/profile-data',d);
+}
+postTestimonial( d ):any
+{
+  return this.http.post('http://localhost:4000/upload-testimonial',d);
+}
+getTestimonials():any
+{
+  return this.http.get('http://localhost:4000/get-testimonial');
 }
 }

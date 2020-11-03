@@ -4,3 +4,11 @@
 .c:hover{
     color: white;
 }
+
+.testi-slider1 {
+    margin: auto; }
+    .testi-slider1 .testi-item {
+      text-align: center; }
+      .testi-slider1 .testi-item img {
+        width: auto;
+        margin: auto; }

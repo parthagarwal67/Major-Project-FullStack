@@ -1,0 +1,27 @@
+<div class="container-fluid" style="margin:70px auto;width: 43%;background: wheat;box-shadow: 0px 0px 65px rgb(201, 198, 198);padding: 2rem 3.5rem;height: auto;">
+    <h3><i class="ti-quote-left"></i> Testimonials <i class="ti-quote-right"></i></h3><br>
+    <div class="row"> 
+      <div class="col-md-7">
+            <form novalidate [formGroup]="myForm" (ngSubmit)="submit()">
+               <label style="color: black;">Username</label> <br> <input type="text" formControlName="uname" name="uname" placeholder="eg: john332" onfocus="this.placeholder=''" onblur="this.placeholder='eg: john332'" style="width:21rem;color: gray;border-radius: 5pt;border: none;outline: none;" [ngClass]="{ 'is-invalid': submitted && f.uname.errors }">
+               <div *ngIf="myForm.get('uname').invalid" class="ccc">
+                 *this is required
+               </div>
+               <br><br>
+               <label style="color: black;">Write Testimonial</label> <br> <textarea type="text" formControlName="testimonial" name="testimonial" cols="40" style="color: gray;word-wrap: break-word;border-radius: 5pt;border: none;outline: none;" [ngClass]="{ 'is-invalid': submitted && f.testimonial.errors }"></textarea>
+               <div *ngIf="myForm.get('testimonial').errors">
+                 <div *ngIf="myForm.get('testimonial').errors.required" class="ccc">
+                    *this is required
+                 </div>
+                 <div *ngIf="myForm.get('testimonial').errors.minlength" class="ccc">
+                    *minimum 80 characters 
+                 </div>
+                 <div *ngIf="myForm.get('testimonial').errors.maxlength" class="ccc">
+                    *maximum 150 characters are allowed
+                 </div>
+               </div>
+               <button style="cursor: pointer;background-color: white;border-radius: 50%;border:1px solid grey;color: blue;outline: none;margin-left: 89%;"><i class="fa fa-arrow-right"></i></button>
+            </form>
+      </div>
+    </div>
+</div> 

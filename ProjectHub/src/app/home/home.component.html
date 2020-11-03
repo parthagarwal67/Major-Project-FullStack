@@ -276,7 +276,8 @@
 
 
 <!-- Start Faculty Area -->
-<section class="faculty-area section-gap">
+
+<!-- <section class="faculty-area section-gap">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -368,29 +369,30 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
+
 <!-- End Faculty Area -->
 
 
 <!-- Start Testimonials Area -->
 <section class="testimonials-area section-gap">
     <div class="container">
-        <div class="testi-slider owl-carousel" data-slider-id="1">
-            <div class="item">
+        <div class="testi-slider1 owl-carousel" data-slider-id="2">
+            <div class="item" *ngFor="let t of testimonials">
                 <div class="testi-item">
                     <img src="assets/img/quote.png" alt="">
-                    <h4>Fanny Spencer</h4>
-                    <ul class="list">
+                    <h4>{{t.uname}}</h4>
+                     <ul class="list">
                         <li><a href="#"><i class="fa fa-star"></i></a></li>
                         <li><a href="#"><i class="fa fa-star"></i></a></li>
                         <li><a href="#"><i class="fa fa-star"></i></a></li>
                         <li><a href="#"><i class="fa fa-star"></i></a></li>
                         <li><a href="#"><i class="fa fa-star"></i></a></li>
                     </ul>
+                    
                     <div class="wow fadeIn" data-wow-duration="1s">
-                        <p>
-                            As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel
-                            across her face <br> and She is the host to your journey.
+                        <p style="text-align: center;">
+                            {{t.testimonial}}
                         </p>
                     </div>
                 </div>
@@ -453,7 +455,7 @@
                 </div>
             </div>
         </div>
-        <div class="owl-thumbs d-flex justify-content-center" data-slider-id="1">
+        <!-- <div class="owl-thumbs d-flex justify-content-center" data-slider-id="1">
             <div class="owl-thumb-item">
                 <div>
                     <img class="img-fluid" src="assets/img/testimonial/t1.jpg" alt="">
@@ -478,7 +480,7 @@
                 </div>
                 <div class="overlay overlay-grad"></div>
             </div>
-        </div>
+        </div> -->
     </div>
 </section>
 <!-- End Testimonials Area -->

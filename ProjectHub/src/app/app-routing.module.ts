@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { DashboardViewProjectsComponent } from './dashboard-view-projects/dashboard-view-projects.component';
 import { DashboardUpdateProjectsComponent } from './dashboard-update-projects/dashboard-update-projects.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 
 const routes: Routes = [
@@ -30,7 +31,8 @@ const routes: Routes = [
           {path:'profile',component:ProfileComponent},
           {path:'uploadproject',component:UploadprojectComponent},
           {path:'dashboardViewProjects',component:DashboardViewProjectsComponent},
-          {path:'dashboardUpdateProjects',component:DashboardUpdateProjectsComponent}
+          {path:'dashboardUpdateProjects',component:DashboardUpdateProjectsComponent},
+          {path:'testimonials',component:TestimonialsComponent}
         ]},
   {path:'profile',component:ProfileComponent},
   ];
