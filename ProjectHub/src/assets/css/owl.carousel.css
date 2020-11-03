@@ -15,7 +15,7 @@
   z-index: 1; }
   .owl-carousel .owl-stage {
     position: relative;
-    -ms-touch-action: pan-Y; }
+    touch-action: pan-Y; }
   .owl-carousel .owl-stage:after {
     content: ".";
     display: block;
