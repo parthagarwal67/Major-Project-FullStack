@@ -114,4 +114,8 @@ getTestimonials():any
 {
   return this.http.get('http://localhost:4000/get-testimonial');
 }
+contactQuery(d):any
+{
+  return this.http.post('http://localhost:4000/contact-query',d);
+}
 }

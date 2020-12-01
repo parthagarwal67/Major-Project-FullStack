@@ -468,6 +468,14 @@ client.connect((err,con)=>{
 
 
 
+app.post('/contact-query',bodyParser.json(),(req,res)=>{
+    console.log(req.body);
+
+    sendMail("agarwalparth672000@gmail.com", "ccmcdwwivizwtole" , req.body.ownemail, "Query Raised By ({req.body.name})", `<br><b>Subject :-</b> req.body.subject<br><b>Email Address :-</b> req.body.uemail<br><br><br>req.body.message` )
+    res.send({Status:"ok",resultData:"Your Query Sent To Owner"});
+
+})
+
 
 app.post('/create-account',bodyParser.json(),(req,res)=>{
     // var p ={username:req.query.username,password:req.query.password}

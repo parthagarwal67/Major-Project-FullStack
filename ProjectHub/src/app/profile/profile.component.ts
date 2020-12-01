@@ -174,12 +174,12 @@ $(".close, .popup-overlay").on("click", function() {
   $(".popup-overlay, .popup-content").removeClass("active");
 });
 
-$(document).ready(function(){
-  $("#tub").click(function(){
-    $("img").remove();
-    location.reload()
-  });
-});
+// $(document).ready(function(){
+//   $("#tub").click(function(){
+//     $("#image").remove();
+//     //location.reload()
+//   });
+// });
 
 }
 }

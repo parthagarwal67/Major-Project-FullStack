@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { from } from 'rxjs';
+import { DataService } from '../data.service';
+
 declare var document;
 @Component({
   selector: 'app-contact',
@@ -6,10 +9,16 @@ declare var document;
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-
-  constructor() { }
+name;
+uemail;
+subject;
+message;
+ownemail;
+  constructor(private ds:DataService) { }
 
   ngOnInit(): void {
+    this.ownemail="agarwalparth672000@gmail.com";
+    // alert(this.ownemail);
   }
   // myMap() {
   //   var mapProp= {
@@ -21,10 +30,22 @@ export class ContactComponent implements OnInit {
 
   response()
   {
-    alert("Query Submitted")
-document.getElementById('a').value='';
-document.getElementById('b').value='';
-document.getElementById('c').value='';
-document.getElementById('d').value='';
+    if(document.getElementById('a').value=='' || document.getElementById('b').value=='' || document.getElementById('c').value=='' || document.getElementById('d').value=='')
+    {
+      alert("Some Fields Are Missing!!")
+    }
+    else
+    {
+    this.ds.contactQuery({name:this.name,uemail:this.uemail,subject:this.subject,message:this.message,ownemail:this.ownemail}).subscribe((d)=>{
+    if(d.Status=='ok')
+      {
+        alert(d.resultData);
+        document.getElementById('a').value='';
+        document.getElementById('b').value='';
+        document.getElementById('c').value='';
+        document.getElementById('d').value='';
+      }
+  })
+    }
   }
 }

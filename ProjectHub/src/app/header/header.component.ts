@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Directive, ElementRef, HostListener } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { $ } from 'protractor';
 
 // @Directive({
 //     selector:'img[appImgFallback]'
@@ -32,5 +33,10 @@ export class HeaderComponent implements OnInit {
   logout2()
   {
     localStorage.removeItem('name');
+  }
+  goto()
+  {
+    // this.router.navigate(['/contact']);
+    window.location.href='/contact';
   }
 }

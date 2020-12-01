@@ -2,7 +2,7 @@
   <div class="container wow fadeIn" data-wow-duration="2s" id="container" style="height: 200px; margin-top: 80px;">
     <div class="form-container sign-up-container">
     
-    <form #mm="ngForm">
+    <!-- <form #mm="ngForm">
         <h1>Create Account</h1>
         <div class="social-container">
             <a href="https://www.facebook.com/" target="_blank" class="social"><i class="fa fa-facebook"></i></a>
@@ -11,10 +11,38 @@
         </div>
         <span>or use your email for registration</span>
         <input type="text" name="name" placeholder="Name" [(ngModel)]="record.name" required maxlength="20">
-        <input type="email" name="email" placeholder="Email" [(ngModel)]="record.email" required>
+        <input type="email" name="email" placeholder="Email" [(ngModel)]="record.email" required id="em">
         <input type="password" name="password" placeholder="Password" [(ngModel)]="record.password" minlength="6" required>
         <button *ngIf="mm.valid" class="btn" (click)="createAccount()">SignUp</button>
+    </form> -->
+
+    <form novalidate [formGroup]="createaccountForm" (ngSubmit)="createAccount()">
+        <h1>Create Account</h1>
+        <div class="social-container">
+            <a href="https://www.facebook.com/" target="_blank" class="social"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.google.com/" target="_blank" class="social"><i class="fa fa-google"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank" class="social"><i class="fa fa-linkedin"></i></a>
+        </div>
+        <span>or use your email for registration</span>
+        <input type="text" name="name" class="form-control" placeholder="Name" [(ngModel)]="record.name" id="na" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+            <div *ngIf="f.name.errors.required">Name is required</div>
+            <div *ngIf="f.name.errors.maxLength">Max Length is 24</div>
+        </div>
+        <input type="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="record.email" id="em" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Email is required</div>
+            <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+        </div>
+        <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="record.password" id="pa" formControlName="pass" [ngClass]="{ 'is-invalid': submitted && f.pass.errors }">
+        <div *ngIf="submitted && f.pass.errors" class="invalid-feedback">
+            <div *ngIf="f.pass.errors.required">Password is required</div>
+            <div *ngIf="f.pass.errors.pattern">Pattern Not Matched</div>
+            <div *ngIf="f.pass.errors.minLength">Min Length is 8</div>
+        </div>
+        <button class="btn">SignUp</button>
     </form>
+
     </div>
     <div class="form-container sign-in-container">
         <form #mn="ngForm">
@@ -28,7 +56,7 @@
         <input type="email" name="email" placeholder="Email" [(ngModel)]="accountdata.email" required>
         <input type="password" name="password" placeholder="Password" [(ngModel)]="accountdata.password" required>
         <a routerLink="/forgot-password">Forgot Your Password ?</a>
-        <button class="btn" (click)="login()">Sign In</button>
+        <button *ngIf="mn.valid" class="btn" (click)="login()">Sign In</button>
         </form>
     </div>
     <div class="overlay-container">

@@ -375,11 +375,12 @@
 
 
 <!-- Start Testimonials Area -->
-<section class="testimonials-area section-gap">
+
+<section class="testimonials-area section-gap" style="background-color: aquamarine;margin-bottom: 10rem;">
     <div class="container">
         <div class="testi-slider1 owl-carousel" data-slider-id="2">
-            <div class="item" *ngFor="let t of testimonials">
-                <div class="testi-item">
+            <div class="item" *ngFor="let t of testimonials" style="box-shadow: 0px 0px 65px lightgrey;background-color: whitesmoke;border: aquamarine;border-top-left-radius: 5.5rem;border-bottom-right-radius: 3.5rem;">
+                <div class="testi-item" style="padding-top: 1rem;padding-bottom: 1rem;">
                     <img src="assets/img/quote.png" alt="">
                     <h4>{{t.uname}}</h4>
                      <ul class="list">
@@ -483,6 +484,7 @@
         </div> -->
     </div>
 </section>
+
 <!-- End Testimonials Area -->
 
 

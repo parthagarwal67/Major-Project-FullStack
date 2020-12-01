@@ -22,7 +22,7 @@
                             <li><a href="blog-single.html">Blog Details</a></li>
                         </ul>
                     </li> -->
-                    <li><a routerLink="/contact"><i class="fa fa-phone"></i>&nbsp;Contact</a></li>
+                    <li class="hov" (click)="goto()"><a><i class="fa fa-phone"></i>&nbsp;Contact</a></li>
                     <li *ngIf="!curuser" class="but"><a routerLink="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;Login / SignUp</a></li>
                     <li *ngIf="curuser" class="menu-has-children"><a routerLink="">
                         
